@@ -7,17 +7,80 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'Base/css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 {% endblock css %}
 
 {% block body %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center">Welcome to LittleVita</h1>
+    <div class="videoGallery-bg-top"></div>
+    <div class="videoGallery fade-in">
+        
+        <div class="mvh-container">
+            <div class="sectionHeading text-center">
+                <h2 class="black"> Video Gallery
+                </h2>
             </div>
         </div>
+        
+        <div class="mvx-container">
+            <div class="owl-carousel owl-theme">
+                <div class="video">
+                    <h5>Covid19 Vaccines for 15-18years old kids</h5>
+                    <iframe src="https://www.youtube.com/embed/X2zcvp9dakc?si=hSCTXqEZ4vvLWc0W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <h5>Know about Flu Vaccine</h5>
+                    <iframe src="https://www.youtube.com/embed/ZugKQkc66c4?si=tYJg3JCeovkF2uly" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <h5>Kareena on importance of AnnualFlu Vaccination</h5>
+                    <iframe src="https://www.youtube.com/embed/B3FUpQX7z88?si=bWna98G_yhbIqgpR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <h5>Precautions to prevent Cervical Cancer</h5>
+                    <iframe src="https://www.youtube.com/embed/cj8fwfu7Xtk?si=HEo9HVW4jFShU480" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="mvh-container">
+            <div class="text-center">
+                <a href="videos.html" class="btn btn-primary">View All Videos</a>
+            </div>
+
+        </div>
+
     </div>
+    <div class="videoGallery-bg-bottom"></div>
 {% endblock body%}
 
 
-{% block js %}{% endblock js %}
+{% block js %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function(){
+            $('.owl-carousel').owlCarousel({
+                items:4,
+                merge:true,
+                loop:true,
+                margin:10,
+                video:true,
+                stagePadding: 5,
+                videoHeight:true,
+                videoWidth:true,
+                lazyLoad:true,
+                center:true,
+                responsive:{
+                    480:{
+                        items:1
+                    },
+                    600:{
+                        items:3
+                    }
+                }
+            })
+          });    
+    </script>
+{% endblock js %}
