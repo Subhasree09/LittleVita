@@ -15,15 +15,26 @@
         <div class="form-box">
             <div class="form">
                 
-                <form class="register-form">
+                <form class="register-form" method='POST' action=''>{% csrf_token %}
                     <center>
                         <h1 class="main-heading">Register Form</h1>
                     </center>
-                    <input type="text" placeholder="user name" />
-                    <input type="text" placeholder="email-id" />
-                    <input type="password" placeholder="password" />
-                    <button>REGISTER</button>
-                    <p class="message">Already Registered?<a href="#">Login</a>
+
+                    {% for field in form %}
+                        <div class="form-group">
+                            {{field.label_tag}} {{field}} <small class='text-warning'>{{field.errors|striptags}}</small>
+                        </div>
+                    {% endfor %}
+                    <button class="rounded" type="submit">REGISTER</button>
+    
+                    {% if form.non_field_errors %}
+                        {% for error in form.non_field_errors %}
+                            <p class=" alert alert-danger my-3">{{error}}</p>
+                        {% endfor %}
+                    {% endif %}
+                    
+                    <p class="message">
+                        Already Registered?<a href={% url "login" %}>Login</a>
                     </p>
                 </form>
             </div>

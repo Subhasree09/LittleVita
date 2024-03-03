@@ -14,16 +14,24 @@
     <div class="col-1">
         <div class="form-box">
             <div class="form">
-                <form class="login-form">
+                <form class="login-form" method='post'> {% csrf_token %}
                     <center>
                         <h1 class="main-heading">Login Form</h1>
                     </center>
-                    <input type="text" placeholder="user name" />
-                    <input type="password" placeholder="password" />
-                    <button>LOGIN</button>
-                    <p class="message">Not Registered? <a href="#">Register</a></p>
+                    {% for field in form %}
+                        <div class="form-group">
+                            {{field.label_tag}} {{field}} <small class='text-warning'>{{field.errors|striptags}}</small>
+                        </div>
+                    {% endfor %}
+                    <button class="rounded" type="submit">LOGIN</button>
+    
+                    {% if form.non_field_errors %}
+                        {% for error in form.non_field_errors %}
+                            <p class=" alert alert-danger my-3">{{error}}</p>
+                        {% endfor %}
+                    {% endif %}
                 </form>
-
+                <p class="message">Not Registered? <a href={% url "signup" %}>Register</a></p>
             </div>
         </div>
     </div>
