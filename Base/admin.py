@@ -4,9 +4,9 @@ from . import models
 # Register your models here.
 @admin.register(models.Parent)
 class ParentAdmin(admin.ModelAdmin):
-    list_display = ['parent_id', 'parent_name', 'parent_email', 'phone_number']
-    search_fields = ['parent_name', 'parent_email']
-    list_filter = ['parent_name', 'parent_email']
+    list_display = ['parent_id', 'first_name', 'last_name', 'email', 'phone_number']
+    search_fields = ['first_name', 'last_name', 'email']
+    list_filter = ['first_name', 'last_name', 'email']
 
 @admin.register(models.Child)
 class ChildAdmin(admin.ModelAdmin):

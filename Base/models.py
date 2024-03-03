@@ -4,15 +4,16 @@ from django.contrib.auth.models import User
 
 
 class Parent(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100, null=True, blank=True)
+    email = models.EmailField(max_length=100)
     user = models.OneToOneField(User, null=True,blank = True, on_delete=models.CASCADE)
     parent_id = models.AutoField(primary_key=True)
-    parent_name = models.CharField(max_length=100)
-    parent_email = models.EmailField(max_length=100)
-    phone_number = models.CharField(max_length=20)
+    phone_number = models.CharField(max_length=20, null=True, blank=True)
     # Add other parent details as needed
 
     def __str__(self):
-        return self.parent_name
+        return self.first_name
 
 
 class Child(models.Model):

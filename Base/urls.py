@@ -11,7 +11,8 @@ urlpatterns = [
     path('disease/', views.disease, name='disease'),
     path('vaccine/', views.vaccine, name='vaccine'),
     path('videos/', views.videos, name='videos'),
-    path('login/', views.login, name='login'),
-    path('signup/', views.signup, name='signup'),
+    path('login/', views.loginUser, name='login'),
+    path('signup/', views.signupUser, name='signup'),
+    path('logout/', views.logoutUser, name='logout'),
 
 ]
