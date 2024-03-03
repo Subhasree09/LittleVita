@@ -27,3 +27,9 @@ def vaccine(request):
 
 def videos(request):
     return render(request, 'Base/videos.html')
+
+def login(request):
+    return render(request, 'Base/login.html')
+
+def signup(request):
+    return render(request, 'Base/signup.html')

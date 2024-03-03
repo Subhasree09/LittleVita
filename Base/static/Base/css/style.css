@@ -7,3 +7,13 @@ body{
     padding: 0;
     color: #333;
 }
+.navbar-nav .nav-item.dropdown:hover .nav-link,
+.navbar-nav .nav-item.dropdown.show .nav-link {
+  color: #FF4D7B !important;
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-item.active,
+.navbar-nav .nav-item.dropdown .dropdown-item:active {
+  background-color: #FF4D7B;
+  color: #fff !important;
+}
