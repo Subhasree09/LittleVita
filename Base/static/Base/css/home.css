@@ -5,3 +5,65 @@ h1{
     font-size: 50px;
     text-align: center;
 }
+
+
+.videoGallery{
+    margin-top: -25px;
+}
+
+.videoGallery-bg-top{
+    background: url(https://www.myvaccinationhub.in/assets/images/video-gallery-top-bg.svg) no-repeat;
+    width: 100%;
+    height: 117px;
+    margin-top: 60px;
+}
+.videoGallery{
+    background-color: #e5effb; /* Use your desired grey color code */
+    height: 240px;
+}
+.videoGallery-bg-bottom{
+    background: url(https://www.myvaccinationhub.in/assets/images/video-gallery-top-bg.svg) no-repeat;
+    width: 100%;
+    height: 117px;
+    margin-top: -80px;
+}
+.mvx-container{
+    min-height:20px;
+}
+.mvh-container {
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+.videoGallery.sectionHeading{
+    padding-top: 25px;
+}
+.owl-stage{
+    height: 50px;
+}
+.owl-video-frame {
+    
+    width: 100%;
+    height: 100%;
+}
+
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.owl-dot{
+    display: inline-block;
+}
+
+.owl-dot span{
+    width: 11px;
+    height: 11px;
+    background: #fff;
+    border-radius: 50%;
+    display: block;
+    margin: 5px 3px;
+}
