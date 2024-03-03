@@ -1,0 +1,40 @@
+{% extends "Base/base.html" %}
+{% load static %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href={% static "Base/css/login_signup.css" %}>
+{% endblock css %}
+
+{% block body %}
+<div class="row">
+    <div class="col-1">
+        <div class="form-box">
+            <div class="form">
+                
+                <form class="register-form">
+                    <center>
+                        <h1 class="main-heading">Register Form</h1>
+                    </center>
+                    <input type="text" placeholder="user name" />
+                    <input type="text" placeholder="email-id" />
+                    <input type="password" placeholder="password" />
+                    <button>REGISTER</button>
+                    <p class="message">Already Registered?<a href="#">Login</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-1">
+        <img src={% static "Base/media/Account.png" %}>
+    </div>
+</div>
+{% endblock body %}
+
+{% block js %}
+
+{% endblock js %}
