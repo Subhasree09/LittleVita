@@ -2,23 +2,392 @@
 {% load static %}
 
 {% block title %}
-
+Diseases
 {% endblock title %}
 
 {% block css %}
-    <link rel="stylesheet" href={% static "Base/css/awarness.css" %}>
+    <link rel="stylesheet" href={% static "Base/css/disease.css" %}>
 {% endblock css %}
 
 {% block body %}
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <h1>Disease</h1>
-            </div>
+           
+            <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Diseases</h2>
+        <p>Babies are most vulnerable just after birth. They may be born with certain congenital conditions or may
+          contract infections easily.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center
+     align-items-stretch position-relative">
+          <img src={% static "Base/media/new.jpg" %} class="img-fluid" alt="img">
+        </div>
+
+        <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch
+     justify-content-center py-5 px-lg-5">
+
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-heart"></i></div>
+            <h4 class="title"><a href="">JAUNDICE</a></h4>
+            <p class="description">The most common illness among the babies around the world is jaundice. Jaundice in
+              babies is caused due to liver immature. which is called physiological jaundice.</p>
+          </div>
+
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-health"></i></div>
+            <h4 class="title"><a href="">SYMPTOMS</a></h4>
+            <p class="description">Yellow skin and the white part of the eyes (sclera) -- when jaundice is more severe,
+              these areas may look brown.
+              Yellow color inside the mouth.
+              Dark or brown-colored urine.</p>
+          </div>
+
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-help-circle"></i></div>
+            <h4 class="title"><a href="">TREATMENT </a></h4>
+            <p class="description">Jaundice can generally be managed with diet or lifestyle, but if the cause is severe,
+              the individuals may need immediate surgical or long-term treatment. Medications: Iron supplements,
+              Antihistamines, Cholestyramine, Rifampin, and Naltrexone.</p>
+          </div>
+
+        </div>
+
+        <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center
+     align-items-stretch position-relative">
+          <img src={% static "Base/media/new2.jpg" %} class="img-fluid" alt="">
+        </div>
+        <br>
+        <br>
+        <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch
+     justify-content-center py-5 px-lg-5">
+
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-heart"></i></div>
+            <h4 class="title"><a href="">PNEMONIA</a></h4>
+            <p class="description">Pneumonia is an infection that inflames the air sacs in one or both lungs. The air
+              sacs may fill with fluid or pus (purulent material), causing cough with phlegm or pus, fever, chills, and
+              difficulty breathing.</p>
+          </div>
+
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-health"></i></div>
+            <h4 class="title"><a href="">SYMPTOMS</a></h4>
+            <p class="description">Chest pain when you breathe or cough, Confusion or changes in mental awareness (in
+              adults age 65 and older), Cough, which may produce phlegm, Fatigue
+              Fever, sweating and shaking chills</p>
+          </div>
+
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-help-circle"></i></div>
+            <h4 class="title"><a href="">TREATMENT </a></h4>
+            <p class="description">Treatment for pneumonia depends on your risk factors and how serious your pneumonia
+              is. Many people who have pneumonia are prescribed medicine and recover at home. You may need to be treated
+              in the hospital or an intensive care unit (ICU) if your pneumonia is serious.</p>
+
+          </div>
+
+        </div>
+
+      </div>
+  </section><!-- End About Section -->
         </div>
     </div>
+
+    <!-- Footer Start -->
+    <div class="footer">
+        <div class="box-7">
+            <div class="container-fluid bg-dark text-light footer">
+                <div class="container py-5">
+                    <div class="row g-5">
+                        <div class="col-lg-4 col-md-6">
+                            <h4 class="text-light mb-4">Address</h4>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-map-marker-alt me-3 fa-5"></i>
+                                    </td>
+                                    <td>
+                                        <a href="https://www.google.com/maps/place/Tutechage+Solution/@22.49007,88.395027,15z/data=!4m6!3m5!1s0x3a0271bf1fd19311:0x112d235b5add58aa!8m2!3d22.4900695!4d88.3950274!16s%2Fg%2F1ptyg3xlh?hl=en&entry=ttu"
+                                            style="text-decoration: none; color: #faf9f2;">
+                                            C-239 Little Vita, Santoshpur Kolkata, West
+                                            Bengal
+                                            700075 India</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-phone-alt me-3"></i>
+                                    </td>
+                                    <td>
+                                        11-111-111-11
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-envelope me-3"></i>
+                                    </td>
+                                    <td>
+                                        info@example.com
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <h4 class="text-light mb-4">Business Hour</h4>
+                            <table>
+                                <tr>
+                                    <td>Monday :</td>
+                                    <td>10:00 AM - 9:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Tuesday :</td>
+                                    <td>10:00 AM - 9:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Wednesday :</td>
+                                    <td>10:00 AM - 9:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Thursday :</td>
+                                    <td>10:00 AM - 9:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Friday :</td>
+                                    <td>10:00 AM - 9:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Saturday :</td>
+                                    <td>10:00 AM - 9:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Sunday :</td>
+                                    <td>10:00 AM - 9:00 PM</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <h4 class="text-light mb-4">Quick Links</h4>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <i class="fa-solid fa-angle-right fa-xs"></i> <a href="#about"
+                                            style="text-decoration: none; color:#faf9f2;">About Us</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa-solid fa-angle-right fa-xs"></i> <a href="#quote"
+                                            style="text-decoration: none; color:#faf9f2;">Get in touch</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa-solid fa-angle-right fa-xs"></i> <a href="#survice"
+                                            style="text-decoration: none; color:#faf9f2;">Our Services</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa-solid fa-angle-right fa-xs"></i> <a href=""
+                                            style="text-decoration: none; color:#faf9f2;">Terms & Condition</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa-solid fa-angle-right fa-xs"></i> <a href=""
+                                            style="text-decoration: none; color:#faf9f2;">Privacy Policy</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="copyright">
+                        <div class="row">
+                            <hr>
+                            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                                &copy; <a class="border-bottom" href="#"
+                                    style="text-decoration: none; color: #faf9f2;">Little Vita</a>, All Right Reserved.
+                            </div>
+                            <div class="col-md-6 text-center text-md-end mb-4">
+                                Designed By <a class="border-bottom"
+                                    style="text-decoration: none; color: #faf9f2;">Rudradeep</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
 {% endblock body %}
 
 {% block js %}
+<script>
+
+    (function() {
+        "use strict";
+      
+        /**
+         * Easy selector helper function
+         */
+        const select = (el, all = false) => {
+          el = el.trim()
+          if (all) {
+            return [...document.querySelectorAll(el)]
+          } else {
+            return document.querySelector(el)
+          }
+        }
+      
+        /**
+         * Easy event listener function
+         */
+        const on = (type, el, listener, all = false) => {
+          let selectEl = select(el, all)
+          if (selectEl) {
+            if (all) {
+              selectEl.forEach(e => e.addEventListener(type, listener))
+            } else {
+              selectEl.addEventListener(type, listener)
+            }
+          }
+        }
+      
+        /**
+         * Easy on scroll event listener 
+         */
+        const onscroll = (el, listener) => {
+          el.addEventListener('scroll', listener)
+        }
+      
+        /**
+         * Navbar links active state on scroll
+         */
+        let navbarlinks = select('#navbar .scrollto', true)
+        const navbarlinksActive = () => {
+          let position = window.scrollY + 200
+          navbarlinks.forEach(navbarlink => {
+            if (!navbarlink.hash) return
+            let section = select(navbarlink.hash)
+            if (!section) return
+            if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+              navbarlink.classList.add('active')
+            } else {
+              navbarlink.classList.remove('active')
+            }
+          })
+        }
+        window.addEventListener('load', navbarlinksActive)
+        onscroll(document, navbarlinksActive)
+      
+        /**
+         * Scrolls to an element with header offset
+         */
+        const scrollto = (el) => {
+          let header = select('#header')
+          let offset = header.offsetHeight
+      
+          let elementPos = select(el).offsetTop
+          window.scrollTo({
+            top: elementPos - offset,
+            behavior: 'smooth'
+          })
+        }
+      
+        /**
+         * Toggle .header-scrolled class to #header when page is scrolled
+         */
+        let selectHeader = select('#header')
+        let selectTopbar = select('#topbar')
+        if (selectHeader) {
+          const headerScrolled = () => {
+            if (window.scrollY > 100) {
+              selectHeader.classList.add('header-scrolled')
+              if (selectTopbar) {
+                selectTopbar.classList.add('topbar-scrolled')
+              }
+            } else {
+              selectHeader.classList.remove('header-scrolled')
+              if (selectTopbar) {
+                selectTopbar.classList.remove('topbar-scrolled')
+              }
+            }
+          }
+          window.addEventListener('load', headerScrolled)
+          onscroll(document, headerScrolled)
+        }
+      
+        /**
+         * Mobile nav toggle
+         */
+        on('click', '.mobile-nav-toggle', function(e) {
+          select('#navbar').classList.toggle('navbar-mobile')
+          this.classList.toggle('bi-list')
+          this.classList.toggle('bi-x')
+        })
+      
+      
+        /**
+         * Scrool with ofset on links with a class name .scrollto
+         */
+        on('click', '.scrollto', function(e) {
+          if (select(this.hash)) {
+            e.preventDefault()
+      
+            let navbar = select('#navbar')
+            if (navbar.classList.contains('navbar-mobile')) {
+              navbar.classList.remove('navbar-mobile')
+              let navbarToggle = select('.mobile-nav-toggle')
+              navbarToggle.classList.toggle('bi-list')
+              navbarToggle.classList.toggle('bi-x')
+            }
+            scrollto(this.hash)
+          }
+        }, true)
+      
+        /**
+         * Scroll with ofset on page load with hash links in the url
+         */
+        window.addEventListener('load', () => {
+          if (window.location.hash) {
+            if (select(window.location.hash)) {
+              scrollto(window.location.hash)
+            }
+          }
+        });
+      
+        /**
+         * Initiate glightbox 
+         */
+        const glightbox = GLightbox({
+          selector: '.glightbox'
+        });
+      
+        /**
+         * Back to top button
+         */
+         let backtotop = select('.back-to-top')
+         if (backtotop) {
+           const toggleBacktotop = () => {
+             if (window.scrollY > 100) {
+               backtotop.classList.add('active')
+             } else {
+               backtotop.classList.remove('active')
+             }
+           }
+           window.addEventListener('load', toggleBacktotop)
+           onscroll(document, toggleBacktotop)
+         }
+      
+      })()
+</script>
 
 {% endblock js %}

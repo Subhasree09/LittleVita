@@ -2,23 +2,417 @@
 {% load static %}
 
 {% block title %}
-
+LittleVita
 {% endblock title %}
 
 {% block css %}
-    <link rel="stylesheet" href={% static "Base/css/awarness.css" %}>
+    <link rel="stylesheet" href={% static "Base/css/doctor.css" %}>
 {% endblock css %}
 
 {% block body %}
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <h1>Doctors</h1>
-            </div>
+            <div class="d-none d-lg-flex social-links align-items-center">
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+              </div>
+              </div>
+              </div>
+              <!-- ======= Doctors Section ======= -->
+              <section id="doctors" class="doctors">
+                <div class="container">
+            
+                  <div class="section-title">
+                    <h2>Doctors</h2>
+                    <p>Choose a doctor who has enough experience to give you the best care.</p>
+                  </div>
+            
+                  <div class="row">
+            
+                    <div class="col-lg-6">
+                      <div class="member d-flex align-items-start">
+                        <div class="pic"><img src={% static "Base/media/1.png" %} class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                          <h4>Rohan Chitrakar</h4>
+                          <span>Cardiologist Child Specialist</span>
+                          <p>AMRI HOSPITAL</p>
+                          <p>Monday,Wednessday,Friday</p>
+                          <p>6:30-8:30</p>
+                          <p>Fess:1500</p>
+                          <p>Email: rohan002@gmail.com</p>
+                          <div class="social">
+                            <a href=""><i class="ri-twitter-fill"></i></a>
+                            <a href=""><i class="ri-facebook-fill"></i></a>
+                            <a href=""><i class="ri-instagram-fill"></i></a>
+                            <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                      <div class="member d-flex align-items-start">
+                        <div class="pic"><img src={% static "Base/media/2.jpg" %} class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                          <h4>Prateek Rai</h4>
+                          <span>Child Specialist</span>
+                          <p>IRIS</p>
+                          <p>Tuesday,Friday,Saturday</p>
+                          <p>6:30-8:30</p>
+                          <p>Fess:1200</p>
+                          <p>Email: raiprateek026@gmail.com</p>
+                          <div class="social">
+                            <a href=""><i class="ri-twitter-fill"></i></a>
+                            <a href=""><i class="ri-facebook-fill"></i></a>
+                            <a href=""><i class="ri-instagram-fill"></i></a>
+                            <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            
+                    <div class="col-lg-6 mt-4">
+                      <div class="member d-flex align-items-start">
+                        <div class="pic"><img src={% static "Base/media/3.jpg" %} class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                          <h4>Ananya Agarwal</h4>
+                          <p>NAVA JIVAN</p>
+                          <span>Pediatrician</span>
+                          <p>Tuesday,Friday,Saturday</p>
+                          <p>5:30-8:30</p>
+                          <p>Fess:1400</p>
+                          <p>Email: ananya42@gmail.com</p>
+                          <div class="social">
+                            <a href=""><i class="ri-twitter-fill"></i></a>
+                            <a href=""><i class="ri-facebook-fill"></i></a>
+                            <a href=""><i class="ri-instagram-fill"></i></a>
+                            <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            
+                    <div class="col-lg-6 mt-4">
+                      <div class="member d-flex align-items-start">
+                        <div class="pic"><img src={% static "Base/media/4.jpg" %} class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                          <h4>Krishi Goenka</h4>
+                          <span>Neurosurgeon Child Specialist</span>
+                          <p>ILS HOSPITAL</p>
+                          <p>Tuesday,Friday,Saturday</p>
+                          <p>5:30-8:30</p>
+                          <p>Fess:1400</p>
+                          <p>Email: goenkakrishi35@gmail.com</p>
+                          <div class="social">
+                            <a href=""><i class="ri-twitter-fill"></i></a>
+                            <a href=""><i class="ri-facebook-fill"></i></a>
+                            <a href=""><i class="ri-instagram-fill"></i></a>
+                            <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            
+            
+                  </div>
+            
+                </div>
+              </section><!-- End Doctors Section -->
         </div>
     </div>
+
+    <!-- Footer Start -->
+    <div class="footer">
+        <div class="box-7">
+            <div class="container-fluid bg-dark text-light footer">
+                <div class="container py-5">
+                    <div class="row g-5">
+                        <div class="col-lg-4 col-md-6">
+                            <h4 class="text-light mb-4">Address</h4>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-map-marker-alt me-3 fa-5"></i>
+                                    </td>
+                                    <td>
+                                        <a href="https://www.google.com/maps/place/Tutechage+Solution/@22.49007,88.395027,15z/data=!4m6!3m5!1s0x3a0271bf1fd19311:0x112d235b5add58aa!8m2!3d22.4900695!4d88.3950274!16s%2Fg%2F1ptyg3xlh?hl=en&entry=ttu"
+                                            style="text-decoration: none; color: #faf9f2;">
+                                            C-239 Little Vita, Santoshpur Kolkata, West
+                                            Bengal
+                                            700075 India</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-phone-alt me-3"></i>
+                                    </td>
+                                    <td>
+                                        11-111-111-11
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-envelope me-3"></i>
+                                    </td>
+                                    <td>
+                                        info@example.com
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <h4 class="text-light mb-4">Business Hour</h4>
+                            <table>
+                                <tr>
+                                    <td>Monday :</td>
+                                    <td>10:00 AM - 9:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Tuesday :</td>
+                                    <td>10:00 AM - 9:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Wednesday :</td>
+                                    <td>10:00 AM - 9:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Thursday :</td>
+                                    <td>10:00 AM - 9:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Friday :</td>
+                                    <td>10:00 AM - 9:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Saturday :</td>
+                                    <td>10:00 AM - 9:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Sunday :</td>
+                                    <td>10:00 AM - 9:00 PM</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <h4 class="text-light mb-4">Quick Links</h4>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <i class="fa-solid fa-angle-right fa-xs"></i> <a href="#about"
+                                            style="text-decoration: none; color:#faf9f2;">About Us</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa-solid fa-angle-right fa-xs"></i> <a href="#quote"
+                                            style="text-decoration: none; color:#faf9f2;">Get in touch</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa-solid fa-angle-right fa-xs"></i> <a href="#survice"
+                                            style="text-decoration: none; color:#faf9f2;">Our Services</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa-solid fa-angle-right fa-xs"></i> <a href=""
+                                            style="text-decoration: none; color:#faf9f2;">Terms & Condition</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa-solid fa-angle-right fa-xs"></i> <a href=""
+                                            style="text-decoration: none; color:#faf9f2;">Privacy Policy</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="copyright">
+                        <div class="row">
+                            <hr>
+                            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                                &copy; <a class="border-bottom" href="#"
+                                    style="text-decoration: none; color: #faf9f2;">Little Vita</a>, All Right Reserved.
+                            </div>
+                            <div class="col-md-6 text-center text-md-end mb-4">
+                                Designed By <a class="border-bottom"
+                                    style="text-decoration: none; color: #faf9f2;">Rudradeep</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
 {% endblock body %}
 
 {% block js %}
+<script>
+
+    (function() {
+        "use strict";
+      
+        /**
+         * Easy selector helper function
+         */
+        const select = (el, all = false) => {
+          el = el.trim()
+          if (all) {
+            return [...document.querySelectorAll(el)]
+          } else {
+            return document.querySelector(el)
+          }
+        }
+      
+        /**
+         * Easy event listener function
+         */
+        const on = (type, el, listener, all = false) => {
+          let selectEl = select(el, all)
+          if (selectEl) {
+            if (all) {
+              selectEl.forEach(e => e.addEventListener(type, listener))
+            } else {
+              selectEl.addEventListener(type, listener)
+            }
+          }
+        }
+      
+        /**
+         * Easy on scroll event listener 
+         */
+        const onscroll = (el, listener) => {
+          el.addEventListener('scroll', listener)
+        }
+      
+        /**
+         * Navbar links active state on scroll
+         */
+        let navbarlinks = select('#navbar .scrollto', true)
+        const navbarlinksActive = () => {
+          let position = window.scrollY + 200
+          navbarlinks.forEach(navbarlink => {
+            if (!navbarlink.hash) return
+            let section = select(navbarlink.hash)
+            if (!section) return
+            if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+              navbarlink.classList.add('active')
+            } else {
+              navbarlink.classList.remove('active')
+            }
+          })
+        }
+        window.addEventListener('load', navbarlinksActive)
+        onscroll(document, navbarlinksActive)
+      
+        /**
+         * Scrolls to an element with header offset
+         */
+        const scrollto = (el) => {
+          let header = select('#header')
+          let offset = header.offsetHeight
+      
+          let elementPos = select(el).offsetTop
+          window.scrollTo({
+            top: elementPos - offset,
+            behavior: 'smooth'
+          })
+        }
+      
+        /**
+         * Toggle .header-scrolled class to #header when page is scrolled
+         */
+        let selectHeader = select('#header')
+        let selectTopbar = select('#topbar')
+        if (selectHeader) {
+          const headerScrolled = () => {
+            if (window.scrollY > 100) {
+              selectHeader.classList.add('header-scrolled')
+              if (selectTopbar) {
+                selectTopbar.classList.add('topbar-scrolled')
+              }
+            } else {
+              selectHeader.classList.remove('header-scrolled')
+              if (selectTopbar) {
+                selectTopbar.classList.remove('topbar-scrolled')
+              }
+            }
+          }
+          window.addEventListener('load', headerScrolled)
+          onscroll(document, headerScrolled)
+        }
+      
+        /**
+         * Mobile nav toggle
+         */
+        on('click', '.mobile-nav-toggle', function(e) {
+          select('#navbar').classList.toggle('navbar-mobile')
+          this.classList.toggle('bi-list')
+          this.classList.toggle('bi-x')
+        })
+      
+      
+        /**
+         * Scrool with ofset on links with a class name .scrollto
+         */
+        on('click', '.scrollto', function(e) {
+          if (select(this.hash)) {
+            e.preventDefault()
+      
+            let navbar = select('#navbar')
+            if (navbar.classList.contains('navbar-mobile')) {
+              navbar.classList.remove('navbar-mobile')
+              let navbarToggle = select('.mobile-nav-toggle')
+              navbarToggle.classList.toggle('bi-list')
+              navbarToggle.classList.toggle('bi-x')
+            }
+            scrollto(this.hash)
+          }
+        }, true)
+      
+        /**
+         * Scroll with ofset on page load with hash links in the url
+         */
+        window.addEventListener('load', () => {
+          if (window.location.hash) {
+            if (select(window.location.hash)) {
+              scrollto(window.location.hash)
+            }
+          }
+        });
+      
+        /**
+         * Initiate glightbox 
+         */
+        const glightbox = GLightbox({
+          selector: '.glightbox'
+        });
+      
+        /**
+         * Back to top button
+         */
+         let backtotop = select('.back-to-top')
+         if (backtotop) {
+           const toggleBacktotop = () => {
+             if (window.scrollY > 100) {
+               backtotop.classList.add('active')
+             } else {
+               backtotop.classList.remove('active')
+             }
+           }
+           window.addEventListener('load', toggleBacktotop)
+           onscroll(document, toggleBacktotop)
+         }
+      
+      })()
+</script>
 
 {% endblock js %}
