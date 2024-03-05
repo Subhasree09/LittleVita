@@ -78,9 +78,8 @@
             <a class="nav-link" href={% url "contact" %}>Contact Us</a>
           </li>
         </ul>
-      </div>
 
-      {% if request.user.is_authenticated %}
+        {% if request.user.is_authenticated %}
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <a href={% url "logout" %} class="btn btn-danger me-md-2" role="button">Logout</a>
       </div>
@@ -90,6 +89,10 @@
         <a href={% url "signup" %} class="btn btn-primary" role="button">Signup</a>
       </div>
      {% endif %}
+     
+      </div>
+
+      
 
     </div>
   </nav>
@@ -104,6 +107,9 @@
   {% block body %}
 
   {% endblock body %}
+
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
