@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-
+import openai
+from django.http import JsonResponse
 from .models import Parent, Child
 
 # Create your views here.
@@ -60,6 +61,28 @@ def logoutUser(request):
 
 
 def home(request):
+
+    answer = "Hi, Mom! I am here to help you. Ask me anything."
+    context = {'answer':answer}
+    if request.method == "POST":
+        ask = request.POST.get('question')
+
+        openai.api_key = "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"
+
+        completion = openai.completions.create(
+            model="gpt-3.5-turbo-instruct",
+            prompt=ask,
+            temperature=1,
+            max_tokens=256,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0
+        )
+        # print(completion)
+        answer = (completion.choices[0].text)
+        context = {'answer':answer, 'ask':ask}
+        return JsonResponse({'answer': answer})
+
     return render(request, 'Base/home.html')
 
 def nutrition(request):
