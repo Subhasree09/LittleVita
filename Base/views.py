@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 import openai
 from django.http import JsonResponse
 from .models import Parent, Child
+from decouple import config
 
 # Create your views here.
 def loginUser(request):
@@ -66,8 +67,8 @@ def home(request):
     context = {'answer':answer}
     if request.method == "POST":
         ask = request.POST.get('question')
-
-        openai.api_key = "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"
+        API_KEY = config('API_KEY')
+        openai.api_key = API_KEY
 
         completion = openai.completions.create(
             model="gpt-3.5-turbo-instruct",
