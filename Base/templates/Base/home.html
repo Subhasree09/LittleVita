@@ -188,7 +188,7 @@
                 // Serialize form data
                 var formData = $(this).serialize();
                 var question = document.getElementById('userInput');
-                console.log(question)
+                // console.log(question)
                 // Send AJAX request
                 $.ajax({
                     type: 'POST',
@@ -216,6 +216,8 @@
                             botMessageElement.classList.add('bot-message');
                             botMessageElement.innerText = 'BOT: ' + response.answer;
                             chatWindow.appendChild(botMessageElement);
+                            let line= document.createElement('hr');
+                            chatWindow.appendChild(line);
                         }
                     },
                     error: function(xhr, status, error) {
