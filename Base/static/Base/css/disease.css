@@ -1,4 +1,4 @@
-h1{
+h1 {
     color: red;
     font-size: 50px;
     text-align: center;
@@ -10,57 +10,62 @@ h1{
 --------------------------------------------------------------*/
 body {
     font-family: "Open Sans", sans-serif;
-    color: #444444;
-  }
-  
-  a {
+    /* color: #444444; */
+}
+
+a {
     color: #1977cc;
     text-decoration: none;
-  }
-  
-  a:hover {
+}
+
+a:hover {
     color: #3291e6;
     text-decoration: none;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Raleway", sans-serif;
-  }
-  
-  
-  
-  
-  /*--------------------------------------------------------------
+}
+
+
+
+
+/*--------------------------------------------------------------
   # Top Bar
   --------------------------------------------------------------*/
-  
-  /*--------------------------------------------------------------
+
+/*--------------------------------------------------------------
   # Sections General
   --------------------------------------------------------------*/
-  section {
+section {
     padding: 60px 0;
     overflow: hidden;
-  }
-  
-  .section-bg {
+}
+
+.section-bg {
     background-color: #f1f7fd;
-  }
-  
-  .section-title {
+}
+
+.section-title {
     text-align: center;
     padding-bottom: 30px;
-  }
-  
-  .section-title h2 {
+}
+
+.section-title h2 {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 20px;
     padding-bottom: 20px;
     position: relative;
-    color:  #FF0044;
-  }
-  
-  .section-title h2::before {
+    color: #FF0044;
+}
+
+.section-title h2::before {
     content: '';
     position: absolute;
     display: block;
@@ -69,43 +74,44 @@ body {
     background: #ddd;
     bottom: 1px;
     left: calc(50% - 60px);
-  }
-  
-  .section-title h2::after {
+}
+
+.section-title h2::after {
     content: '';
     position: absolute;
     display: block;
     width: 40px;
     height: 3px;
-    background:  #FF0044;
+    background: #FF0044;
     bottom: 0;
     left: calc(50% - 20px);
-  }
-  
-  .section-title p {
+}
+
+.section-title p {
     margin-bottom: 0;
-  }
-  /*--------------------------------------------------------------
+}
+
+/*--------------------------------------------------------------
   # About
   --------------------------------------------------------------*/
-  .about .icon-boxes h4 {
+.about .icon-boxes h4 {
     font-size: 18px;
     color: #FF7EA2;
     margin-bottom: 15px;
-  }
-  
-  .about .icon-boxes h3 {
+}
+
+.about .icon-boxes h3 {
     font-size: 28px;
     font-weight: 700;
-    color:  #FF7EA2;
+    color: #FF7EA2;
     margin-bottom: 15px;
-  }
-  
-  .about .icon-box {
+}
+
+.about .icon-box {
     margin-top: 40px;
-  }
-  
-  .about .icon-box .icon {
+}
+
+.about .icon-box .icon {
     float: left;
     display: flex;
     align-items: center;
@@ -115,64 +121,119 @@ body {
     border: 2px solid #FF7EA2;
     border-radius: 50px;
     transition: 0.5s;
-  }
-  
-  .about .icon-box .icon i {
+}
+
+.about .icon-box .icon i {
     color: #FF7EA2;
     font-size: 32px;
-  }
-  
-  .about .icon-box:hover .icon {
+}
+
+.about .icon-box:hover .icon {
     background: #FF7EA2;
     border-color: #FF7EA2;
-  }
-  
-  .about .icon-box:hover .icon i {
+}
+
+.about .icon-box:hover .icon i {
     color: #fff;
-  }
-  
-  .about .icon-box .title {
+}
+
+.about .icon-box .title {
     margin-left: 85px;
     font-weight: 700;
     margin-bottom: 10px;
     font-size: 18px;
-  }
-  
-  .about .icon-box .title a {
+}
+
+.about .icon-box .title a {
     color: #343a40;
     transition: 0.3s;
-  }
-  
-  .about .icon-box .title a:hover {
+}
+
+.about .icon-box .title a:hover {
     color: #1977cc;
-  }
-  
-  .about .icon-box .description {
+}
+
+.about .icon-box .description {
     margin-left: 85px;
     line-height: 24px;
     font-size: 14px;
-  }
-  
-  
-  @-webkit-keyframes pulsate-btn {
+}
+
+
+@-webkit-keyframes pulsate-btn {
     0% {
-      transform: scale(0.6, 0.6);
-      opacity: 1;
+        transform: scale(0.6, 0.6);
+        opacity: 1;
     }
+
     100% {
-      transform: scale(1, 1);
-      opacity: 0;
+        transform: scale(1, 1);
+        opacity: 0;
     }
-  }
-  
-  @keyframes pulsate-btn {
+}
+
+@keyframes pulsate-btn {
     0% {
-      transform: scale(0.6, 0.6);
-      opacity: 1;
+        transform: scale(0.6, 0.6);
+        opacity: 1;
     }
+
     100% {
-      transform: scale(1, 1);
-      opacity: 0;
+        transform: scale(1, 1);
+        opacity: 0;
     }
-  }
-  
+}
+
+
+.contents {
+    display: flex;
+    border: 2px solid #343a40;
+    border-radius: 4px;
+    margin: 0 0 20px 0;
+    box-shadow: 0 6px 15px rgba(44, 44, 44, 0.708);
+}
+
+
+.contents:nth-child(even) {
+    /* your styles here */
+    flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 768px) {
+    .contents {
+        flex-direction: column;
+    }
+    .contents:nth-child(even) {
+        /* your styles here */
+        flex-direction: column;
+    }
+    
+}
+
+.disease-img {
+    width: 50%;
+    height: 75%;
+    align-self: center;
+    border-radius: 4px 0 0 4px;
+    box-shadow: 0 5px 15px rgba(17, 16, 16, 0.533);
+}
+
+.search-bar{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-input{
+    /* width: 100%; */
+    height: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(17, 16, 16, 0.533);
+}

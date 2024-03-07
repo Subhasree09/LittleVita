@@ -204,7 +204,7 @@
                         const userMessage = userInput.value;
                         if (userMessage) {
 
-                            const userMessageElement = document.createElement('p');
+                            const userMessageElement = document.createElement('pre');
                             userMessageElement.classList.add('user-message');
                             userMessageElement.textContent = 'User: ' + userMessage;
                             chatWindow.appendChild(userMessageElement);
@@ -212,7 +212,7 @@
                             // Clear input field
                             userInput.value = '';
                         
-                            const botMessageElement = document.createElement('p');
+                            const botMessageElement = document.createElement('pre');
                             botMessageElement.classList.add('bot-message');
                             botMessageElement.innerText = 'BOT: ' + response.answer;
                             chatWindow.appendChild(botMessageElement);

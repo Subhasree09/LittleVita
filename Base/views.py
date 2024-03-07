@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 import openai
 from django.http import JsonResponse
-from .models import Parent, Child
+from .models import Parent, Child, Disease
 from decouple import config
 
 # Create your views here.
@@ -19,6 +19,7 @@ def loginUser(request):
     if request.method=='POST':
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
+            print("authenticating")
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             user = authenticate(username=username, password=password)
@@ -27,8 +28,12 @@ def loginUser(request):
                 messages.success(request, 'Logged in successfully')
                 return redirect('home')
             else:
+                print('Invalid username or password')
                 messages.error(request, 'Invalid username or password')
                 return redirect('login')
+        else:
+            messages.error(request, 'Invalid form Data. Try again!')
+            return redirect('login')
             
     form = AuthenticationForm()
     context['form'] = form            
@@ -102,7 +107,26 @@ def doctors(request):
     return render(request, 'Base/doctors.html')
 
 def disease(request):
-    return render(request, 'Base/disease.html')
+
+    if request.method == 'GET':
+        if 'q' in request.GET:
+            q = request.GET['q']
+            disease = Disease.objects.filter(disease_name__icontains=q)
+            disease_desc = Disease.objects.filter(description__icontains=q)
+            symptoms = Disease.objects.filter(symptoms__icontains=q)
+            diseases = disease.union(disease_desc, symptoms)
+
+            if diseases.count() == 0:
+                messages.error(request, 'No results found')
+            else:
+                context = {'diseases':diseases}
+                return render(request, 'Base/disease.html', context)
+    diseases = Disease.objects.all()
+    context = {'diseases':diseases}
+
+
+
+    return render(request, 'Base/disease.html', context)
 
 def vaccine(request):
     return render(request, 'Base/vaccine.html')
