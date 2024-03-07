@@ -187,10 +187,10 @@ section {
 
 .contents {
     display: flex;
-    border: 2px solid #343a40;
+    /* border: 2px solid #343a40; */
     border-radius: 4px;
     margin: 0 0 20px 0;
-    box-shadow: 0 6px 15px rgba(44, 44, 44, 0.708);
+    box-shadow: 3px 5px 10px rgba(44, 44, 44, 0.708);
 }
 
 
@@ -235,5 +235,9 @@ section {
     padding: 10px;
     border: none;
     border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(17, 16, 16, 0.533);
+}
+
+.search-btn{
     box-shadow: 0 5px 15px rgba(17, 16, 16, 0.533);
 }

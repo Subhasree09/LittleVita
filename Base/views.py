@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 import openai
 from django.http import JsonResponse
-from .models import Parent, Child, Disease
+from .models import Parent, Child, Disease, Doctor
 from decouple import config
 
 # Create your views here.
@@ -104,7 +104,24 @@ def contact(request):
     return render(request, 'Base/contact.html')
 
 def doctors(request):
-    return render(request, 'Base/doctors.html')
+    context={}
+
+    if request.method == 'GET':
+        if 'q' in request.GET:
+            q = request.GET['q']
+            doctor = Doctor.objects.filter(doctor_name__icontains=q)
+            specialization = Doctor.objects.filter(specialization__icontains=q)
+            hospital = Doctor.objects.filter(hospital__icontains=q)
+            doctors = doctor.union(specialization, hospital)
+            if doctors.count() == 0:
+                messages.error(request, 'No results found')
+            else:
+                context['doctorsList']=doctors
+                return render(request, 'Base/doctors.html', context)
+            
+    doctorsList= Doctor.objects.all()
+    context['doctorsList']=doctorsList
+    return render(request, 'Base/doctors.html', context)
 
 def disease(request):
 

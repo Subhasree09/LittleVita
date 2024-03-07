@@ -90,15 +90,22 @@ class Nutrition(models.Model):
     nutrition_name = models.CharField(max_length=100, default="Nutrition Name Unavailable")
     age_group = models.CharField(max_length=50)
     feeding_method = models.CharField(max_length=100)
-    breast_milk_composition = models.TextField()
-    formula_milk_composition = models.TextField()
-    introduction_of_solids = models.TextField()
-    recommended_diet = models.TextField()
+    breast_milk_composition = models.TextField(null=True, blank=True)
+    formula_milk_composition = models.TextField(null=True, blank=True)
+    introduction_of_solids = models.TextField(null=True, blank=True)
+    recommended_diet = models.TextField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    image = models.ImageField(upload_to='nutrition_images/', blank=True, null=True)
+
     
     def __str__(self):
         return f"Nutrition for {self.age_group}"
     
+class Day(models.Model):
+    name = models.CharField(max_length=20)
 
+    def __str__(self):
+        return self.name
 
 class Doctor(models.Model):
     doctor_id = models.AutoField(primary_key=True)
@@ -107,10 +114,17 @@ class Doctor(models.Model):
     email = models.EmailField(max_length=100)
     phone_number = models.CharField(max_length=20)
     hospital = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='doctor_images/', default='default_image.jpg')
+    time = models.CharField(max_length=100, default="10:00-18:00")
+    fees = models.DecimalField(max_digits=10, decimal_places=2, default=0) 
+    days_in_hospital = models.ManyToManyField(Day)
     # Add other fields as needed
 
     def __str__(self):
         return self.doctor_name
+
+
+
     
 
 class Hospital(models.Model):
