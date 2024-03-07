@@ -55,3 +55,9 @@ class HospitalAdmin(admin.ModelAdmin):
     list_display = ['hospital_id', 'hospital_name', 'address', 'city', 'country', 'phone_number']
     search_fields = ['hospital_name']
     list_filter = ['hospital_name']
+
+@admin.register(models.Day)
+class DayAdmin(admin.ModelAdmin):
+    list_display = ['name']
+    search_fields = ['name']
+    list_filter = ['name']
