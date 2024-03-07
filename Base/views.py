@@ -148,6 +148,9 @@ def disease(request):
 def vaccine(request):
     return render(request, 'Base/vaccine.html')
 
+def vaccine_schedule(request):
+    return render(request, 'Base/vaccine_schedule.html')
+
 def videos(request):
     return render(request, 'Base/videos.html')
 

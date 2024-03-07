@@ -14,5 +14,5 @@ urlpatterns = [
     path('login/', views.loginUser, name='login'),
     path('signup/', views.signupUser, name='signup'),
     path('logout/', views.logoutUser, name='logout'),
-
+    path('vaccine-schedule/', views.vaccine_schedule, name='vaccine-schedule'),
 ]
