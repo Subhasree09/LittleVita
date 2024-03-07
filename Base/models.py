@@ -90,9 +90,8 @@ class Nutrition(models.Model):
     nutrition_name = models.CharField(max_length=100, default="Nutrition Name Unavailable")
     age_group = models.CharField(max_length=50)
     feeding_method = models.CharField(max_length=100)
-    breast_milk_composition = models.TextField(null=True, blank=True)
-    formula_milk_composition = models.TextField(null=True, blank=True)
-    introduction_of_solids = models.TextField(null=True, blank=True)
+    
+    introduction_of_solids = models.TextField(null=True, blank=True, default="Not applicable")
     recommended_diet = models.TextField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to='nutrition_images/', blank=True, null=True)
