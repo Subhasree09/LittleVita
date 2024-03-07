@@ -40,7 +40,7 @@ class DiseaseAdmin(admin.ModelAdmin):
 
 @admin.register(models.Nutrition)
 class NutritionAdmin(admin.ModelAdmin):
-    list_display = ['nutrition_id', 'nutrition_name', 'age_group', 'feeding_method', 'breast_milk_composition', 'formula_milk_composition', 'introduction_of_solids', 'recommended_diet']
+    list_display = ['nutrition_id', 'nutrition_name', 'age_group', 'feeding_method', 'introduction_of_solids', 'recommended_diet']
     search_fields = ['nutrition_name']
     list_filter = ['nutrition_name']
 

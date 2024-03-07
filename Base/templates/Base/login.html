@@ -7,11 +7,12 @@
 
 {% block css %}
     <link rel="stylesheet" href={% static "Base/css/login_signup.css" %}>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 {% endblock css %}
 
 {% block body %}
-<div class="row">
-    <div class="col-1">
+<div class=" px-3 content" style="background-image: url({% static "Base/media/backgroung.jpg" %})">
+    <div class="col align-self-center form-container">
         <div class="form-box">
             <div class="form">
                 <form class="login-form" method='post' > {% csrf_token %}
@@ -23,7 +24,7 @@
                             {{field.label_tag}} {{field}} <small class='text-warning'>{{field.errors|striptags}}</small>
                         </div>
                     {% endfor %}
-                    <button class="rounded" type="submit">LOGIN</button>
+                    <button class="rounded submit" type="submit">LOGIN</button>
     
                     {% if form.non_field_errors %}
                         {% for error in form.non_field_errors %}
@@ -31,14 +32,43 @@
                         {% endfor %}
                     {% endif %}
                 </form>
-                <p class="message">Not Registered? <a href={% url "signup" %}>Register</a></p>
+                <p class="additional-text">Not Registered? <a href={% url "signup" %}>Register</a></p>
             </div>
         </div>
     </div>
-    <div class="col-1">
+    {% comment %} <div class="col-1">
         <img src={% static "Base/media/Account.png" %}>
-    </div>
+    </div> {% endcomment %}
 </div>
+
+
+
+{% comment %} <h2>Login Form</h2>
+
+<form action="/action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+        
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form> {% endcomment %}
+
 {% endblock body %}
 
 {% block js %}
