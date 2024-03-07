@@ -1,10 +1,6 @@
-h1{
-    color: rgb(95, 91, 91);
-    font-size: 50px;
-    text-align: center;
-}
 
-<!--Video Gallery-->
+
+/*<!--Video Gallery-->
 
 .videoGallery{
     margin-top: -25px;
@@ -17,7 +13,7 @@ h1{
     margin-top: 60px;
 }
 .videoGallery{
-    background-color: #e5effb; /* Use your desired grey color code */
+    background-color: #e5effb; /* Use your desired grey color code 
     height: 240px;
 }
 .videoGallery-bg-bottom{
@@ -65,76 +61,27 @@ h1{
     border-radius: 50%;
     display: block;
     margin: 5px 3px;
-}
+}*/
+
 .card{
-    height: 500px;
+    height: 800px;
     margin: 50px;
-    box-shadow: 5px 5px 20px black;
-    transition: all 0.3s;
+    box-shadow: 5px 5px 20px rgba(16, 16, 16, 0.557);
+    transition: all 0.2s;
+    background-color: #f6d7e0;
 }
 .card:hover {
     transform: scale(1.05);
 }
-.card-text{
+.card-title{
     padding: 6px;
-    position: absolute;
+    font-weight: bold;
+    color: #FF7EA2;
 }
-
-<!--Header-->
-
-
-.container {
-   max-width: 1500px;
-   margin: auto;
-   padding-left: 25px;
-   padding-right: 25px;
-}
-
-
-
-.col-2 {
-   flex-basis: 50%;
-   min-width: 300px;
-}
-
-.col-2 img {
-   max-width: 100%;
-   padding: 50px 0;
-   transition: 300ms linear;
-}
-
-.col-2 img:hover {
-   transform: scale(1.06);
-}
-
-.col-2 h1 {
-   font-size: 50px;
-   line-height: 60px;
-   margin: 25px 0;
-}
-.col-2 h2 {
-   color: #FF0044;
-}
-
-.btn {
-   display: inline-block;
-   background:#FF0044 ;
-   color: #fff;
-   padding: 6px 30px;
-   margin: 30px 0;
-   border-radius: 30px;
-   transition: background 0.5s;
-}
-
-.btn:hover {
-   background: #FF7EA2;
-}
-
-.header {
-   background: #FFD4E0;
-
-}
-
-.header .row {
-   margin-top: 50px;
+.card-text {
+    font-size: 15px;
+    
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
 }

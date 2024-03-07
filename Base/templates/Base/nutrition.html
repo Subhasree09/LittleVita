@@ -7,113 +7,27 @@
 
 {% block css %}
     <link rel="stylesheet" href={% static "Base/css/style.css" %}>
+    <link rel="stylesheet" href={% static "Base/css/nutrition.css" %}>
 {% endblock css %}
 
 {% block body %}
-<div class="header">
-    <div class="container">
-       <div class="row">
-           <div class="col-2">
-               <h1>Vaccination Schedule</h1>
-               <h2>Explore age-wise recommended vaccinations for your child.</h2>
-               <p>Don’t miss Vaccination so that diseases get locked down. Not childhood.</p>
-               <a href="" class="btn">Explore &#8594</a>
-               </div>
-           <div class="col-2">
-               <a href="">
-               <img src="Baby.png">
-               </a>
-           </div>
-       </div>
-    </div>
-</div>
 <div class="container">
-    <div class="row justify-content-center row-cols-1 row-cols-md-2 g-4 mt-3 mr-13 ml-13">
+    <div class="row justify-content-center row-cols-1 row-cols-md-2 g-4 mt-3 mr-13 ml-13 mb-13">
         <div class="col">
-          <div class="card">
+          <div class="card shadow">
             <img src="https://www.cdc.gov/nutrition/infantandtoddlernutrition/images/breastfeeding-mom.jpg?_=95563" class="card-img-top" alt="breastfeeding">
             <div class="card-body">
               <h5 class="card-title">Breast Feeding</h5>
-              <p class="card-text">Breast milk is a great source of nutrition for your baby. Some common questions:
-                What to Expect While Breastfeeding
-                Newborn Breastfeeding Basics
-                How Much and How Often to Breastfeed
-                Pumping Breast Milk
-                Travel Recommendations for Nursing Families
-                Breastfeeding and Returning to Your Workplace
-                Weaning
+              <p class="card-text" style="font-size: 18px;">Breast milk is a great source of nutrition for your baby. If you are breastfeeding, or thinking about breastfeeding, learn more.
               </p>
+              <p class="card-text" style="font-size: 15px;">age group:1-6months</p>
+              <p class="card-text" style="font-size: 15px;">feeding method:Breastfeeding</p>
+                <p class="card-text" style="font-size: 15px;">breast milk compo:Proteins, Fats, Carbohydrates, Vitamins, Minerals</p>
+                <p class="card-text" style="font-size: 15px;">formula milk compo:</p>
+                <p class="card-text" style="font-size: 15px;">introduction of solids:Introduction of soft foods</p>
+                <p class="card-text" style="font-size: 15px;">recommended diet:Breast milk, soft foods</p>
             </div>
           </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="https://www.cdc.gov/nutrition/infantandtoddlernutrition/images/mealtime.jpg?_=77929" class="card-img-top" alt="mealtime">
-              <div class="card-body">
-                <h5 class="card-title">Meal Time</h5>
-                <p class="card-text">Mealtime can be a fun, rewarding, and sometimes messy time for you and your child. The healthy mealtime patterns you and your child start now will help promote healthy habits in the future.
-                    Signs Your Child is Hungry or Full
-                    Mealtime Routines and Tips
-                </p>
-              </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="https://www.cdc.gov/nutrition/infantandtoddlernutrition/images/formula-feeding.jpg?_=95611" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">Formula Feeding</h5>
-                <p class="card-text">If you are feeding your baby infant formula, there are some important things to know such as how to choose an infant formula and how to prepare and store your infant’s formula.
-                    Choosing an Infant Formula
-                    Infant Formula Preparation and Storage
-                    How Much and How Often to Feed</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="https://www.cdc.gov/nutrition/infantandtoddlernutrition/images/vitamins-minerals-heros.jpg?_=95700" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Vitamins & Minerals</h5>
-                <p class="card-text">Your child needs a variety of vitamins and minerals to grow healthy and strong. Vitamin D, iron, and zinc are three important ones.
-                    What vitamin D, iron, and zinc do.
-                    When your child needs vitamin D, iron, and zinc.
-                    How much vitamin D, iron, and zinc your child needs.
-                    Steps you can take to help your child get enough vitamin D, iron, and zinc.
-                </p>
-              </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="https://www.cdc.gov/nutrition/infantandtoddlernutrition/images/feeding-from-bottle.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">Feeding From a Bottle</h5>
-                <p class="card-text">You can feed your baby breast milk or infant formula from a bottle. If you choose to feed your baby using a bottle, he or she will need to learn how to drink from a bottle. It can take some time for your baby to get used to it.
-                </p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="https://www.cdc.gov/nutrition/infantandtoddlernutrition/images/ITN-500px.jpg?_=95445" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">Foods & Drinks for 6 to 24 month olds</h5>
-                <p class="card-text">When your child is about 6 months old, you can start introducing him or her to foods and drinks other than breast milk and infant formula.
-                    The foods and drinks you feed your child are sometimes called complementary foods. You can think of these as “complementing,” or adding to, the breast milk or infant formula that you continue to feed your child.
-                    
-                    Between your child’s first and second year, he or she will develop the skills needed to participate in meals with the family, and by the time your child is 2 years old, he or she will be able to eat most of the same foods as the rest of the family. Some skills, such as finger feeding, drinking from a cup, and using a spoon are part of your child’s developmental milestones. Explore the pages below to learn more.
-                    
-                    When, What, and How to Introduce Solid Foods
-                    How Much and How Often to Feed
-                    Choking Hazards
-                    Foods and Drinks to Encourage
-                    Foods and Drinks to Avoid or Limit
-                    Tastes and Textures
-                    Cow’s Milk and Milk Alternatives
-                    Picky Eaters</p>
-              </div>
-                </div>
         </div>
     </div>
 </div>
