@@ -56,6 +56,11 @@
                 <li><a class="dropdown-item" href="#">Vaccine Tracker</a></li>
               </ul>
             </li>
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href={% url "dashboard" %}>Dashboard</a>
+            </li>
+            {% endif %}
             <li class="nav-item">
               <a class="nav-link" href={% url "disease" %}>Disease</a>
             </li>
@@ -90,7 +95,7 @@
       </div>
       
       {% comment %} Multilingual support added {% endcomment %}
-      <div id="google_translate"></div>
+      {% comment %} <div id="google_translate"></div>
       <script type="text/javascript">
           function googleTranslateInit(){
             new google.translate.TranslateElement({pageLanguage:'en',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate');
@@ -98,7 +103,7 @@
       </script>
       <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateInit">
       </script>
-      
+       {% endcomment %}
 
     </div>
   </nav>
