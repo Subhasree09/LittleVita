@@ -261,6 +261,17 @@
 
   .description{
     color: #dedcdcb1;
+    text-align:left;
+    text-align: justify;
+  }
+  .title{
+    color: #2e204a;
+    font-weight: 600;
+    text-align: justify;
+    /* font-weight: bold; */
+  }
+p{
+    text-align: justify;
   }
 
   
