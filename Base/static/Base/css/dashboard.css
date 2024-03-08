@@ -1,0 +1,125 @@
+body {
+    padding: 20px;
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-fluid {
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.dashboard-header,
+.upcoming-vaccines-card {
+    background-color: #007bff;
+    /* Blue */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.dashboard-title {
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.dashboard-content,
+.upcoming-vaccines {
+    margin-top: 20px;
+}
+
+.dashboard-content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dashboard-content div {
+    margin-bottom: 10px;
+    /* Add margin between each user detail */
+}
+
+.dashboard-content button {
+    margin-top: 10px;
+    /* Add margin above the "Add Child" button */
+}
+
+.upcoming-vaccines-card {
+    background-color: #b4d8e8;
+    /* Powder Blue */
+    color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 10px;
+    }
+
+    .dashboard-title {
+        font-size: 18px;
+    }
+}
+
+#childForm input {
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.dashboard-header {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #28a745;
+    /* Green */
+    border-color: #28a745;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.user-image {
+    border-radius: 50%;
+    max-width: 100px;
+    margin-bottom: 15px;
+}
