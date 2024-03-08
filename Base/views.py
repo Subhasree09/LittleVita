@@ -4,9 +4,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 import openai
 from django.http import JsonResponse
-from .models import Parent, Child, Disease, Doctor
+from .models import Parent, Child, Disease, Doctor, Nutrition, Vaccine
 from decouple import config
 
 # Create your views here.
@@ -26,7 +27,7 @@ def loginUser(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, 'Logged in successfully')
-                return redirect('home')
+                return redirect('dashboard')
             else:
                 print('Invalid username or password')
                 messages.error(request, 'Invalid username or password')
@@ -65,6 +66,17 @@ def logoutUser(request):
     messages.info(request, 'Logged out successfully')
     return redirect('home')
 
+@login_required(login_url='login')
+def dashboard(request):
+    context={}
+    if request.user.is_authenticated:
+        parent = Parent.objects.get(user=request.user)
+        # children = Child.objects.filter(parent=parent)
+        context['parent'] = parent
+        return render(request, 'Base/dashboard.html', context)
+    else:
+        messages.error(request, 'You are not logged in')
+        return redirect('login')
 
 def home(request):
 
@@ -92,7 +104,21 @@ def home(request):
     return render(request, 'Base/home.html')
 
 def nutrition(request):
-    return render(request, 'Base/nutrition.html')
+    context={}
+    if request.method == 'GET':
+        if 'q' in request.GET:
+            q = request.GET['q']
+            nutrition = Nutrition.objects.filter(nutrition_name__icontains=q)
+            nutrition_desc = Nutrition.objects.filter(description__icontains=q)
+            nutritions = nutrition.union(nutrition_desc)
+            if nutritions.count() == 0:
+                messages.error(request, 'No results found')
+            else:
+                context['nutritions'] = nutritions
+                return render(request, 'Base/nutrition.html', context)
+    nutritions = Nutrition.objects.all()
+    context['nutritions'] = nutritions
+    return render(request, 'Base/nutrition.html', context)
 
 def awarness(request):
     return render(request, 'Base/awarness.html')
@@ -151,6 +177,6 @@ def vaccine(request):
 def vaccine_schedule(request):
     return render(request, 'Base/vaccine_schedule.html')
 
-def videos(request):
-    return render(request, 'Base/videos.html')
+# def videos(request):
+#     return render(request, 'Base/videos.html')
 

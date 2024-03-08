@@ -1,0 +1,107 @@
+{% extends "Base/base.html" %}
+{% load static %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href={% static "Base/css/dashboard.css" %}>
+{% endblock css %}
+
+{% block body %}
+    
+<div class="row">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div class="col-lg-8">
+        <div class="container-fluid">
+            <div class="dashboard-header">
+                <h1 class="dashboard-title text-end">Dashboard</h1>
+                <img src={{parent.dp.url}} alt="User Image" class="user-image">
+            </div>
+            <div class="dashboard-content">
+                <div><strong>Name:</strong> {{parent.first_name}} {{parent.last_name}}</div>
+                <div><strong>Email:</strong> {{parent.email}}</div>
+                <div><strong>Contact Number:</strong> {{parent.phone_number}}</div>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addChildModal">Add New
+                    Child</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="container-fluid">
+            <div class="dashboard-header">
+                <h1 class="dashboard-title">Upcoming Vaccines</h1>
+            </div>
+            <div class="upcoming-vaccines">
+                <p>Vaccine 1: [Date]</p>
+                <p>Vaccine 2: [Date]</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 mt-4">
+            <h2>Existing Children</h2>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Child ID</th>
+                            <th>Child Name</th>
+                            <th>Date of Birth</th>
+                            <th>Age</th> <!-- Add Age column here -->
+                            <th>Vaccines Taken</th>
+                            <th>Vaccines Pending</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>2005-05-15</td>
+                            <td>16</td> <!-- Add Age value here -->
+                            <td>DTaP, MMR</td>
+                            <td>Polio, Hepatitis B</td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addChildModal" tabindex="-1" aria-labelledby="addChildModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addChildModalLabel">Add Child Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="childForm">
+                    <!-- <input type="text" id="childId" class="form-control" placeholder="Child ID"> -->
+                    <input type="text" id="childName" class="form-control" placeholder="Child Name" required>
+                    <input type="text" id="childage" class="form-control" placeholder="Age" required>
+                    <input type="date" id="dob" class="form-control" placeholder="Date of Birth" required>
+                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "Base/footer.html" %}
+{% endblock body %}
+
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src={% static "Base/js/dashboard.js" %}></script>
+{% endblock js %}
