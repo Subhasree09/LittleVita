@@ -11,26 +11,32 @@
 {% endblock css %}
 
 {% block body %}
-
-<div class="container">
-    <div class="row justify-content-center row-cols-1 row-cols-md-2 g-4 mt-3 mr-13 ml-13 mb-13">
-        <div class="col">
-          <div class="card shadow">
-            <img src="https://www.cdc.gov/nutrition/infantandtoddlernutrition/images/breastfeeding-mom.jpg?_=95563" class="card-img-top" alt="breastfeeding">
-            <div class="card-body">
-              <h5 class="card-title">Breast Feeding</h5>
-              <p class="card-text" style="font-size: 18px;">Breast milk is a great source of nutrition for your baby. If you are breastfeeding, or thinking about breastfeeding, learn more.
-              </p>
-              <p class="card-text" style="font-size: 15px;">age group:1-6months</p>
-              <p class="card-text" style="font-size: 15px;">feeding method:Breastfeeding</p>
-                <p class="card-text" style="font-size: 15px;">breast milk compo:Proteins, Fats, Carbohydrates, Vitamins, Minerals</p>
-                <p class="card-text" style="font-size: 15px;">formula milk compo:</p>
-                <p class="card-text" style="font-size: 15px;">introduction of solids:Introduction of soft foods</p>
-                <p class="card-text" style="font-size: 15px;">recommended diet:Breast milk, soft foods</p>
-            </div>
+<form method="GET" action="" class='search-bar'>
+  <input type="text" name="q" placeholder="Search diseases..." class="user-input ">
+  <input type="submit" value="Search" class="btn btn-outline-warning search-btn">
+</form>
+<div class="main">
+  <ul class="cards">
+    {% for nutrition in nutritions %}
+    <li class="cards_item">
+      <div class="card" tabindex="0">
+        <div class="card_image"><img src={{nutrition.image.url}} alt="mixed vegetable salad in a mason jar. "></div>
+        <div class="card_content">
+          <h2 class="card_title">{{nutrition.nutrition_name|upper}}</h2>
+          <div class="card_text">
+            <p class="description">{{nutrition.description}}</p>
+            <p class="age-group title"> <span class="title">Age-Group :</span> {{nutrition.age_group}}</p>
+            <p class="feeding-method title"> <span class="title"> Feeding method:</span> {{nutrition.feeding_method}}</p>
+            <p class="recomandation-for title"> <span class="title">Recomandation for: </span>  {{nutrition.recommended_diet}} </p>
+            {% if nutrition.introduction_of_solids != "Not applicable" %}
+            <p class="introduction-of-solid title"> <span class="title"> Introduction of solid: </span> {{nutrition.introduction_of_solids}}</p>
+            {% endif %}
           </div>
         </div>
-    </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
 </div>
 
 {% include "Base/footer.html" %}
