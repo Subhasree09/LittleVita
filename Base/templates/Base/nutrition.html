@@ -25,11 +25,11 @@
           <h2 class="card_title">{{nutrition.nutrition_name|upper}}</h2>
           <div class="card_text">
             <p class="description">{{nutrition.description}}</p>
-            <p class="age-group title"> <span class="title">Age-Group :</span> {{nutrition.age_group}}</p>
-            <p class="feeding-method title"> <span class="title"> Feeding method:</span> {{nutrition.feeding_method}}</p>
-            <p class="recomandation-for title"> <span class="title">Recomandation for: </span>  {{nutrition.recommended_diet}} </p>
+            <p class="age-group"> <span class="title">Age-Group :</span> {{nutrition.age_group}}</p>
+            <p class="feeding-method"> <span class="title"> Feeding method:</span> {{nutrition.feeding_method}}</p>
+            <p class="recomandation-for"> <span class="title">Recomandation for: </span>  {{nutrition.recommended_diet}} </p>
             {% if nutrition.introduction_of_solids != "Not applicable" %}
-            <p class="introduction-of-solid title"> <span class="title"> Introduction of solid: </span> {{nutrition.introduction_of_solids}}</p>
+            <p class="introduction-of-solid"> <span class="title"> Introduction of solid: </span> {{nutrition.introduction_of_solids}}</p>
             {% endif %}
           </div>
         </div>
