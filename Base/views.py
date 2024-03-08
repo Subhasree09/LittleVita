@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 import openai
 from django.http import JsonResponse
 from .models import Parent, Child, Disease, Doctor, Nutrition, Vaccine
@@ -26,7 +27,7 @@ def loginUser(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, 'Logged in successfully')
-                return redirect('home')
+                return redirect('dashboard')
             else:
                 print('Invalid username or password')
                 messages.error(request, 'Invalid username or password')
@@ -65,6 +66,17 @@ def logoutUser(request):
     messages.info(request, 'Logged out successfully')
     return redirect('home')
 
+@login_required(login_url='login')
+def dashboard(request):
+    context={}
+    if request.user.is_authenticated:
+        parent = Parent.objects.get(user=request.user)
+        # children = Child.objects.filter(parent=parent)
+        context['parent'] = parent
+        return render(request, 'Base/dashboard.html', context)
+    else:
+        messages.error(request, 'You are not logged in')
+        return redirect('login')
 
 def home(request):
 

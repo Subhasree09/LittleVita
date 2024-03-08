@@ -10,6 +10,7 @@ class Parent(models.Model):
     user = models.OneToOneField(User, null=True,blank = True, on_delete=models.CASCADE)
     parent_id = models.AutoField(primary_key=True)
     phone_number = models.CharField(max_length=20, null=True, blank=True)
+    dp= models.ImageField(upload_to='parent_images/', default='default_dp.jpg', null=True, blank=True)
     # Add other parent details as needed
 
     def __str__(self):
