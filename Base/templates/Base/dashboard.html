@@ -20,12 +20,12 @@
         <div class="container-fluid">
             <div class="dashboard-header">
                 <h1 class="dashboard-title text-end">Dashboard</h1>
-                <img src="Windows-10-user-icon-big.png" alt="User Image" class="user-image">
+                <img src={{parent.dp.url}} alt="User Image" class="user-image">
             </div>
             <div class="dashboard-content">
-                <div><strong>Name:</strong> John Doe</div>
-                <div><strong>Email:</strong> john.doe@example.com</div>
-                <div><strong>Contact Number:</strong> (123) 456-7890</div>
+                <div><strong>Name:</strong> {{parent.first_name}} {{parent.last_name}}</div>
+                <div><strong>Email:</strong> {{parent.email}}</div>
+                <div><strong>Contact Number:</strong> {{parent.phone_number}}</div>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addChildModal">Add New
                     Child</button>
             </div>
