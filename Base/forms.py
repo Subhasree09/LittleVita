@@ -5,9 +5,9 @@ from django import forms
 
 
 class SignUpForm(UserCreationForm):
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class':'form-control'}))
-    password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput(attrs={'class':'form-control'}))
-    phone_number = forms.CharField(max_length=20)
+    password1 = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class':'form-control signup-input'}))
+    password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput(attrs={'class':'form-control signup-input'}))
+    phone_number = forms.CharField(max_length=20, widget=forms.TextInput(attrs={'class':'signup-input'}))
 
     class Meta:
         model = User
@@ -21,10 +21,10 @@ class SignUpForm(UserCreationForm):
         }     
 
         widgets ={
-            'username':forms.TextInput(attrs={'id':'form-input1'}),
-            'first_name':forms.TextInput(attrs={'id':'id_fname'}),
-            'last_name':forms.TextInput(attrs={'id':'id_lname'}),
-            'email':forms.TextInput(attrs={'id':'id_email'}),
-            'phone':forms.TextInput(attrs={'id':'id_phone'}),
+            'username':forms.TextInput(attrs={'id':'form-input1', "class":'signup-input'}),
+            'first_name':forms.TextInput(attrs={'id':'id_fname', "class":'signup-input'}),
+            'last_name':forms.TextInput(attrs={'id':'id_lname', "class":'signup-input'}),
+            'email':forms.TextInput(attrs={'id':'id_email', "class":'signup-input'}),
+            'phone_number':forms.TextInput(attrs={'id':'id_phone', "class":'signup-input'}),
         }
 

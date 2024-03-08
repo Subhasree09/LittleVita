@@ -10,9 +10,9 @@
 {% endblock css %}
 
 {% block body %}
-<div class="row">
-    <div class="col-1">
-        <div class="form-box">
+<div class="px-3 content" style="background-image: url({% static "Base/media/backgroung.jpg" %})">
+    <div class="col align-self-center form-container">
+        <div class="signup-form-box">
             <div class="form">
                 
                 <form class="register-form" method='POST' action='' >{% csrf_token %}
@@ -20,12 +20,15 @@
                         <h1 class="main-heading">Register Form</h1>
                     </center>
 
-                    {% for field in form %}
-                        <div class="form-group">
-                            {{field.label_tag}} {{field}} <small class='text-warning'>{{field.errors|striptags}}</small>
-                        </div>
-                    {% endfor %}
-                    <button class="rounded" type="submit">REGISTER</button>
+                    {% comment %} <div class="form-row"> {% endcomment %}
+                        {% for field in form %}
+                            <div class="form-group">
+                                {{field.label_tag}} {{field}} <small class='text-warning'>{{field.errors|striptags}}</small>
+                            </div>
+                        {% endfor %}
+                    {% comment %} </div> {% endcomment %}
+
+                    <button class="rounded btn btn-success" type="submit">REGISTER</button>
     
                     {% if form.non_field_errors %}
                         {% for error in form.non_field_errors %}
@@ -33,16 +36,16 @@
                         {% endfor %}
                     {% endif %}
                     
-                    <p class="message">
+                    <p class="additional-text">
                         Already Registered?<a href={% url "login" %}>Login</a>
                     </p>
                 </form>
             </div>
         </div>
     </div>
-    <div class="col-1">
+    {% comment %} <div class="col-1">
         <img src={% static "Base/media/Account.png" %}>
-    </div>
+    </div> {% endcomment %}
 </div>
 {% endblock body %}
 

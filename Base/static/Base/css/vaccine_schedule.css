@@ -1,0 +1,146 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+ }
+
+ body {
+
+    font-family: 'Poppins', sans-serif;
+ }
+ .toast{
+     width: 60vw;
+     background-color:red;
+ }
+
+ .container {
+    max-width: 1500px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+ }
+
+ .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+ }
+
+ .col-2 {
+    flex-basis: 50%;
+    min-width: 300px;
+ }
+
+ .col-2 img {
+    max-width: 100%;
+    padding: 50px 0;
+    transition: 300ms linear;
+ }
+
+ .col-2 img:hover {
+    transform: scale(1.06);
+ }
+
+ .col-2 h1 {
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+ }
+ .col-2 h2 {
+    color: #FF0044;
+ }
+
+ .btn1 {
+    display: inline-block;
+    background:#FF0044 ;
+    color: #fff;
+    padding: 6px 30px;
+    margin: 30px 50px;
+    border-radius: 30px;
+    height: 50px;
+    transition: background 0.5s;
+ }
+ .btns {
+   display: inline-block;
+   background:#FF0044 ;
+   color: #fff;
+   padding: 6px 30px;
+   margin: 30px 50px;
+   border-radius: 30px;
+   transition: background 0.5s;
+}
+
+ .btn:hover {
+    background: #FF7EA2;
+ }
+ .btn1:hover {
+   background: #FF7EA2;
+}
+
+ .header {
+    background: #FFD4E0;
+
+ }
+
+ .header .row {
+    margin-top: 50px;
+ }
+
+
+
+ /* Vaccination Chart */
+ .small-container {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+ }
+ 
+ .col-4 {
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+ }
+
+ .col-4 img {
+    width: 80%;
+    height: 80%;
+ }
+
+ .title {
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color: #620354;
+ }
+
+ .title::after {
+    content: '';
+    background: #1E044B;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+ }
+
+ h4 {
+    color: #1E044B;
+    font-weight: normal;
+ }
+
+ .col-4 p {
+    font-size: 18px;
+ }
+
+
+ .col-4:hover {
+    transform: translateY(-20px);
+ }
+

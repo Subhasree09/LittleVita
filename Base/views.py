@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 import openai
 from django.http import JsonResponse
-from .models import Parent, Child, Disease, Doctor
+from .models import Parent, Child, Disease, Doctor, Nutrition, Vaccine
 from decouple import config
 
 # Create your views here.
@@ -92,7 +92,21 @@ def home(request):
     return render(request, 'Base/home.html')
 
 def nutrition(request):
-    return render(request, 'Base/nutrition.html')
+    context={}
+    if request.method == 'GET':
+        if 'q' in request.GET:
+            q = request.GET['q']
+            nutrition = Nutrition.objects.filter(nutrition_name__icontains=q)
+            nutrition_desc = Nutrition.objects.filter(description__icontains=q)
+            nutritions = nutrition.union(nutrition_desc)
+            if nutritions.count() == 0:
+                messages.error(request, 'No results found')
+            else:
+                context['nutritions'] = nutritions
+                return render(request, 'Base/nutrition.html', context)
+    nutritions = Nutrition.objects.all()
+    context['nutritions'] = nutritions
+    return render(request, 'Base/nutrition.html', context)
 
 def awarness(request):
     return render(request, 'Base/awarness.html')
@@ -148,6 +162,9 @@ def disease(request):
 def vaccine(request):
     return render(request, 'Base/vaccine.html')
 
-def videos(request):
-    return render(request, 'Base/videos.html')
+def vaccine_schedule(request):
+    return render(request, 'Base/vaccine_schedule.html')
+
+# def videos(request):
+#     return render(request, 'Base/videos.html')
 

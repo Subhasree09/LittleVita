@@ -1,0 +1,375 @@
+{% extends "Base/base.html" %}
+{% load static %}
+
+{% block title %}
+	Vaccine Schedule
+{% endblock title %}
+
+{% block css %}
+	<link rel="stylesheet" href={% static "Base/css/vaccine_schedule.css" %}>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock css %}
+
+{% block body %}
+	<div class="header">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-2">
+			<h1 style="color:black;">Vaccination Schedule</h1>
+			<h2>Explore age-wise recommended vaccinations for your child.</h2>
+			<p>Don’t miss Vaccination so that diseases get locked down. Not childhood.</p>
+			<a href="" class="btn"><b>Explore &#8594</b></a>
+		  </div>
+		  <div class="col-2">
+			<a href="">
+			  <img src={% static "Base/media/vaccine_schedule/Baby.png" %}>
+			</a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<br>
+	<br>
+	<div class="small-container">
+	  <h1 class="title" style="color: #FF0044;">Age Wise Vaccination Chart For Your Child</h1>
+	  <div class="row">
+		<div class="col-4">
+		  <center><img src={% static "Base/media/vaccine_schedule/Birth.png" %}></center>
+		  <p>
+			<button class="btn btns  btn-primary" type="button" data-bs-toggle="collapse"
+			  data-bs-target="#collapseWidthExample1" aria-expanded="false" aria-controls="collapseWidthExample">
+			  <b><u>Birth</u></b>
+			</button>
+		  </p>
+		  <div style="min-height: 120px;">
+			<div class="collapse collapse-horizontal" id="collapseWidthExample1">
+			  <div class="card card-body" style="width: 500px;">
+				<ul>
+				  <li><b>Hepatitis B-1</b> : Dose: 1 of 4 Protects against Hepatitis B infection.</li>
+				  <li><b>BCG</b> : Dose: 1 of 1 Protects against Tuberculosis.</li>
+				  <li><b>OPV</b> : Dose: 1 of 1 Protects against Polio; a disease caused by a virus.</li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-4">
+		  <center><img src= {% static "Base/media/vaccine_schedule/6_Weeks.png" %}></center>
+		  <p>
+			<button class="btn btns  btn-primary" type="button" data-bs-toggle="collapse"
+			  data-bs-target="#collapseWidthExample2" aria-expanded="false" aria-controls="collapseWidthExample">
+			  <b><u>6 Weeks</u></b>
+			</button>
+		  </p>
+		  <div style="min-height: 120px;">
+			<div class="collapse collapse-horizontal" id="collapseWidthExample2">
+			  <div class="card card-body" style="width: 900px;">
+				<ul>
+				  <li><b>DTP-1</b> : Dose: 1 of 3 Protects against Diphtheria, tetanus and pertussis.</li>
+				  <li><b>IPV-1</b> : Dose: 1 of 5 Protects against Polio; a disease caused by a virus that can affect the nerves.</li>
+				  <li><b>Hib-1</b> : Dose: 1 of 4 Protects against Haemophilus influenzae type B (Hib) bacteria.</li>
+				  <li><b>Hepatitis B-2</b> : Dose: 2 of 4 Protects against Hepatitis B infection; a liver infection caused by the Hepatitis B virus.</li>
+				  <li><b>Rotavirus-1</b> : Dose 1 of 3 Protects against: rotavirus infection; a disease caused by a virus that can affect the intestines.</li>
+				  <li><b>PCV-1</b> : Dose: 1 of 4 Protects against pneumococcal disease that can result in pneumonia, otitis media, meningitis and other diseases caused by the pneumococcal bacteria.</li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-4">
+		  <img src={% static "Base/media/vaccine_schedule/10_Weeks.png" %}>
+		  <p>
+			<button class="btn btns  btn-primary" type="button" data-bs-toggle="collapse"
+			  data-bs-target="#collapseWidthExample3" aria-expanded="false" aria-controls="collapseWidthExample">
+			  <b><u>10 Weeks</u></b>
+			</button>
+		  </p>
+		  <div style="min-height: 120px;">
+			<div class="collapse collapse-horizontal" id="collapseWidthExample3">
+			  <div class="card card-body" style="width: 900px;">
+				<ul>
+				  <li><b>DTP-2</b> : Dose: 2 of 3 Protects against Diphtheria, tetanus and pertussis. This vaccination is a booster that helps boost the immunity.</li>
+				  <li><b>IPV-2</b> : Dose: 2 of 5 Protects against Polio; a disease caused by a virus that can affect the nerves.</li>
+				  <li><b>Hib-2</b> : Dose: 2 of 4 Protects against Haemophilus influenzae type B (Hib) bacteria.</li>
+				  <li><b>Hepatitis B-3</b> : Dose: 3 of 4 Protects against Hepatitis B infection; a liver infection caused by the Hepatitis B virus.</li>
+				  <li><b>Rotavirus-2</b> : Dose 2 of 3 Protects against: rotavirus infection; a disease caused by a virus that can affect the intestines.</li>
+				  <li><b>PCV-2</b> : Dose: 2 of 4 Protects against pneumococcal disease that can result in pneumonia, otitis media, meningitis and other diseases caused by the pneumococcal bacteria.</li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-4">
+		  <img src={% static "Base/media/vaccine_schedule/14_Weeks.png" %}>
+		  <p>
+			<button class="btn btns  btn-primary" type="button" data-bs-toggle="collapse"
+			  data-bs-target="#collapseWidthExample4" aria-expanded="false" aria-controls="collapseWidthExample">
+			  <b><u>14 Weeks</u></b>
+			</button>
+		  </p>
+		  <div style="min-height: 120px;">
+			<div class="collapse collapse-horizontal" id="collapseWidthExample4">
+			  <div class="card card-body" style="width: 900px;">
+				<ul>
+				  <li><b>DTP-3</b> : Dose: 3 of 3 Protects against Diphtheria, tetanus and pertussis. This vaccination is a booster that helps boost the immunity.</li>
+				  <li><b>IPV-3</b> : Dose: 3 of 5 Protects against Polio; a disease caused by a virus that can affect the nerves.</li>
+				  <li><b>Hib-3</b> : Dose: 3 of 4 Protects against Haemophilus influenzae type B (Hib) bacteria.</li>
+				  <li><b>Hepatitis B-4</b> : Dose: 4 of 4 Protects against Hepatitis B infection; a liver infection caused by the Hepatitis B virus.</li>
+				  <li><b>Rotavirus-3</b> : Dose 3 of 3 Protects against: rotavirus infection; a disease caused by a virus that can affect the intestines.</li>
+				  <li><b>PCV-3</b> : Dose: 3 of 4 Protects against pneumococcal disease that can result in pneumonia, otitis media, meningitis and other diseases caused by the pneumococcal bacteria.</li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="col-4">
+		  <img src={% static "Base/media/vaccine_schedule/6_Months.png"  %}>
+		  <p>
+			<button class="btn btns  btn-primary" type="button" data-bs-toggle="collapse"
+			  data-bs-target="#collapseWidthExample5" aria-expanded="false" aria-controls="collapseWidthExample">
+			  <b><u>6 Months</u></b>
+			</button>
+		  </p>
+		  <div style="min-height: 120px;">
+			<div class="collapse collapse-horizontal" id="collapseWidthExample5">
+			  <div class="card card-body" style="width: 500px;">
+				<ul>
+				  <li><b>Influenza Vaccine-1</b> : Dose: 1 of 2 Protects against Influenza, commonly known as the 'seasonal flu'; a respiratory infection caused by two main types of influenza virus: Types A and B.</li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-4">
+		  <img src={% static "Base/media/vaccine_schedule/7_Months.png" %}>
+		  <p>
+			<button class="btn btns  btn-primary" type="button" data-bs-toggle="collapse"
+			  data-bs-target="#collapseWidthExample6" aria-expanded="false" aria-controls="collapseWidthExample">
+			  <b><u>7 Months</u></b>
+			</button>
+		  </p>
+		  <div style="min-height: 120px;">
+			<div class="collapse collapse-horizontal" id="collapseWidthExample6">
+			  <div class="card card-body" style="width: 500px;">
+				<ul>
+				  <li><b>Influenza Vaccine-2</b> : Dose: 2 of 2 Protects against Influenza, commonly known as the 'seasonal flu'; a respiratory infection caused by two main types of influenza virus: Types A and B.</li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-4">
+		  <img src= {% static "Base/media/vaccine_schedule/9_Months.png" %}>
+		  <p>
+			<button class="btn btns  btn-primary" type="button" data-bs-toggle="collapse"
+			  data-bs-target="#collapseWidthExample7" aria-expanded="false" aria-controls="collapseWidthExample">
+			  <b><u>9 Months</u></b>
+			</button>
+		  </p>
+		  <div style="min-height: 120px;">
+			<div class="collapse collapse-horizontal" id="collapseWidthExample7">
+			  <div class="card card-body" style="width: 800px;">
+				<ul>
+				  <li><b>MMR-1</b> : Dose: 1 of 3 Protects against Measles, Mumps, and Rubella.</li>
+				  <li><b>Meningitis ACWY-1</b> : Dose: 1 of 2 Protects against A, C, W and Y types of meningococcal disease that can result in meningitis and other serious diseases caused by the meningococcal bacteria.</li>
+				  <li><b>Yellow Fever</b> : Dose: 1 of 1 Protects against Yellow Fever; a disease causes by mosquitos infected with the Yellow Fever virus.</li>
+				  <li><b>Typhoid Conjugate Vaccine</b> : Dose: 1 of 1 Protects against Salmonella typhi bacteria that causes typhoid fever.</li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-4">
+		  <img src={% static "Base/media/vaccine_schedule/12_Months.png"  %}>
+		  <p>
+			<button class="btn btns  btn-primary" type="button" data-bs-toggle="collapse"
+			  data-bs-target="#collapseWidthExample8" aria-expanded="false" aria-controls="collapseWidthExample">
+			  <b><u>12 Months</u></b>
+			</button>
+		  </p>
+		  <div style="min-height: 120px;">
+			<div class="collapse collapse-horizontal" id="collapseWidthExample8">
+			  <div class="card card-body" style="width: 900px;">
+				<ul>
+				  <li><b>Hepatitis A-1</b> : Dose: 1 of 2 Protects against Hepatitis A; a liver infection caused by the Hepatitis A virus.</li>
+				  <li><b>Meningitis ACWY-1</b> : Dose: 2 of 2 Protects against  A, C, W and Y types of meningococcal disease that can result in meningitis and other serious diseases caused by the meningococcal bacteria.</li>
+				  <li><b>PCV Booster</b> : Dose: 4 of 4 Protects against  pneumococcal disease that can result in pneumonia, otitis media, meningitis and other diseases caused by the pneumococcal bacteria.</li>
+				  <li><b>Hepatitis B-4</b> : Dose: 4 of 4 Protects against Hepatitis B infection; a liver infection caused by the Hepatitis B virus.</li>
+				  <li><b>Japanese Encephalitis</b> : Dose 1 of 1 Protects against: Japanese encephalitis virus that is passed from animals to humans through the bite of an infected mosquito.</li>
+				  <li><b>Cholera</b> : Dose: 1 of 1 Protects against Cholera; an infectious disease that causes severe watery diarrhea.</li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col-4">
+			<img src= {% static "Base/media/vaccine_schedule/15_Months.png" %}>
+			<p>
+			  <button class="btn btns  btn-primary" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapseWidthExample9" aria-expanded="false" aria-controls="collapseWidthExample">
+				<b><u>15 Months</u></b>
+			  </button>
+			</p>
+			<div style="min-height: 120px;">
+			  <div class="collapse collapse-horizontal" id="collapseWidthExample9">
+				<div class="card card-body" style="width: 700px;">
+				  <ul>
+					<li><b>MMR-2</b> : Dose: 2 of 3 Protects against Measles, Mumps, and Rubella.</li>
+					<li><b>Varicella-1</b> : Dose: 1 of 2 Protects against Varicella, commonly known as 'chicken pox'.</li>
+					<li><b>PCV Booster</b> : Dose: 4 of 4 Protects against Pneumococcal disease that can result in pneumonia, otitis media, meningitis and other diseases caused by the pneumococcal bacteria.</li>
+				  </ul>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-4">
+			<img src= {% static "Base/media/vaccine_schedule/16-18_Months.png" %}>
+			<p>
+			  <button class="btn btns  btn-primary" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapseWidthExample10" aria-expanded="false" aria-controls="collapseWidthExample">
+				<b><u>16-18 Months</u></b>
+			  </button>
+			</p>
+			<div style="min-height: 120px;">
+			  <div class="collapse collapse-horizontal" id="collapseWidthExample10">
+				<div class="card card-body" style="width: 900px;">
+				  <ul>
+					<li><b>DTP Booster-1</b> : Dose: 1 of 1 Protects against Diphtheria, tetanus and pertussis. This vaccination is a booster that helps boost the immunity to the same diseases the DTP vaccine help protects from.</li>
+					<li><b>Hib B-1</b> : Dose: 4 of 4 Protects against Haemophilus influenzae type B (Hib) bacteria.</li>
+					<li><b>IPV B-1</b> : Dose: 4 of 5 Protects against Polio; a disease caused by a virus that can affect the nerves.</li>
+					<li><b>PCV Booster</b> : Dose: 4 of 4 Protects against Pneumococcal disease that can result in pneumonia, otitis media, meningitis and other diseases caused by the pneumococcal bacteria.</li>
+				  </ul>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-4">
+			<img src= {% static "Base/media/vaccine_schedule/18-24_Months.png" %}>
+			<p>
+			  <button class="btn btns  btn-primary" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapseWidthExample11" aria-expanded="false" aria-controls="collapseWidthExample">
+				<b><u>18-24 Months</u></b>
+			  </button>
+			</p>
+			<div style="min-height: 120px;">
+			  <div class="collapse collapse-horizontal" id="collapseWidthExample11">
+				<div class="card card-body" style="width: 900px;">
+				  <ul>
+					<li><b>Hepatitis A-2</b> : Dose: 2 of 2 Protects against Hepatitis A; a liver infection caused by the Hepatitis A virus.</li>
+					<li><b>Varicella-2</b> : Dose: 2 of 2 Protects against Varicella, commonly known as 'chicken pox'.</li>
+					<li><b>Meningitis ACWY-1</b> : Dose: 1 of 1 Protects against  A, C, W and Y types of meningococcal disease that can result in meningitis and other serious diseases caused by the meningococcal bacteria.</li>
+					<li><b>Annual Influenza Vaccination</b> : Dose: Should be given every year and should be continued till 5 years of age.<br>Protects against Influenza, commonly known as the 'seasonal flu'; a respiratory infection caused by two main types of influenza virus: Types A and B.</li>
+				  </ul>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-4">
+			<img src= {% static "Base/media/vaccine_schedule/30-36_Months.png" %}>
+			<p>
+			  <button class="btn btns  btn-primary" type="button" data-bs-toggle="collapse"
+				data-bs-target="#collapseWidthExample12" aria-expanded="false" aria-controls="collapseWidthExample">
+				<b><u>30-36 Months</u></b>
+			  </button>
+			</p>
+			<div style="min-height: 120px;">
+			  <div class="collapse collapse-horizontal" id="collapseWidthExample12">
+				<div class="card card-body" style="width: 500px;">
+				  <ul>
+					<li><b>Annual Influenza Vaccination</b> : Dose: Should be given every year and should be continued till 5 years of age.<br> Protects against Influenza, commonly known as the 'seasonal flu'; a respiratory infection caused by two main types of influenza virus: Types A and B.</li>
+				  </ul>
+				</div>
+			  </div>
+			</div>
+		  </div>
+	  </div>
+	  <div class="row">
+		<div class="col-4">
+		  <img src= {% static "Base/media/vaccine_schedule/42-47_Months.png" %}>
+		  <p>
+			<button class="btn btns  btn-primary" type="button" data-bs-toggle="collapse"
+			  data-bs-target="#collapseWidthExample13" aria-expanded="false" aria-controls="collapseWidthExample">
+			  <b><u>42-47 Months</u></b>
+			</button>
+		  </p>
+		  <div style="min-height: 120px;">
+			<div class="collapse collapse-horizontal" id="collapseWidthExample13">
+			  <div class="card card-body" style="width: 500px;">
+				<ul>
+				  <li><b>Annual Influenza Vaccination</b> : Dose: Should be given every year and should be continued till 5 years of age.<br> Protects against Influenza, commonly known as the 'seasonal flu'; a respiratory infection caused by two main types of influenza virus: Types A and B.</li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-4">
+		  <img src= {% static "Base/media/vaccine_schedule/4-6_Years.png" %}>
+		  <p>
+			<button class="btn btns  btn-primary" type="button" data-bs-toggle="collapse"
+			  data-bs-target="#collapseWidthExample14" aria-expanded="false" aria-controls="collapseWidthExample">
+			  <b><u>4-6 Years</u></b>
+			</button>
+		  </p>
+		  <div style="min-height: 120px;">
+			<div class="collapse collapse-horizontal" id="collapseWidthExample14">
+			  <div class="card card-body" style="width: 700px;">
+				<ul>
+				  <li><b>DTP Booster-2</b> : Dose: 2 of 2 Protects against Diphtheria, tetanus and pertussis. This vaccination is a booster that helps boost the immunity to the same diseases the DTP vaccine help protects from.</li>
+				  <li><b>IPV B-2</b> : Dose: 5 of 5 Protects against Polio; a disease caused by a virus that can affect the nerves.</li>
+				  <li><b>MMR-3</b> : Dose: 3 of 3 Protects against  Measles, Mumps, and Rubella.</li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-4">
+		  <img src= {% static "Base/media/vaccine_schedule/9-14_Years.png" %}>
+		  <p>
+			<button class="btn btns  btn-primary" type="button" data-bs-toggle="collapse"
+			  data-bs-target="#collapseWidthExample15" aria-expanded="false" aria-controls="collapseWidthExample">
+			  <b><u>9-14 Years</u></b>
+			</button>
+		  </p>
+		  <div style="min-height: 120px;">
+			<div class="collapse collapse-horizontal" id="collapseWidthExample15">
+			  <div class="card card-body" style="width: 700px;">
+				<ul>
+				  <li><b>Tdap</b> : Dose: 1 of 1 Protects against Diphtheria, tetanus and pertussis. This vaccination is a booster that helps boost the immunity to the same diseases the DTP vaccine help protects from.</li>
+				  <li><b>HPV</b> : Dose: 1 of 1 , 2 of 2 (six months apart the 1st dose) Protects against Human Papillomavirus (HPV); a virus that can cause cervical cancer and other diseases.</li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-4">
+		  <img src= {% static "Base/media/vaccine_schedule/15-18_Years.png" %}>
+		  <p>
+			<button class="btn btns  btn-primary" type="button" data-bs-toggle="collapse"
+			  data-bs-target="#collapseWidthExample16" aria-expanded="false" aria-controls="collapseWidthExample">
+			  <b><u>15-18 Years</u></b>
+			</button>
+		  </p>
+		  <div style="min-height: 120px;">
+			<div class="collapse collapse-horizontal" id="collapseWidthExample16">
+			  <div class="card card-body" style="width: 500px;">
+				<ul>
+				  <li><b>HPV</b> : Dose: 1 of 3, 2 of 3, 3 of 3 Protects against Human Papillomavirus (HPV); a virus that can cause cervical cancer and other diseases.</li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	
+ 
+{% endblock body %}
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+crossorigin="anonymous"></script>
+{% endblock js %}
