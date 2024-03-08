@@ -365,7 +365,18 @@
 		</div>
 	</div>
 	
- 
+	<script>
+		// Close the collapse elements when clicking outside
+		document.addEventListener('click', function (event) {
+			var target = event.target;
+			if (!target.closest('.collapse-horizontal')) {
+				var collapses = document.querySelectorAll('.collapse-horizontal.show');
+				collapses.forEach(function (collapse) {
+					collapse.classList.remove('show');
+				});
+			}
+		});
+	</script>
 {% endblock body %}
 
 {% block js %}
