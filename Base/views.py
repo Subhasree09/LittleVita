@@ -70,9 +70,22 @@ def logoutUser(request):
 def dashboard(request):
     context={}
     if request.user.is_authenticated:
+        if request.method == 'POST':
+            print("data collecting")
+            child_name = request.POST.get('child_name')
+            child_sex = request.POST.get('sex')
+            date_of_birth = request.POST.get('dob')
+            parent = Parent.objects.get(user=request.user)
+            child = Child.objects.create(child_name=child_name, child_sex=child_sex, date_of_birth=date_of_birth, parent=parent)
+            child.save()
+            messages.success(request, 'Child added successfully')
+            return redirect('dashboard')
+        
         parent = Parent.objects.get(user=request.user)
         # children = Child.objects.filter(parent=parent)
         context['parent'] = parent
+
+
         return render(request, 'Base/dashboard.html', context)
     else:
         messages.error(request, 'You are not logged in')

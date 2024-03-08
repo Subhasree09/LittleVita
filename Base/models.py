@@ -19,10 +19,11 @@ class Parent(models.Model):
 
 class Child(models.Model):
     child_id = models.AutoField(primary_key=True)
-    child_name = models.CharField(max_length=100)
+    child_name = models.CharField(max_length=100, null=True, blank=True)
+    child_sex = models.CharField(max_length=10, default='Undefined')
     date_of_birth = models.DateField()
     parent = models.ForeignKey(Parent, related_name='children', on_delete=models.CASCADE)
-    vaccine = models.ManyToManyField('Vaccine', through='VaccineStatus', related_name='children')
+    vaccine = models.ManyToManyField('Vaccine', through='VaccineStatus', related_name='children', null=True, blank=True)
 
     # Add other child details as needed
 
