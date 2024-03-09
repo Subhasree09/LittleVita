@@ -28,7 +28,7 @@
                   </svg> Edit Image</div>
             </div>
             <div class="dashboard-content">
-                <div class="dashboard-content-item"><strong>Name:</strong> {{parent.first_name}} {{parent.last_name}}</div>
+                <div class="dashboard-content-item"><strong>Name:</strong> {{parent.first_name|capfirst}} {{parent.last_name|capfirst}}</div>
                 <div class="dashboard-content-item"><strong>Email:</strong> {{parent.email}}</div>
                 <div class="dashboard-content-item"><strong>Contact Number:</strong> {{parent.phone_number}}</div>
                 <button class="btn primary-btn add-child-button" data-bs-toggle="modal"
@@ -43,8 +43,14 @@
                 <h1 class="dashboard-title">Upcoming Vaccines</h1>
             </div>
             <div class="upcoming-vaccines">
-                <p class="dashboard-content-item">Vaccine 1: [Date]</p>
-                <p class="dashboard-content-item">Vaccine 2: [Date]</p>
+                {% for child in children %}
+                <strong>{{child.child_name|capfirst}}</strong>
+                <ol>
+                   {% for vaccine in child.vaccines_not_taken %}
+                    <li>{{vaccine}}</li>
+                    {% endfor %}
+                </ol>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -55,7 +61,7 @@
         <div class="col-lg-12 mt-4">
             <h2>Existing Children</h2>
             <div class="table-responsive table-container">
-                <table class="table">
+                <table class="table child-table">
                     <thead>
                         <tr class="table-header">
                             <th>Child Name</th>
@@ -67,12 +73,15 @@
                     <tbody>
                         {% for child  in children %}
                         <tr class="table-data">
-                            <td>{{child.child_name}}</td>
+                            <td>{{child.child_name|capfirst}}</td>
                             <td>{{child.date_of_birth}}</td>
                             <td>{{child.age}}</td> <!-- Add Age value here -->
-                            <td>
+                            <td class='vaccine-taken'>
                                 {% for vaccine in child.vaccines_taken %}
-                                    {{vaccine}} {% if not forloop.last %}, {% endif %}
+                                <ol>
+                                    <li>{{vaccine}}</li>
+                                </ol>
+                                    
                                 {% endfor %}
                             </td>
                         </tr>

@@ -130,3 +130,20 @@ body {
     max-width: 100px;
     margin-bottom: 15px;
 }
+
+.child-table {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.child-table td, th{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.child-table td.vaccine-taken {
+    background-color: #d4eaff;
+    color: #1b1a1a;
+    text-align: left;
+}

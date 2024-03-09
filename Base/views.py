@@ -112,6 +112,13 @@ def dashboard(request):
         for child in children:
             vaccine_statuses = VaccineStatus.objects.filter(child=child, completed=True)
             child.vaccines_taken = [status.vaccine for status in vaccine_statuses]
+            
+            # Fetch all vaccines
+            all_vaccines = Vaccine.objects.all()
+
+            # Exclude the vaccines that the child has taken
+            child.vaccines_not_taken = all_vaccines.exclude(vaccine_id__in=[vaccine.vaccine_id for vaccine in child.vaccines_taken])
+
         context['children']=children
 
 
