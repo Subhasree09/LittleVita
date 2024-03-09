@@ -231,7 +231,7 @@
                             // Clear input field
                             userInput.value = '';
                         
-                            const botMessageElement = document.createElement('pre');
+                            const botMessageElement = document.createElement('p');
                             botMessageElement.classList.add('bot-message');
                             botMessageElement.innerText = 'BOT: ' + response.answer;
                             chatWindow.appendChild(botMessageElement);
