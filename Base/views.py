@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 import openai
 from django.http import JsonResponse
-from .models import Parent, Child, Disease, Doctor, Nutrition, Vaccine
+from .models import Parent, Child, Disease, Doctor, Nutrition, Vaccine, VaccineStatus
 from decouple import config
 from datetime import date, datetime
 
@@ -106,13 +106,21 @@ def dashboard(request):
                     return redirect('dashboard')
         
         parent = Parent.objects.get(user=request.user)
-        children = Child.objects.filter(parent=parent)
         context['parent'] = parent
+
+        children = Child.objects.filter(parent=parent)
+        for child in children:
+            vaccine_statuses = VaccineStatus.objects.filter(child=child, completed=True)
+            child.vaccines_taken = [status.vaccine for status in vaccine_statuses]
         context['children']=children
 
-        vaccine_status = VaccineStatusForm(request.POST or None, user=parent)
-        context['vaccine_status'] = vaccine_status
+        
+        for child in children:
+            print(type(child.vaccines_taken))
 
+        vaccine_status_form = VaccineStatusForm(request.POST or None, user=parent)
+        context['vaccine_status'] = vaccine_status_form
+        
         return render(request, 'Base/dashboard.html', context)
     else:
         messages.error(request, 'You are not logged in')
@@ -217,7 +225,10 @@ def disease(request):
     return render(request, 'Base/disease.html', context)
 
 def vaccine(request):
-    return render(request, 'Base/vaccine.html')
+
+    vaccines= Vaccine.objects.all()
+    context = {'vaccines':vaccines}
+    return render(request, 'Base/vaccine.html', context)
 
 def vaccine_schedule(request):
     return render(request, 'Base/vaccine_schedule.html')
