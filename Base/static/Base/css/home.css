@@ -1,13 +1,108 @@
+/*home-top*/
+* {
+    box-sizing: border-box;
+}
+.contain{
+    font-family: 'EB Garamond';font-size: 22px;
+    margin:0;
+    width:100%;
+    min-width: 100vh;
+    max-width: 100%;
+    min-height: 100vh;
+    height:100%;
+    background-image: linear-gradient(rgba(16, 14, 14, 0.3),transparent),url('/static/Base/media/home.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 0 8%;
+    position: relative;
+    box-sizing: border-box;
+}
+nav{
+    display:flex;
+    width:100%;
+    align-items:center;
+    flex-wrap:wrap;
+    padding: 5px 0;
+}
+.logo{
+    width:180px;
+    cursor:pointer;
+    margin-left: -110px;
+}
+.text-box .row p{
+    font-size: 25px;
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.text-box .middle h1{
+    color:#111;
+    margin-left: -65px;
+    margin-bottom: 150px;
+    font-size: 100px;
+    line-height: 100px;
+    animation: fadein 2s;
+}
+@keyframes fadein {
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+.text-box{
+    color:#FF4D7B;
+    position:absolute;
+    bottom:45%;
+}
+.text-box h3{
+    font-size: 40px;
+    font-weight: 600;
+    margin-left: -50px;
+    background-position: 0 0;
+    animation: h3animate 2s;
+}
+@keyframes h3animate{
+    from{
+        opacity:0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+    to{
+        opacity:1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
 
+.text-box h2{
+    font-size: 80px;
+    line-height: 100px;
+    margin-left: 38px;
+    margin-bottom: 50px;    
+    -webkit-text-stroke: 1px #FF4D7B;
+    background-position: 0 0;
+    animation: h2animate 2.5s;   
+}
 
-h1{
-    color: rgb(95, 91, 91);
-    font-size: 50px;
-    text-align: center;
+@keyframes h2animate{
+    from{
+        opacity:0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    to{
+        opacity:1;
+        -webkit-transform: none;
+        transform: none;
+    }
 }
 
 
-.videoGallery{
+/* Video Gallery */
+/*.videoGallery{
     margin-top: -25px;
 }
 
@@ -18,7 +113,7 @@ h1{
     margin-top: 60px;
 }
 .videoGallery{
-    background-color: #e5effb; /* Use your desired grey color code */
+    background-color: #e5effb; /* Use your desired grey color code 
     height: 240px;
 }
 .videoGallery-bg-bottom{
@@ -74,7 +169,7 @@ h1{
     border: none;
   
   }
-  
+*/
   /* Service */
   .card-services {
     transition: all 0.3s;
