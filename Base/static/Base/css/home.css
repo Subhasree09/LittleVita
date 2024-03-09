@@ -3,6 +3,7 @@
     box-sizing: border-box;
 }
 .contain{
+    font-family: 'EB Garamond';font-size: 22px;
     margin:0;
     width:100%;
     min-width: 100vh;
@@ -14,7 +15,6 @@
     background-position: center;
     padding: 0 8%;
     position: relative;
-    
     box-sizing: border-box;
 }
 nav{
@@ -25,41 +25,80 @@ nav{
     padding: 5px 0;
 }
 .logo{
-    width:400px;
+    width:180px;
     cursor:pointer;
+    margin-left: -110px;
 }
-.contain .row{
+.text-box .row p{
+    font-size: 25px;
     display:flex;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 20px;
 }
-.contain .text-box{
+.text-box .middle h1{
+    color:#111;
+    margin-left: -65px;
+    margin-bottom: 150px;
+    font-size: 100px;
+    line-height: 100px;
+    animation: fadein 2s;
+}
+@keyframes fadein {
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+.text-box{
     color:#FF4D7B;
     position:absolute;
-    bottom:20%;
+    bottom:45%;
 }
-.contain .text-box h3{
+.text-box h3{
     font-size: 40px;
     font-weight: 600;
-}
-.contain .text-box h1{
-    font-size: 110px;
-    line-height: 100px;
-    margin-left: -10px;
-    color: transparent;
-    -webkit-text-stroke: 1px #FF4D7B;
-    background: url('/static/Base/media/back1.png');
-    -webkit-background-clip: text;
+    margin-left: -50px;
     background-position: 0 0;
-    animation: back 20s linear infinite;   
+    animation: h3animate 2s;
 }
-@keyframes back{
-    100%{
-        background-position: 2000px 0;
+@keyframes h3animate{
+    from{
+        opacity:0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+    to{
+        opacity:1;
+        -webkit-transform: none;
+        transform: none;
     }
 }
 
+.text-box h2{
+    font-size: 80px;
+    line-height: 100px;
+    margin-left: 38px;
+    margin-bottom: 50px;    
+    -webkit-text-stroke: 1px #FF4D7B;
+    background-position: 0 0;
+    animation: h2animate 2.5s;   
+}
+
+@keyframes h2animate{
+    from{
+        opacity:0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    to{
+        opacity:1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
 
 
 /* Video Gallery */
