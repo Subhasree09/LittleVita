@@ -22,6 +22,7 @@ class Child(models.Model):
     child_name = models.CharField(max_length=100, null=True, blank=True)
     child_sex = models.CharField(max_length=10, default='Undefined')
     date_of_birth = models.DateField()
+    age = models.IntegerField(null=True, blank=True)
     parent = models.ForeignKey(Parent, related_name='children', on_delete=models.CASCADE)
     vaccine = models.ManyToManyField('Vaccine', through='VaccineStatus', related_name='children', null=True, blank=True)
 
