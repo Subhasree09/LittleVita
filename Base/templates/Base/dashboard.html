@@ -92,7 +92,7 @@
             </div>
             <div class="modal-body">
                 <form id="childForm" method="POST" >{% csrf_token %}
-                    <!-- <input type="text" id="childId" class="form-control" placeholder="Child ID"> -->
+                    <input type="hidden" name="hide" value="child_add">
                     <input type="text" id="childName" name="child_name" class="form-control" placeholder="Child Name" required>
                     <label for="male">Male</label>
                     <input type="radio" id="male" name="sex" value="male" required>
@@ -108,6 +108,17 @@
     </div>
 </div>
 </div>
+
+<form action="" method="post">{% csrf_token %}
+    {% for field in vaccine_status %}
+        {% if not field.field.widget.input_type == 'hidden' %}
+        <div class="form-group">
+            {{field.label_tag}} {{field}} <small class='text-warning'>{{field.errors|striptags}}</small>
+        </div>
+        {% endif %}
+        {% endfor %}
+        <button type="submit">Save</button>
+</form>
 {% include "Base/footer.html" %}
 {% endblock body %}
 

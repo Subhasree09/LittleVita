@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import SignUpForm
+from .forms import SignUpForm, VaccineStatusForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
@@ -76,23 +76,42 @@ def calculate_age(born):
 def dashboard(request):
     context={}
     if request.user.is_authenticated:
+        print("user is authenticated")
         if request.method == 'POST':
-            child_name = request.POST.get('child_name')
-            child_sex = request.POST.get('sex')
-            date_of_birth = datetime.strptime(request.POST.get('dob'), '%Y-%m-%d').date()
-            parent = Parent.objects.get(user=request.user)
-            today = date.today()
-            age = age = calculate_age(date_of_birth)
-            print(age)
-            child = Child.objects.create(child_name=child_name, child_sex=child_sex, date_of_birth=date_of_birth, age=age, parent=parent)
-            child.save()
-            messages.success(request, 'Child added successfully')
-            return redirect('dashboard')
+            if 'hide' in request.POST and request.POST['hide'] == 'child_add':
+                print("child add")
+                child_name = request.POST.get('child_name')
+                child_sex = request.POST.get('sex')
+                date_of_birth = datetime.strptime(request.POST.get('dob'), '%Y-%m-%d').date()
+                parent = Parent.objects.get(user=request.user)
+                today = date.today()
+                age = age = calculate_age(date_of_birth)
+                print(age)
+                child = Child.objects.create(child_name=child_name, child_sex=child_sex, date_of_birth=date_of_birth, age=age, parent=parent)
+                child.save()
+                messages.success(request, 'Child added successfully')
+                return redirect('dashboard')
+            
+            else:
+                print("vaccine status")
+                parent = Parent.objects.get(user=request.user)
+                form = VaccineStatusForm(request.POST, user=parent)
+                if form.is_valid():
+                    form.save()
+                    messages.success(request, 'Vaccine status updated successfully')
+                    return redirect('dashboard')
+                else:
+                    print(form.errors)
+                    messages.error(request, 'Invalid form data. Try again!')
+                    return redirect('dashboard')
         
         parent = Parent.objects.get(user=request.user)
         children = Child.objects.filter(parent=parent)
         context['parent'] = parent
         context['children']=children
+
+        vaccine_status = VaccineStatusForm(request.POST or None, user=parent)
+        context['vaccine_status'] = vaccine_status
 
         return render(request, 'Base/dashboard.html', context)
     else:

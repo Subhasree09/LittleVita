@@ -71,6 +71,7 @@ class VaccineStatus(models.Model):
     child = models.ForeignKey('Child', on_delete=models.CASCADE)
     vaccine = models.ForeignKey('Vaccine', on_delete=models.CASCADE)
     completed = models.BooleanField(default=False)
+    date_of_vaccination= models.DateField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.child.child_name} - {self.vaccine.vaccine_name} ({'Completed' if self.completed else 'Not Completed'})"
