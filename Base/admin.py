@@ -10,7 +10,7 @@ class ParentAdmin(admin.ModelAdmin):
 
 @admin.register(models.Child)
 class ChildAdmin(admin.ModelAdmin):
-    list_display = ['child_id', 'child_name', "child_sex", 'date_of_birth', 'parent', ]
+    list_display = ['child_id', 'child_name', "child_sex", 'date_of_birth', 'age', 'parent' ]
     search_fields = ['child_name', 'date_of_birth']
     list_filter = ['child_name', 'date_of_birth']
 

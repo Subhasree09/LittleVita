@@ -9,6 +9,7 @@ import openai
 from django.http import JsonResponse
 from .models import Parent, Child, Disease, Doctor, Nutrition, Vaccine
 from decouple import config
+from datetime import date, datetime
 
 # Create your views here.
 def loginUser(request):
@@ -65,26 +66,33 @@ def logoutUser(request):
     logout(request)
     messages.info(request, 'Logged out successfully')
     return redirect('home')
+    
+def calculate_age(born):
+    today = date.today()
+    return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+
 
 @login_required(login_url='login')
 def dashboard(request):
     context={}
     if request.user.is_authenticated:
         if request.method == 'POST':
-            print("data collecting")
             child_name = request.POST.get('child_name')
             child_sex = request.POST.get('sex')
-            date_of_birth = request.POST.get('dob')
+            date_of_birth = datetime.strptime(request.POST.get('dob'), '%Y-%m-%d').date()
             parent = Parent.objects.get(user=request.user)
-            child = Child.objects.create(child_name=child_name, child_sex=child_sex, date_of_birth=date_of_birth, parent=parent)
+            today = date.today()
+            age = age = calculate_age(date_of_birth)
+            print(age)
+            child = Child.objects.create(child_name=child_name, child_sex=child_sex, date_of_birth=date_of_birth, age=age, parent=parent)
             child.save()
             messages.success(request, 'Child added successfully')
             return redirect('dashboard')
         
         parent = Parent.objects.get(user=request.user)
-        # children = Child.objects.filter(parent=parent)
+        children = Child.objects.filter(parent=parent)
         context['parent'] = parent
-
+        context['children']=children
 
         return render(request, 'Base/dashboard.html', context)
     else:
@@ -92,7 +100,6 @@ def dashboard(request):
         return redirect('login')
 
 def home(request):
-
     answer = "Hi, Mom! I am here to help you. Ask me anything."
     context = {'answer':answer}
     if request.method == "POST":

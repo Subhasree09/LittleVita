@@ -58,7 +58,6 @@
                 <table class="table">
                     <thead>
                         <tr class="table-header">
-                            <th>Child ID</th>
                             <th>Child Name</th>
                             <th>Date of Birth</th>
                             <th>Age</th> <!-- Add Age column here -->
@@ -67,14 +66,15 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for child  in children %}
                         <tr class="table-data">
-                            <td>1</td>
-                            <td>John Doe</td>
-                            <td>2005-05-15</td>
-                            <td>16</td> <!-- Add Age value here -->
+                            <td>{{child.child_name}}</td>
+                            <td>{{child.date_of_birth}}</td>
+                            <td>{{child.age}}</td> <!-- Add Age value here -->
                             <td>DTaP, MMR</td>
                             <td>Polio, Hepatitis B</td>
                         </tr>
+                        {% endfor %}
                         <!-- Add more rows as needed -->
                     </tbody>
                 </table>
