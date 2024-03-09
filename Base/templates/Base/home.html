@@ -37,100 +37,71 @@
 
 
 <!-- Service starts -->
-<div class="box-2 d-flex" id="service" style="background-color: whitesmoke;">
-    <div class="container mb-5">
-        <div class="heading d-flex justify-content-center p-5"
-            style="font-family: Georgia, 'Times New Roman', Times, serif;">
-            <h2 class="display-5 mb-4"> lorem_ </h2>
-        </div>
-
-        <div class="row gy-3" style="font-size: 1.2rem;">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card shadowbox card-services mb-4 rounded-4 h-100">
-                    <div class="container">
-                        <div class="card-body pt-5 pb-5">
-                            <h4 class="card-title cardheadingstyle">
-                                <b>Lorem 1</b>
-                            </h4>
-                            <p class="card-text text-start cardbodystyle">
-                            <div class="inside-box d-flex flex-wrap">
-                                nean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequa
+<section id="about" class="about">
+    <div class="section-heading ">
+        <h2>about Us</h2>
+    </div>
+    <div class="container">
+        <div class="about-content">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="single-about-txt">
+                        <h3>
+                            Welcome to LittleVita, your essential companion in navigating your newborn's vaccination and polio monitoring. Our user-friendly web application ensures you effortlessly track each vaccine, offering insights into diseases and recommended vaccinations.
+                        </h3>
+                        <p>
+                            Beyond this, LittleVita connects you directly with experienced doctors, providing a seamless channel for any questions or concerns. Join us in prioritizing your baby's health – LittleVita is not just an app; it's your partner in ensuring a healthy and happy start for your little one.
+                        </p>
+                        <p>
+                            Join us on this journey of safeguarding your baby's health. LittleVita is more than an app; it's a commitment to the well-being of your precious one. Let's navigate the path to a healthy and happy childhood together.
+                        </p>
+                        {% comment %} <div class="row">
+                            <div class="col-sm-4">
+                                <div class="single-about-add-info">
+                                    <h3>phone</h3>
+                                    <p>987-123-6547</p>
+                                </div>
                             </div>
-                            </p>
-                        </div>
+                            <div class="col-sm-4">
+                                <div class="single-about-add-info">
+                                    <h3>email</h3>
+                                    <p>browny@info.com</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="single-about-add-info">
+                                    <h3>website</h3>
+                                    <p>www.brownsine.com</p>
+                                </div>
+                            </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
-            </div>
+                <div class="col-sm-offset-1 col-sm-5">
+                    <div class="single-about-img">
+                        <img src={% static "Base/media/about-image.jpg" %} alt="profile_image">
 
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card shadowbox card-services mb-4 rounded-4 h-100">
-                    <div class="container">
-                        <div class="card-body pt-5 pb-5">
-                            <h4 class="card-title cardheadingstyle">
-                                <b>Lorem 2</b>
-                            </h4>
-                            <p class="card-text text-start cardbodystyle">
-                            <div class="inside-box d-flex flex-wrap">
-                                nean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequa
-                            </div>
-                            </p>
 
-                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card shadowbox card-services mb-4 rounded-4 h-100">
-                    <div class="container">
-                        <div class="card-body pt-5 pb-5">
-                            <h4 class="card-title cardheadingstyle">
-                                <b>Lorem 1</b>
-                            </h4>
-                            <p class="card-text text-start cardbodystyle">
-                            <div class="inside-box d-flex flex-wrap">
-                                nean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequa
-                            </div>
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section><!--/.about-->
+<!--about end -->
 <!-- Service ends -->
 
 
 
 
 {% comment %} --------Blog------ {% endcomment %}
-    <div class="container mt-5 pt-5">
-        <div class="row">
-            <h2><center><font size="8">Blogs</font></center></h2>
-	<b style="color:red;">
-    <section class="about container" id="about">
-        <div class="contentBx">
-            <h3 class="titleText">Vacination Tips For Parents</h3>
-            <p class="title-text">
-                Almost all sickness or discomfort after vaccination is minor ,such as a soreness at the injection site or mild fever. 
-			</p>
-            <a href="#" class="btn2">Read more</a>
-			<h3 class="titleText">Painful Vaccines</h3>
-            <p class="title-text">
-                Vaccines that are known to cause the most injection site pain are pneumococcal-C-13, MMR, and HPV vaccines. 
-			</p>
-            <a href="#" class="btn2">Read more</a>
-        </div>
-        <div class="imgBx">
-            <img src={% static "Base/media/blog_img.jpg" %} alt="img" class="fitBg">
-        </div>
-    </section>
-
-        </div>
-    </div>
-
-
+<div class="container mt-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Latest Blog Posts</h2>
+        <div class="row" id="blogSection"></div>
+      </div>
+</div>
     {% comment %} chat bot implement {% endcomment %}
 
     <div class="chat-icon" id="chatIcon">
@@ -196,6 +167,50 @@
                 }
             })
         });    
+    </script>
+    {% comment %} Blog {% endcomment %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const blogSection = document.getElementById("blogSection");
+          
+            // Sample blog data (replace with your actual data)
+            const blogPosts = [
+              {
+                title: "Blog Post 1",
+                image: "https://via.placeholder.com/300",
+                content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              },
+              {
+                title: "Blog Post 2",
+                image: "https://via.placeholder.com/300",
+                content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              },
+              {
+                title: "Blog Post 3",
+                image: "https://via.placeholder.com/300",
+                content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              },
+              // Add more blog posts as needed
+            ];
+          
+            // Generate blog cards
+            blogPosts.forEach(post => {
+              const card = document.createElement("div");
+              card.classList.add("col-md-4", "blog-card");
+          
+              card.innerHTML = `
+                <div class="card h-100">
+                  <img src="${post.image}" class="card-img-top" alt="${post.title}">
+                  <div class="card-body">
+                    <h5 class="card-title blog-card-title">${post.title}</h5>
+                    <p class="card-text blog-card-text">${post.content}</p>
+                  </div>
+                </div>
+              `;
+          
+              blogSection.appendChild(card);
+            });
+          });
     </script>
     
     {% comment %} ChatBot implementation... Don't edit a single letter with out my permission  {% endcomment %}
