@@ -33,45 +33,23 @@
       </div>
 
       <div class="row">
-
+        {% for vaccine in vaccines %}
         <div class="col-lg-6">
-          <div class="custom-member d-flex align-items-start">
-            <div class="custom-pic"><img src={% static "Base/media/1.jpg" %} class="img-fluid" alt=""></div>
+          <div class="custom-member d-flex align-items-center">
+            <div class="custom-pic"><img src={{vaccine.image.url}} class="img-fluid" alt=""></div>
             <div class="custom-member-info">
-              <h4>Engerix-B</h4>
-              <span>Hepatitis B Vaccine</span>
-              <p><b>Manufacturer:</b> GlaxoSmithKline (GSK)</p>
-              <p><b>Description:</b> Engerix-B is a recombinant hepatitis B vaccine. It contains a surface antigen
-                (HBsAg).</p>
-              <p><b>Disease Targeted:</b> Hepatitis B</p>
-              <p><b>Storage Requirement:</b> Should refrigerate at a specific temperature range</p>
-              <p><b>Side Effects:</b> Mild and include pain or swelling at the injection site, low-grade fever, or
-                fatigue.</p>
-              <p><b>Additional Notes:</b> The Hepatitis B vaccine is often included in routine immunization schedules
-                worldwide.</p>
+              <h4>{{vaccine.vaccine_name}}</h4>
+              {% comment %} <span>Hepatitis B Vaccine</span> {% endcomment %}
+              <p><b>Manufacturer:</b> {{vaccine.manufacturer}}</p>
+              <p><b>Description:</b> {{vaccine.description}}</p>
+              <p><b>Disease Targeted:</b> {{vaccine.disease_targeted}}</p>
+              <p><b>Storage Requirement:</b> {{vaccine.storage_requirements}}</p>
+              <p><b>Side Effects:</b> {{vaccine.side_effects}}</p>
+              <p><b>Additional Notes:</b> {{vaccine.additional_notes}}</p>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-6 mt-4 mt-lg-0">
-          <div class="custom-member d-flex align-items-start">
-            <div class="custom-pic"><img src={% static "Base/media/2.jpg" %} class="img-fluid" alt=""></div>
-            <div class="custom-member-info">
-              <h4>Daptacel</h4>
-              <span>DTaP Vaccine</span>
-              <p><b>Manufacturer:</b> Sanofi Pasteur</p>
-              <p><b>Description:</b> Contains inactivated toxins or components of the bacteria that cause diphtheria,
-                tetanus, and pertussis.</p>
-              <p><b>Diseases Targeted:</b> a) Diphtheria b) Tetanus c) Pertussis</p>
-              <p><b>Storage Requirement:</b> Should refrigerate at a specific temperature range</p>
-              <p><b>Side Effects:</b> Mild and may include pain or swelling at the injection site, fever, and fussiness.
-              </p>
-              <p><b>Additional Notes:</b> DTaP vaccine is a standard childhood vaccine and is usually administered in a
-                series of doses during infancy.</p>
-            </div>
-          </div>
-        </div>
-
+        {% endfor %}
       </div>
 
     </div>
