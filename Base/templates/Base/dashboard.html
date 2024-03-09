@@ -11,49 +11,53 @@
 
 {% block body %}
     
+<div class="child-dashboard-body">
 <div class="row">
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {% comment %} <div class="alert alert-warning alert-dismissible fade show" role="alert">
         <strong>Holy guacamole!</strong> You should check in on some of those fields below.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+    </div> {% endcomment %}
     <div class="col-lg-8">
-        <div class="container-fluid">
+        <div class="container-fluid child-dashboard-container">
             <div class="dashboard-header">
                 <h1 class="dashboard-title text-end">Dashboard</h1>
                 <img src={{parent.dp.url}} alt="User Image" class="user-image">
+                <div class="edit-image-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                  </svg> Edit Image</div>
             </div>
             <div class="dashboard-content">
-                <div><strong>Name:</strong> {{parent.first_name}} {{parent.last_name}}</div>
-                <div><strong>Email:</strong> {{parent.email}}</div>
-                <div><strong>Contact Number:</strong> {{parent.phone_number}}</div>
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addChildModal">Add New
-                    Child</button>
+                <div class="dashboard-content-item"><strong>Name:</strong> {{parent.first_name}} {{parent.last_name}}</div>
+                <div class="dashboard-content-item"><strong>Email:</strong> {{parent.email}}</div>
+                <div class="dashboard-content-item"><strong>Contact Number:</strong> {{parent.phone_number}}</div>
+                <button class="btn primary-btn add-child-button" data-bs-toggle="modal"
+                    data-bs-target="#addChildModal">Add New Child</button>
             </div>
         </div>
     </div>
 
     <div class="col-lg-4">
-        <div class="container-fluid">
+        <div class="container-fluid child-dashboard-container">
             <div class="dashboard-header">
                 <h1 class="dashboard-title">Upcoming Vaccines</h1>
             </div>
             <div class="upcoming-vaccines">
-                <p>Vaccine 1: [Date]</p>
-                <p>Vaccine 2: [Date]</p>
+                <p class="dashboard-content-item">Vaccine 1: [Date]</p>
+                <p class="dashboard-content-item">Vaccine 2: [Date]</p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid child-dashboard-container">
     <div class="row">
         <div class="col-lg-12 mt-4">
             <h2>Existing Children</h2>
-            <div class="table-responsive">
+            <div class="table-responsive table-container">
                 <table class="table">
                     <thead>
-                        <tr>
-                            <th>Child ID</th>
+                        <tr class="table-header">
                             <th>Child Name</th>
                             <th>Date of Birth</th>
                             <th>Age</th> <!-- Add Age column here -->
@@ -62,14 +66,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>John Doe</td>
-                            <td>2005-05-15</td>
-                            <td>16</td> <!-- Add Age value here -->
+                        {% for child  in children %}
+                        <tr class="table-data">
+                            <td>{{child.child_name}}</td>
+                            <td>{{child.date_of_birth}}</td>
+                            <td>{{child.age}}</td> <!-- Add Age value here -->
                             <td>DTaP, MMR</td>
                             <td>Polio, Hepatitis B</td>
                         </tr>
+                        {% endfor %}
                         <!-- Add more rows as needed -->
                     </tbody>
                 </table>
@@ -79,25 +84,41 @@
 </div>
 
 <div class="modal fade" id="addChildModal" tabindex="-1" aria-labelledby="addChildModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-container">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="addChildModalLabel">Add Child Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="childForm">
-                    <!-- <input type="text" id="childId" class="form-control" placeholder="Child ID"> -->
-                    <input type="text" id="childName" class="form-control" placeholder="Child Name" required>
-                    <input type="text" id="childage" class="form-control" placeholder="Age" required>
-                    <input type="date" id="dob" class="form-control" placeholder="Date of Birth" required>
-                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                <form id="childForm" method="POST" >{% csrf_token %}
+                    <input type="hidden" name="hide" value="child_add">
+                    <input type="text" id="childName" name="child_name" class="form-control" placeholder="Child Name" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="male" name="sex" value="male" required>
+                    <label for="female">Female</label>
+                    <input type="radio" id="female" name="sex" value="female" required>
+                    <label for="other">Other</label>
+                    <input type="radio" id="other" name="sex" value="other" required>
+                    <input type="date" id="dob" class="form-control" name="dob" placeholder="Date of Birth" required>
+                    <button type="Submit" class="btn btn-primary mt-3">Submit</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+</div>
 
+<form action="" method="post">{% csrf_token %}
+    {% for field in vaccine_status %}
+        {% if not field.field.widget.input_type == 'hidden' %}
+        <div class="form-group">
+            {{field.label_tag}} {{field}} <small class='text-warning'>{{field.errors|striptags}}</small>
+        </div>
+        {% endif %}
+        {% endfor %}
+        <button type="submit">Save</button>
+</form>
 {% include "Base/footer.html" %}
 {% endblock body %}
 

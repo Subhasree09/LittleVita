@@ -11,35 +11,35 @@
 {% endblock css %}
 
 {% block body %}
-<div class=" px-3 content" style="background-image: url({% static "Base/media/backgroung.jpg" %})">
-    <div class="col align-self-center form-container">
-        <div class="form-box">
-            <div class="form">
-                <form class="login-form" method='post' > {% csrf_token %}
-                    <center>
-                        <h1 class="main-heading">Login Form</h1>
-                    </center>
-                    {% for field in form %}
-                        <div class="form-group">
-                            {{field.label_tag}} {{field}} <small class='text-warning'>{{field.errors|striptags}}</small>
-                        </div>
-                    {% endfor %}
-                    <button class="rounded submit" type="submit">LOGIN</button>
-    
-                    {% if form.non_field_errors %}
-                        {% for error in form.non_field_errors %}
-                            <p class=" alert alert-danger my-3">{{error}}</p>
+    <div class=" px-3 content" style="background-image: url({% static "Base/media/backgroung.jpg" %})">
+        <div class="col align-self-center form-container">
+            <div class="form-box">
+                <div class="form">
+                    <form class="login-form" method='post' > {% csrf_token %}
+                        <center>
+                            <h1 class="main-heading">Login Form</h1>
+                        </center>
+                        {% for field in form %}
+                            <div class="form-group">
+                                {{field.label_tag}} {{field}} <small class='text-warning'>{{field.errors|striptags}}</small>
+                            </div>
                         {% endfor %}
-                    {% endif %}
-                </form>
-                <p class="additional-text">Not Registered? <a href={% url "signup" %}>Register</a></p>
+                        <button class="rounded submit" type="submit">LOGIN</button>
+    
+                        {% if form.non_field_errors %}
+                            {% for error in form.non_field_errors %}
+                                <p class=" alert alert-danger my-3">{{error}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    </form>
+                    <p class="additional-text">Not Registered? <a href={% url "signup" %}>Register</a></p>
+                </div>
             </div>
         </div>
+        {% comment %} <div class="col-1">
+            <img src={% static "Base/media/Account.png" %}>
+        </div> {% endcomment %}
     </div>
-    {% comment %} <div class="col-1">
-        <img src={% static "Base/media/Account.png" %}>
-    </div> {% endcomment %}
-</div>
 
 
 
