@@ -18,6 +18,15 @@ body{
   color: #fff !important;
 }
 
-.notification{
-  
+.error{
+  color:red;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.success{
+  color: green;
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }

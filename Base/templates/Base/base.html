@@ -43,7 +43,6 @@
                 <li><a class="dropdown-item" href={% url "vaccine" %}>Vaccine Information</a></li>
                 <li><a class="dropdown-item" href={% url "vaccine-schedule" %}>Vaccine Schedule</a></li>
                 <li><a class="dropdown-item" href="#">Vaccine Tracker</a></li>
-                <li><a class="dropdown-item" href="#">Vaccine Preventable Disease</a></li>
               </ul>
             </li>
             {% if request.user.is_authenticated %}
@@ -112,6 +111,22 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src={% static "Base/js/script.js" %}></script>
+
+  <script>
+    setTimeout(function() {
+      var errorElement = document.querySelector('.error');
+      if (errorElement) {
+        location.reload(true);
+      }
+    }, 5000);
+    setTimeout(function(){
+      var successElement=document.querySelector('.success');
+      if(successElement){
+        location.reload(true);
+      }
+    },5000);
+  </script>
+
   {% block js %}{% endblock js %}
 
 </body>
