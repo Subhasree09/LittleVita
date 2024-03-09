@@ -114,9 +114,6 @@ def dashboard(request):
             child.vaccines_taken = [status.vaccine for status in vaccine_statuses]
         context['children']=children
 
-        
-        for child in children:
-            print(type(child.vaccines_taken))
 
         vaccine_status_form = VaccineStatusForm(request.POST or None, user=parent)
         context['vaccine_status'] = vaccine_status_form
@@ -135,10 +132,11 @@ def home(request):
         openai.api_key = API_KEY
         prompt = f"""My website is a platform for managing children's vaccination schedules. 
                     And parent can add their children, manage their vaccination schedules, 
-                    and track their vaccination status. And they and search about the nutrition, 
+                    and track their vaccination status. And they can search about the nutrition, 
                     diseases, doctors, and vaccines.Here, parents can add their children, 
-                    manage their vaccination schedules, and track their vaccination status. 
-                    anyother question that is not related to our web site will return a response 
+                    manage their vaccination schedules, and track their vaccination status.
+                    Any question related to healthcare will return a response. 
+                    anyother question that is not related to our website or healthcaare will return a response 
                     that you can't do that. User's question: {ask}"""
         completion = openai.completions.create(
             model="gpt-3.5-turbo-instruct",
