@@ -10,7 +10,650 @@
 {% endblock css %}
 
 {% block body %}
-    
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home &mdash; NoteBook Blogging website resposive design</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <section id="doctors" class="doctors">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>Blogs</h2>
+            <p>Health is a state of complete physical, mental and social well being..</p>
+          </div>
+</div>  
+    </section>
+    <!-- <nav class="nav">
+      <div class="container nav_container">
+        <ul class="nav_list">
+          <li class="nav_item"><a href="#" class="nav_link">Home</a></li>
+          <li class="nav_item"><a href="" class="nav_link">About</a></li>
+          <li class="nav_item"><a href="#" class="nav_link">Categories</a></li>
+          <li class="nav_item"><a href="#" class="nav_link">Posts</a></li>
+        </ul>
+        <a href="#" class="logo_box">
+          <p class="logo">
+            <span class="logo_bg">Note</span><span class="logo_2">book</span
+            ><span class="logo_dot">.</span>
+          </p>
+        </a>
+        <ul class="nav_list">
+          <li class="nav_item">
+            <a href="#" class="nav_link"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+              </svg>
+            </a>
+          </li>
+          <li class="nav_item">
+            <a href="" class="nav_link"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+              </svg>
+            </a>
+          </li>
+          <li class="nav_item"><a href="#" class="nav_link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <header class="header"> -->
+      <div class="container header_container">
+        <div class="header_content">
+          <div class="header_title">
+            <p class="header_title_tag"><span>Featured</span> This month</p>
+          </div>
+          <div class="feature_card feature_card_bg">
+            <img src={% static "Base/media/blog5.jpg" %} alt="" class="feature_card_img" />
+            <div class="feature_card_body">
+              <div class="card_category">LIFESTYLE</div>
+              <h2 class="feature_card_title">
+                The Wellness Chronicles: Stories of a Healthy Life
+              </h2>
+              <div class="card_details">
+                <div class="card_author">
+                  <img src={% static "Base/media/user.jpg" %} alt="" class="card_author_img" />
+                  <p class="card_author_name">Jessica auth</p>
+                </div>
+                <div class="card_date">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                  </svg>
+                  <span class="card_date_post">23 Dec 2023</span>
+                </div>
+              </div>
+              <p class="card_description">
+                Health is a state of physical, mental and social well-being.
+                 Health is of prime importance and everything else comes later.
+              </p>
+            </div>
+          </div>
+          <div class="feature_card feature_card_bg">
+            <img src={% static "Base/media/cook.jpg" %} alt="" class="feature_card_img" />
+            <div class="feature_card_body">
+              <div class="card_category">LIFESTYLE</div>
+              <h2 class="feature_card_title">
+                Homemade Baby Food Recipes: Nutrient-Packed and Delicious
+              </h2>
+              <div class="card_details">
+                <div class="card_author">
+                  <img src={% static "Base/media/user.jpg" %} alt="" class="card_author_img" />
+                  <p class="card_author_name">Jessica auth</p>
+                </div>
+                <div class="card_date">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                  </svg>
+                  <span class="card_date_post">23 Dec 2023</span>
+                </div>
+              </div>
+              <p class="card_description">
+                Babies are typically ready to start eating solid foods around 6 months. 
+                Signs that they're ready include having good head control, being able to sit up, and showing an interest in food.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="header_sidebar">
+          <div class="header_title">
+            <p class="header_title_tag"><span>Popular</span> Posted</p>
+          </div>
+          <div class="feature_card">
+            <img src={% static "Base/media/blog1.jpg" %} alt="" class="feature_card_img" />
+            <div class="feature_card_body">
+              <div class="card_category">LIFESTYLE</div>
+              <h2 class="popular_card_title">
+                Tiny Triumphs: A Parent's Guide to Celebrating Every Baby Milestone
+              </h2>
+              <div class="card_details">
+                <div class="card_author">
+                  <img src={% static "Base/media/user.jpg" %} alt="" class="card_author_img" />
+                  <p class="card_author_name">Jessica auth</p>
+                </div>
+                <div class="card_date">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                  </svg>
+                  <span class="card_date_post">1 Day</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature_card">
+            <img src={% static "Base/media/popular-blog1.jpg" %} alt="" class="feature_card_img" />
+            <div class="feature_card_body">
+              <div class="card_category">LIFESTYLE</div>
+              <h2 class="popular_card_title">
+                The Baby Diaries: A Journal of Firsts, Fumbles, and Fantastic Moments
+              </h2>
+              <div class="card_details">
+                <div class="card_author">
+                  <img src={% static "Base/media/user.jpg" %} alt="" class="card_author_img" />
+                  <p class="card_author_name">Jessica auth</p>
+                </div>
+                <div class="card_date">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                  </svg>
+                  <span class="card_date_post">1 Day</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature_card">
+            <img src={% static "Base/media/popular-blog2.jpg" %} alt="" class="feature_card_img" />
+            <div class="feature_card_body">
+              <div class="card_category">LIFESTYLE</div>
+              <h2 class="popular_card_title">
+                Lullabies and Laughter: Crafting a Joyful Journey into Parenthood
+              </h2>
+              <div class="card_details">
+                <div class="card_author">
+                  <img src={% static "Base/media/user.jpg" %} alt="" class="card_author_img" />
+                  <p class="card_author_name">Jessica auth</p>
+                </div>
+                <div class="card_date">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                  </svg>
+                  <span class="card_date_post">1 Day</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature_card">
+            <img src={% static "Base/media/popular-blog3.jpg" %} alt="" class="feature_card_img" />
+            <div class="feature_card_body">
+              <div class="card_category">LIFESTYLE</div>
+              <h2 class="popular_card_title">
+                From Baby Bump to Binky Bliss: A Journey Through Early Parenthood
+              </h2>
+              <div class="card_details">
+                <div class="card_author">
+                  <img src={% static "Base/media/user.jpg" %} alt="" class="card_author_img" />
+                  <p class="card_author_name">Jessica auth</p>
+                </div>
+                <div class="card_date">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                  </svg>
+                  <span class="card_date_post">1 Day</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container main_container">
+        <div class="main_content">
+          <div class="header_title">
+            <p class="header_title_tag"><span>Recently</span> Posted</p>
+          </div>
+          <div class="main_cards">
+            <div class="card">
+              <img src={% static "Base/media/blog2.jpg" %} alt="" class="card_img" />
+              <div class="feature_card_body">
+                <div class="card_category">LIFESTYLE</div>
+                <h2 class="feature_card_title">
+                    Bundled Joy: Unwrapping the Wonders of Parenting in the First Year
+                </h2>
+                <div class="card_details">
+                  <div class="card_author">
+                    <img
+                      src={% static "Base/media/user.jpg" %}
+                      alt=""
+                      class="card_author_img" />
+                    <p class="card_author_name">Jessica auth</p>
+                  </div>
+                  <div class="card_date">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                    </svg>
+                    <span class="card_date_post">23 Dec 2023</span>
+                  </div>
+                </div>
+                <p class="card_description">
+                    Guardians of Wellness: Tips for Boosting Immunity in Babies
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src={% static "Base/media/popular-blog4.jpg" %} alt="" class="card_img" />
+              <div class="feature_card_body">
+                <div class="card_category">LIFESTYLE</div>
+                <h2 class="feature_card_title">
+                    VaccineVista: A Clear View on Immunization
+                </h2>
+                <div class="card_details">
+                  <div class="card_author">
+                    <img
+                      src={% static "Base/media/user.jpg" %}
+                      alt=""
+                      class="card_author_img" />
+                    <p class="card_author_name">Jessica auth</p>
+                  </div>
+                  <div class="card_date">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                    </svg>
+                    <span class="card_date_post">23 Dec 2023</span>
+                  </div>
+                </div>
+                <p class="card_description">
+                    Shield Shots: Empowering Health through Vaccination
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src={% static "Base/media/blog3.jpg" %} alt="" class="card_img" />
+              <div class="feature_card_body">
+                <div class="card_category">LIFESTYLE</div>
+                <h2 class="feature_card_title">
+                    Creating a Balanced Plate: Nutritional Guidelines for Baby Meals
+                </h2>
+                <div class="card_details">
+                  <div class="card_author">
+                    <img
+                      src={% static "Base/media/user.jpg" %}
+                      alt=""
+                      class="card_author_img" />
+                    <p class="card_author_name">Jessica auth</p>
+                  </div>
+                  <div class="card_date">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                    </svg>
+                    <span class="card_date_post">23 Dec 2023</span>
+                  </div>
+                </div>
+                <p class="card_description">
+                    Health only meant the body’s ability to function well. It was only disrupted because of physical ailment or disease.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src={% static "Base/media/popular-blog5.jpg" %} alt="" class="card_img" />
+              <div class="feature_card_body">
+                <div class="card_category">LIFESTYLE</div>
+                <h2 class="feature_card_title">
+                    Hydration:
+                </h2>
+                <div class="card_details">
+                  <div class="card_author">
+                    <img
+                      src={% static "Base/media/user.jpg" %}
+                      alt=""
+                      class="card_author_img" />
+                    <p class="card_author_name">Jessica auth</p>
+                  </div>
+                  <div class="card_date">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                    </svg>
+                    <span class="card_date_post">23 Dec 2023</span>
+                  </div>
+                </div>
+                <p class="card_description">
+                    Most people have been told they should drink 6 to 8, 8-ounce glasses of water each day.
+                     That’s a reasonable goal.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src={% static "Base/media/vitamin.jpg" %} alt="" class="card_img" />
+              <div class="feature_card_body">
+                <div class="card_category">LIFESTYLE</div>
+                <h2 class="feature_card_title">
+                    Vitamins and Supplements:Especially for breastfeed babies.
+                </h2>
+                <div class="card_details">
+                  <div class="card_author">
+                    <img
+                      src={% static "Base/media/user.jpg" %}
+                      alt=""
+                      class="card_author_img" />
+                    <p class="card_author_name">Jessica auth</p>
+                  </div>
+                  <div class="card_date">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                    </svg>
+                    <span class="card_date_post">23 Dec 2023</span>
+                  </div>
+                </div>
+                <p class="card_description">
+                    The government recommends all children aged 6 months to 5 years are given vitamin supplements containing vitamins A, C and D every day.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src={% static "Base/media/feed.jpg" %} alt="" class="card_img" />
+              <div class="feature_card_body">
+                <div class="card_category">LIFESTYLE</div>
+                <h2 class="feature_card_title">
+                    Breastfeeding Basics: The Benefits and Tips for Nursing Moms
+                </h2>
+                <div class="card_details">
+                  <div class="card_author">
+                    <img
+                      src={% static "Base/media/user.jpg" %}
+                      alt=""
+                      class="card_author_img" />
+                    <p class="card_author_name">Jessica auth</p>
+                  </div>
+                  <div class="card_date">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                    </svg>
+                    <span class="card_date_post">23 Dec 2023</span>
+                  </div>
+                </div>
+                <p class="card_description">
+                    Breastfeeding is good for both infants and mothers. Breast milk is the best source of nutrition for most infants.
+                </p>
+              </div>
+            </div>
+            </div>
+        </div>
+        <div class="main_sidebar">
+          <div class="header_title">
+            <p class="header_title_tag"><span>Top</span> Authors</p>
+          </div>
+          <div class="authors">
+            <div class="author">
+              <img src={% static "Base/media/user.jpg" %}
+              alt="" class="author_img" />
+              <div class="author_body">
+                <h4 class="author_name">John Doe</h4>
+                <p class="author_designation">
+                  Graphic design and web developer
+                </p>
+                <div class="author_social">
+                  <img
+                    src={% static "Base/media/facebook.png" %}
+                    alt=""
+                    class="author_social_icon" /><img
+                    src={% static "Base/media/instagram.png" %}
+                    alt=""
+                    class="author_social_icon" /><img
+                    src={% static "Base/media/twitter.png" %}
+                    alt=""
+                    class="author_social_icon" />
+                </div>
+              </div>
+            </div>
+            <div class="author">
+              <img src={% static "Base/media/users.jpg" %} alt="" class="author_img" />
+              <div class="author_body">
+                <h4 class="author_name">Radhika Chawla</h4>
+                <p class="author_designation">
+                  Graphic design and web developer
+                </p>
+                <div class="author_social">
+                    <img
+                      src={% static "Base/media/facebook.png" %}
+                      alt=""
+                      class="author_social_icon" /><img
+                      src={% static "Base/media/instagram.png" %}
+                      alt=""
+                      class="author_social_icon" /><img
+                      src={% static "Base/media/twitter.png" %}
+                      alt=""
+                      class="author_social_icon" />
+                  </div>
+              </div>
+            </div>
+            <div class="author">
+                <img src={% static "Base/media/boy.jpg" %} alt="" class="author_img" />
+                <div class="author_body">
+                  <h4 class="author_name">Hritik Jain</h4>
+                  <p class="author_designation">
+                    Graphic design and web developer
+                  </p>
+                  <div class="author_social">
+                      <img
+                        src={% static "Base/media/facebook.png" %}
+                        alt=""
+                        class="author_social_icon" /><img
+                        src={% static "Base/media/instagram.png" %}
+                        alt=""
+                        class="author_social_icon" /><img
+                        src={% static "Base/media/twitter.png" %}
+                        alt=""
+                        class="author_social_icon" />
+                    </div>
+                </div>
+              </div>
+              <div class="author">
+                <img src={% static "Base/media/boy1.jpg" %} alt="" class="author_img" />
+                <div class="author_body">
+                  <h4 class="author_name"Kavish Agarwal</h4>
+                  <p class="author_designation">
+                    Graphic design and web developer
+                  </p>
+                  <div class="author_social">
+                      <img
+                        src={% static "Base/media/facebook.png" %}
+                        alt=""
+                        class="author_social_icon" /><img
+                        src={% static "Base/media/instagram.png" %}
+                        alt=""
+                        class="author_social_icon" /><img
+                        src={% static "Base/media/twitter.png" %}
+                        alt=""
+                        class="author_social_icon" />
+                    </div>
+                </div>
+              </div>
+          <div class="sidebar_categories">
+            <div class="header_title">
+              <p class="header_title_tag"><span>Categories</span></p>
+            </div>
+            <div class="categories">
+              <div class="category">
+                <h5 class="category_name">LifeStyle</h5>
+                <h5 class="category_number">09</h5>
+              </div>
+              <div class="category">
+                <h5 class="category_name">Healthy Life</h5>
+                <h5 class="category_number">09</h5>
+              </div>
+              <div class="category">
+                <h5 class="category_name">Scheduled Vaccination</h5>
+                <h5 class="category_number">09</h5>
+              </div>
+              <div class="category">
+                <h5 class="category_name">Nutritios Food</h5>
+                <h5 class="category_number">09</h5>
+              </div>
+              <div class="category">
+                <h5 class="category_name">Hydration</h5>
+                <h5 class="category_number">09</h5>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar_updates">
+            <div class="header_title">
+              <p class="header_title_tag"><span>Today's</span> Updates</p>
+            </div>
+            <div class="updates">
+              <div class="update">
+                <h2 class="update_number">14</h2>
+                <p class="update_text">Posts</p>
+              </div>
+              <div class="update">
+                <h2 class="update_number">14</h2>
+                <p class="update_text">Posts</p>
+              </div>
+              <div class="update">
+                <h2 class="update_number">14</h2>
+                <p class="update_text">Posts</p>
+              </div>
+              <div class="update">
+                <h2 class="update_number">14</h2>
+                <p class="update_text">Posts</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+     </body>
+</html>
+
+
 
 {% include "Base/footer.html" %}
 {% endblock body %}
@@ -18,3 +661,5 @@
 {% block js %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {% endblock js %}
+
+
