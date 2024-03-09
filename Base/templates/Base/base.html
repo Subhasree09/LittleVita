@@ -98,11 +98,11 @@
     </div>
   </nav>
 
-    {% for message in messages %}
-    <div class="notification text-center" id="message-box">
-      <div id="text-message" class="message">{{message}}</div>
-    </div>
-    {% endfor %}
+  {% if messages %}
+  {% for message in messages %}
+      <span {% if message.tags %} class="{{message.tags}} notification" {% endif %} >{{message}}</span> 
+  {% endfor %}
+  {% endif %}
 
 
   {% block body %}
