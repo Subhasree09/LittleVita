@@ -161,8 +161,10 @@ h1{
 
   .custom-doctors .custom-member {
     position: relative;
-    box-shadow: 0px 2px 15px rgba(44, 73, 100, 0.08);
+    box-shadow: 3px 4px 13px 7px rgba(44, 73, 100, 0.08);
     padding: 30px;
+    /* border: #1977cc solid 1px; */
+    margin: 2rem;
     border-radius: 10px;
   }
 

@@ -62,7 +62,6 @@
                             <th>Date of Birth</th>
                             <th>Age</th> <!-- Add Age column here -->
                             <th>Vaccines Taken</th>
-                            <th>Vaccines Pending</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -71,8 +70,11 @@
                             <td>{{child.child_name}}</td>
                             <td>{{child.date_of_birth}}</td>
                             <td>{{child.age}}</td> <!-- Add Age value here -->
-                            <td>DTaP, MMR</td>
-                            <td>Polio, Hepatitis B</td>
+                            <td>
+                                {% for vaccine in child.vaccines_taken %}
+                                    {{vaccine}} {% if not forloop.last %}, {% endif %}
+                                {% endfor %}
+                            </td>
                         </tr>
                         {% endfor %}
                         <!-- Add more rows as needed -->
