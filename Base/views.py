@@ -125,10 +125,16 @@ def home(request):
         ask = request.POST.get('question')
         API_KEY = config('API_KEY')
         openai.api_key = API_KEY
-
+        prompt = f"""My website is a platform for managing children's vaccination schedules. 
+                    And parent can add their children, manage their vaccination schedules, 
+                    and track their vaccination status. And they and search about the nutrition, 
+                    diseases, doctors, and vaccines.Here, parents can add their children, 
+                    manage their vaccination schedules, and track their vaccination status. 
+                    anyother question that is not related to our web site will return a response 
+                    that you can't do that. User's question: {ask}"""
         completion = openai.completions.create(
             model="gpt-3.5-turbo-instruct",
-            prompt=ask,
+            prompt=prompt,
             temperature=1,
             max_tokens=256,
             top_p=1,
