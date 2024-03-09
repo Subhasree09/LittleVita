@@ -4,3 +4,245 @@ h1{
     text-align: center;
     margin-top: 100px;
 }
+
+    /*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+.custom-body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+  }
+
+  .custom-link {
+    color: #1977cc;
+    text-decoration: none;
+  }
+
+  .custom-link:hover {
+    color: #3291e6;
+    text-decoration: none;
+  }
+
+  .custom-heading h1,
+  .custom-heading h2,
+  .custom-heading h3,
+  .custom-heading h4,
+  .custom-heading h5,
+  .custom-heading h6 {
+    font-family: "Raleway", sans-serif;
+  }
+
+  /*--------------------------------------------------------------
+# Top Bar
+--------------------------------------------------------------*/
+  .custom-topbar {
+    background: #fff;
+    height: 40px;
+    font-size: 14px;
+    transition: all 0.5s;
+    z-index: 996;
+  }
+
+  .custom-topbar.custom-topbar-scrolled {
+    top: -40px;
+  }
+
+  .custom-topbar .custom-contact-info a {
+    line-height: 1;
+    color: #444444;
+    transition: 0.3s;
+  }
+
+  .custom-topbar .custom-contact-info a:hover {
+    color: #3fbbc0;
+  }
+
+  .custom-topbar .custom-contact-info i {
+    color: #3fbbc0;
+    padding-right: 4px;
+    margin-left: 15px;
+    line-height: 0;
+  }
+
+  .custom-topbar .custom-contact-info i:first-child {
+    margin-left: 0;
+  }
+
+  .custom-topbar .custom-social-links a {
+    color: #437099;
+    padding-left: 15px;
+    display: inline-block;
+    line-height: 1px;
+    transition: 0.3s;
+  }
+
+  .custom-topbar .custom-social-links a:hover {
+    color: #1977cc;
+  }
+
+  .custom-topbar .custom-social-links a:first-child {
+    border-left: 0;
+  }
+
+  /*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+  .custom-header {
+    background: #fff;
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 15px 0;
+    top: 40px;
+    box-shadow: 0px 2px 15px rgba(25, 119, 204, 0.1);
+  }
+
+  .custom-header.custom-header-scrolled {
+    top: 0;
+  }
+
+  /*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+  .custom-section {
+    padding: 60px 0;
+    overflow: hidden;
+  }
+
+  .custom-section-bg {
+    background-color: #f1f7fd;
+  }
+
+  .custom-section-title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  .custom-section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #FF0044;
+  }
+
+  .custom-section-title h2::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+  }
+
+  .custom-section-title h2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #FF0044;
+    bottom: 0;
+    left: calc(50% - 20px);
+  }
+
+  .custom-section-title p {
+    margin-bottom: 0;
+  }
+
+  /*--------------------------------------------------------------
+# Doctors
+--------------------------------------------------------------*/
+  .custom-doctors {
+    background: #fff;
+  }
+
+  .custom-doctors .custom-member {
+    position: relative;
+    box-shadow: 0px 2px 15px rgba(44, 73, 100, 0.08);
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .custom-doctors .custom-member .custom-pic {
+    overflow: hidden;
+    width: 400px;
+    border-radius: 50%;
+  }
+
+  .custom-doctors .custom-member .custom-pic img {
+    transition: ease-in-out 0.3s;
+  }
+
+  .custom-doctors .custom-member:hover img {
+    transform: scale(1.1);
+  }
+
+  .custom-doctors .custom-member .custom-member-info {
+    padding-left: 30px;
+  }
+
+  .custom-doctors .custom-member h4 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #2c4964;
+  }
+
+  .custom-doctors .custom-member span {
+    display: block;
+    font-size: 15px;
+    padding-bottom: 10px;
+    position: relative;
+    font-weight: 500;
+  }
+
+  .custom-doctors .custom-member span::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: #FF7EA2;
+    bottom: 0;
+    left: 0;
+  }
+
+  .custom-doctors .custom-member p {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+  }
+
+  .custom-doctors .custom-member .custom-social {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .custom-doctors .custom-member .custom-social a {
+    transition: ease-in-out 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    width: 32px;
+    height: 32px;
+    background: #FF7EA2;
+  }
+
+  .custom-doctors .custom-member .custom-social a i {
+    color: #fff;
+    font-size: 16px;
+    margin: 0 2px;
+  }
+
+  .custom-doctors .custom-member .custom-social a:hover {
+    background: #FF0044;
+  }
+
+  .custom-doctors .custom-member .custom-social a+a {
+    margin-left: 8px;
+  }

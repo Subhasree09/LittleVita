@@ -171,8 +171,8 @@ def awarness(request):
 def blog(request):
     return render(request, 'Base/blog.html')
 
-def contact(request):
-    return render(request, 'Base/contact.html')
+def feedback(request):
+    return render(request, 'Base/feedback.html')
 
 def doctors(request):
     context={}

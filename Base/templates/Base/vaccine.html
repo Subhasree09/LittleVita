@@ -6,14 +6,76 @@
 {% endblock title %}
 
 {% block css %}
-    <link rel="stylesheet" href={% static "Base/css/awarness.css" %}>
+    <link rel="stylesheet" href={% static "Base/css/vaccine.css" %}>
 {% endblock css %}
 
 {% block body %}
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Vaccine</h1>
+                <!-- ======= Top Bar ======= -->
+
+              <div class="d-none d-lg-flex custom-social-links align-items-center">
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+  <!-- ======= Doctors Section ======= -->
+  <section id="doctors" class="custom-doctors">
+    <div class="container">
+
+      <div class="custom-section-title">
+        <h2 class="pt-5">Vaccine Information</h2>
+        <p>A preparation that is used to stimulate the body's immune response against diseases.</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-6">
+          <div class="custom-member d-flex align-items-start">
+            <div class="custom-pic"><img src={% static "Base/media/1.jpg" %} class="img-fluid" alt=""></div>
+            <div class="custom-member-info">
+              <h4>Engerix-B</h4>
+              <span>Hepatitis B Vaccine</span>
+              <p><b>Manufacturer:</b> GlaxoSmithKline (GSK)</p>
+              <p><b>Description:</b> Engerix-B is a recombinant hepatitis B vaccine. It contains a surface antigen
+                (HBsAg).</p>
+              <p><b>Disease Targeted:</b> Hepatitis B</p>
+              <p><b>Storage Requirement:</b> Should refrigerate at a specific temperature range</p>
+              <p><b>Side Effects:</b> Mild and include pain or swelling at the injection site, low-grade fever, or
+                fatigue.</p>
+              <p><b>Additional Notes:</b> The Hepatitis B vaccine is often included in routine immunization schedules
+                worldwide.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <div class="custom-member d-flex align-items-start">
+            <div class="custom-pic"><img src={% static "Base/media/2.jpg" %} class="img-fluid" alt=""></div>
+            <div class="custom-member-info">
+              <h4>Daptacel</h4>
+              <span>DTaP Vaccine</span>
+              <p><b>Manufacturer:</b> Sanofi Pasteur</p>
+              <p><b>Description:</b> Contains inactivated toxins or components of the bacteria that cause diphtheria,
+                tetanus, and pertussis.</p>
+              <p><b>Diseases Targeted:</b> a) Diphtheria b) Tetanus c) Pertussis</p>
+              <p><b>Storage Requirement:</b> Should refrigerate at a specific temperature range</p>
+              <p><b>Side Effects:</b> Mild and may include pain or swelling at the injection site, fever, and fussiness.
+              </p>
+              <p><b>Additional Notes:</b> DTaP vaccine is a standard childhood vaccine and is usually administered in a
+                series of doses during infancy.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Doctors Section -->
             </div>
         </div>
     </div>
