@@ -62,7 +62,10 @@
                 <div id="debt-amount-pos"></div>
             </div>
         </form>
-        <button type="submit">Vaccine Schedule</button>
+        <form class="custom-form" action="{% url 'vaccine-schedule' %}" method="get">
+            <button type="submit">Vaccine Schedule</button>
+        </form>
+        
     </div>
 </div>
 
