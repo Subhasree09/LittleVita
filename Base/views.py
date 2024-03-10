@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 import openai
 from django.http import JsonResponse
-from .models import Parent, Child, Disease, Doctor, Nutrition, Vaccine, VaccineStatus
+from .models import Parent, Child, Disease, Doctor, Nutrition, Vaccine, VaccineStatus, Review
 from decouple import config
 from datetime import date, datetime
 
@@ -185,7 +185,23 @@ def blog(request):
     return render(request, 'Base/blog.html')
 
 def feedback(request):
-    return render(request, 'Base/feedback.html')
+    context={}
+    if request.method == 'POST':
+        if not request.user.is_authenticated:
+            messages.error(request, 'You are not logged in')
+            return redirect('login')
+        else:
+            message = request.POST.get('message')
+            ratings = int(request.POST.get('rate'))
+            user_rating = Review.objects.create(user=request.user, rating=ratings, review=message)
+            user_rating.save()
+            messages.success(request, 'Feedback submitted successfully')
+            return redirect('feedback')
+    else:
+        reviews = Review.objects.all()
+        context['reviews'] = reviews
+        
+        return render(request, 'Base/feedback.html', context)
 
 def doctors(request):
     context={}

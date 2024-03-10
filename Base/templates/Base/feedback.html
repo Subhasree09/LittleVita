@@ -18,19 +18,11 @@
     <div class="row-1">
         <div class="container">
             <div class="wrapper">
-                <form action="">
+                <form action="" method='post'> {% csrf_token %}
                     <h3>Rate This Website!</h3>
                     <h4>Let us know what you think!</h4>
                     <div class="input-box">
-                        <input type="text" placeholder="Name" required>
-                        <i class='bx bxs-user'></i>
-                    </div>
-                    <div class="input-box">
-                        <input type="text" placeholder="Email-Id" required>
-                        <i class='bx bxs-envelope'></i>
-                    </div>
-                    <div class="input-box">
-                        <textarea id="Message" rows="4" placeholder="Describe your experience" required></textarea>
+                        <textarea id="Message" rows="4" name="message" placeholder="Describe your experience" required></textarea>
                     </div>
                     <br>
                     <!-- <fieldset> -->
@@ -63,77 +55,39 @@
         <div class="testimonial">
             <div class="small-container">
                 <div class="row review-container">
+                    {% for review  in reviews %}
                     <div class="col-3">
                         <i class="fa fa-quote-left"></i>
-                        <p>Any of Conscious Skincare’s mature range will do the trick for wintry months. They are called
-                            moisturisers,
-                            but that’s an understatement! They behave like a supersonic balm in my opinion!</p>
+                        <p>{{review.review}}</p>
                         <div class="rating">
+                            {% if review.rating is 5 %}
+                            <i class="fa fa-star"></i> 
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
+                            {% elif review.rating is 4 %} 
+                            <i class="fa fa-star"></i> 
                             <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            {% elif review.rating is 3 %} 
+                            <i class="fa fa-star"></i> 
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            {% elif review.rating is 2 %} 
+                            <i class="fa fa-star"></i> 
+                            <i class="fa fa-star"></i>
+                            {% elif review.rating is 1 %}
+                            <i class="fa fa-star"></i>
+                            {% endif %}
+
                         </div>
-                        <img src="Image/User1.jpg">
-                        <h3>Mabel Joe</h3>
+                        
+                        <h3>{{review.user}}</h3>
                     </div>
-                    <div class="col-3">
-                        <i class="fa fa-quote-left"></i>
-                        <p>Conscious Skincare packages all their products in recyclable materials and offer a unique,
-                            high quality brand that we feel a perfect match for the excellence of The Royal Ballet.</p>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="bi bi-star"></i>
-                        </div>
-                        <img src="Image/User2.jpg">
-                        <h3>Sean Parker</h3>
-                    </div>
-                    <div class="col-3">
-                        <i class="fa fa-quote-left"></i>
-                        <p>Conscious Skincare packages all their products in recyclable materials and offer a unique,
-                            high quality brand that we feel a perfect match for the excellence of The Royal Ballet.</p>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-o"></i>
-                        </div>
-                        <img src="Image/User2.jpg">
-                        <h3>Sean Parker</h3>
-                    </div>
-                    <div class="col-3">
-                        <i class="fa fa-quote-left"></i>
-                        <p>Conscious Skincare packages all their products in recyclable materials and offer a unique,
-                            high quality brand that we feel a perfect match for the excellence of The Royal Ballet.</p>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <img src="Image/User2.jpg">
-                        <h3>Sean Parker</h3>
-                    </div>
-                    <div class="col-3">
-                        <i class="fa fa-quote-left"></i>
-                        <p>'Love the smell!! Fantastic products! Great present for my other half who loved them also,
-                            will definitely be buying again :-)
-                            love the little bag they come in with nice printed lining! Just fantastic! Thank you!</p>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <img src="Image/User3.jpg">
-                        <h3>Mike Smith</h3>
-                    </div>
+                    {% endfor %}
+                    
                 </div>
             </div>
         </div>
