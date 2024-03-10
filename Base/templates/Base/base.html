@@ -89,7 +89,13 @@
 
   {% if messages %}
   {% for message in messages %}
-      <span {% if message.tags %} class="{{message.tags}} notification" {% endif %} >{{message}}</span> 
+    <div class="message-box">
+      <span {% if message.tags %} class="{{message.tags}} notification" {% endif %} >
+        {{message}} 
+        <button class='cancel-message'>X</button>
+      </span>
+       
+    </div>
   {% endfor %}
   {% endif %}
 
@@ -103,21 +109,6 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src={% static "Base/js/script.js" %}></script>
-
-  <script>
-    setTimeout(function() {
-      var errorElement = document.querySelector('.error');
-      if (errorElement) {
-        location.reload(true);
-      }
-    }, 5000);
-    setTimeout(function(){
-      var successElement=document.querySelector('.success');
-      if(successElement){
-        location.reload(true);
-      }
-    },5000);
-  </script>
 
   {% block js %}{% endblock js %}
 
