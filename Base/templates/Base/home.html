@@ -62,9 +62,10 @@
                 <div id="debt-amount-pos"></div>
             </div>
         </form>
-        <form class="custom-form" action="{% url 'vaccine-schedule' %}" method="get">
+        {% comment %} <form class="custom-form" action="{% url 'vaccine-schedule' %}" method="get">
             <button type="submit">Vaccine Schedule</button>
-        </form>
+        </form> {% endcomment %}
+        <a href= {% url 'vaccine-schedule' %} class="scbutton "> <button type="submit" class="btn btn-primary">Vaccine Schedule</button> </a>
         
     </div>
 </div>
