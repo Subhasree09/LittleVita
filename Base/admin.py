@@ -61,3 +61,9 @@ class DayAdmin(admin.ModelAdmin):
     list_display = ['name']
     search_fields = ['name']
     list_filter = ['name']
+
+@admin.register(models.Review)
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ['user', 'rating', 'review', 'created_at']
+    search_fields = ['user']
+    list_filter = ['user']
