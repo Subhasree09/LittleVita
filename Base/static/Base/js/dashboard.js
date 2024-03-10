@@ -10,3 +10,17 @@ document.getElementById('childForm').addEventListener('submit', function (event)
     // console.log('ChildAge:', childAge);
     $('#addChildModal').modal('hide');
 });
+
+
+// Add this JavaScript code to your existing scripts
+
+document.getElementById('openFormBtn').addEventListener('click', function() {
+    document.getElementById('popupFormContainer').style.display = 'block';
+    document.querySelector('.overlay').style.display = 'block';
+});
+
+document.getElementById('closeFormBtn').addEventListener('click', function() {
+    document.getElementById('popupFormContainer').style.display = 'none';
+    document.querySelector('.overlay').style.display = 'none';
+});
+
