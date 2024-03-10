@@ -31,8 +31,24 @@
                 <div class="dashboard-content-item"><strong>Name:</strong> {{parent.first_name|capfirst}} {{parent.last_name|capfirst}}</div>
                 <div class="dashboard-content-item"><strong>Email:</strong> {{parent.email}}</div>
                 <div class="dashboard-content-item"><strong>Contact Number:</strong> {{parent.phone_number}}</div>
-                <button class="btn primary-btn add-child-button" data-bs-toggle="modal"
+                <button class="btn primary-btn add-child-button btn btn-success" data-bs-toggle="modal"
                     data-bs-target="#addChildModal">Add New Child</button>
+                    <h2 class="mt-3">Vaccine Details</h2>
+
+                        <button id="openFormBtn" class="btn btn-success">Add Vaccine Details</button>
+                            <div id="popupFormContainer" class="container-fluid popup-form">
+                                <form action="" method="post">{% csrf_token %}
+                                    {% for field in vaccine_status %}
+                                         {% if not field.field.widget.input_type == 'hidden' %}
+                                             <div class="form-group">
+                                                  {{field.label_tag}} {{field}} <small class='text-warning'>{{field.errors|striptags}}</small>
+                                                </div>
+        {% endif %}
+        {% endfor %}
+        <button type="submit" class="btn btn-success ">Save</button>
+        <button id="closeFormBtn" class="btn btn-secondary">Close Form</button>
+</form>
+</div>
             </div>
         </div>
     </div>
@@ -120,16 +136,6 @@
 </div>
 </div>
 
-<form action="" method="post">{% csrf_token %}
-    {% for field in vaccine_status %}
-        {% if not field.field.widget.input_type == 'hidden' %}
-        <div class="form-group">
-            {{field.label_tag}} {{field}} <small class='text-warning'>{{field.errors|striptags}}</small>
-        </div>
-        {% endif %}
-        {% endfor %}
-        <button type="submit">Save</button>
-</form>
 {% include "Base/footer.html" %}
 {% endblock body %}
 
