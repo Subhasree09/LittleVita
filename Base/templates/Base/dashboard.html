@@ -93,12 +93,12 @@
                             <td>{{child.date_of_birth}}</td>
                             <td>{{child.age}}</td> <!-- Add Age value here -->
                             <td class='vaccine-taken'>
-                                {% for vaccine in child.vaccines_taken %}
                                 <ol>
-                                    <li>{{vaccine}}</li>
+                                    {% for vaccine in child.vaccines_taken %}
+                                        <li>{{vaccine}}</li>
+                                    {% endfor %}
                                 </ol>
                                     
-                                {% endfor %}
                             </td>
                         </tr>
                         {% endfor %}

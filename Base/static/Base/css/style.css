@@ -17,6 +17,22 @@ body{
   background-color: #FF4D7B;
   color: #fff !important;
 }
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* This ensures that the navbar stays on top of other elements */
+  
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s;
+}
+
+.navbar.hide {
+  top: -100px;
+}
 
 .error{
   color:red;

@@ -137,7 +137,7 @@ def home(request):
         ask = request.POST.get('question')
         API_KEY = config('API_KEY')
         openai.api_key = API_KEY
-        prompt = f"""My website is a platform for managing children's vaccination schedules. 
+        prompt = f"""My website named LittleVita is a platform for managing children's vaccination schedules. 
                     And parent can add their children, manage their vaccination schedules, 
                     and track their vaccination status. And they can search about the nutrition, 
                     diseases, doctors, and vaccines.Here, parents can add their children, 
