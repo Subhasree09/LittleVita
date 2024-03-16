@@ -24,7 +24,7 @@
 <body>
 
   {% comment %} Navbar {% endcomment %}
-    <nav class="navbar navbar-expand-lg bg-body-tertiary blue-200">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary blue-200 sticky-navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href={% url "home" %} style="color: #FF4D7B;">LittleVita</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,9 +86,9 @@
     </div>
   </nav>
 
-  {% if messages %}
+
   {% for message in messages %}
-    <div class="message-box">
+    <div class="message-box" style="">
       <span {% if message.tags %} class="{{message.tags}} notification" {% endif %} >
         {{message}} 
         <button class='cancel-message'>X</button>
@@ -96,7 +96,7 @@
        
     </div>
   {% endfor %}
-  {% endif %}
+
 
 
   {% block body %}
