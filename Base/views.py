@@ -8,9 +8,16 @@ from django.contrib.auth.decorators import login_required
 import openai
 import google.generativeai as genai
 from django.http import JsonResponse
-from .models import Parent, Child, Disease, Doctor, Nutrition, Vaccine, VaccineStatus, Review
+from .models import Parent, Child, Disease, Doctor, Nutrition, Vaccine, VaccineStatus, Review, Hospital
 from decouple import config
 from datetime import date, datetime
+import json
+
+# Set the Gemini API key
+GOOGLE_API_KEY=config('GOOGLE_API_KEY')
+genai.configure(api_key=GOOGLE_API_KEY)
+model = genai.GenerativeModel('gemini-pro')
+
 
 # Create your views here.
 def loginUser(request):
@@ -139,9 +146,6 @@ def home(request):
     context['answer'] = answer
     if request.method == "POST":
         ask = request.POST.get('question')
-        GOOGLE_API_KEY=config('GOOGLE_API_KEY')
-        genai.configure(api_key=GOOGLE_API_KEY)
-        model = genai.GenerativeModel('gemini-pro')
         response = model.generate_content(f"""
                 I am an AI developed for a website named LittleVita, a platform dedicated to managing children's vaccination schedules and providing information about newborn baby health. 
                 I can provide information about adding children, managing their vaccination schedules, tracking their vaccination status, and searching for information about nutrition, diseases, doctors, and vaccines specifically for newborn babies. 
@@ -270,4 +274,40 @@ def vaccine_schedule(request):
 def hospital(request):
     context={}
     context['activeHospital']='activate'
+    if request.method == 'GET':
+        if 'q' in request.GET:
+            q = request.GET['q']
+
+            # access hospital from database and filter it with the query
+            hospital = Hospital.objects.filter(hospital_name__icontains=q)
+            city = Hospital.objects.filter(city__icontains=q)
+            hospitals = hospital.union(city)
+    
+            # access hospital from gemini api 
+            response = model.generate_content(f"""
+                generate hospitals information for {q} in a json format.
+                The information must contain hospital_name, address, phone_number".
+                Do not write  any other information such as json or python and so on.
+                only write the information in json string  format so that i can easily convert json to python dict.
+                """)
+            print(response.text)
+            # print(type(response.text))
+
+            gemini_hospitals = json.loads(response.text)
+            first_key = list(gemini_hospitals.keys())[0]
+            gemini_hospitals = gemini_hospitals[first_key]
+
+            print(gemini_hospitals)
+            # print(type(gemini_hospitals))
+
+            if hospitals.count() == 0 and len(gemini_hospitals) == 0:
+                messages.error(request, 'No results found')
+            else:
+                context['hospitals'] = hospitals
+                context['gemini_hospitals'] = gemini_hospitals
+                return render(request, 'Base/hospital.html', context)
+            
+        
+    hospital = Hospital.objects.all()
+    context['hospitals'] = hospital
     return render(request, 'Base/hospital.html', context)
