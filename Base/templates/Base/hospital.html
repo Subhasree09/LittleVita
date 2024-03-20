@@ -6,7 +6,7 @@
 {% endblock title %}
 
 {% block css %}
-<link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+{% comment %} <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" /> {% endcomment %}
 <link rel="stylesheet" href={% static "Base/css/hospital.css" %}>
 {% endblock css %}
 
@@ -27,134 +27,42 @@
   </header>
 
 
-
   <div class="container">
+    <form method="GET" action="" class='search-bar'>
+      <input type="text" name="q" placeholder="Search diseases..." class="user-input ">
+      <input type="submit" value="Search" class="btn btn-outline-warning search-btn">
+    </form>
     <h2 class="text-center mt-5 mb-4">Hospital Information</h2>
     <div class="row">
-      <!-- Hospital Card 1 -->
-      <div class="col-md-4">
-        <div class="card hospital-card">
-          <img src="Hospital-de-Bellvitge.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Hospital 1</h5>
-            <p class="card-text">Phone: 123-456-7890</p>
-            <p class="card-text">Location: 128 Vivekanada Road,  Kolkata, India</p>
-            <p class="card-text">Availability: Mon-Sat 9am-5pm</p>
-            <p class="card-text">Doctor: Dr. Roy</p>
-            <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
-          </div>
-        </div>
-      </div>
 
-      <!-- Hospital Card 2 -->
+      <!-- Hospital Card  -->
+      {% for hospital in hospitals  %}
       <div class="col-md-4">
         <div class="card hospital-card">
-          <img src="Hoshiarpur_home.png" class="card-img-top" alt="...">
+          <img src={{hospital.image.url}} class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Hospital 2</h5>
-            <p class="card-text">Phone: 987-654-3210</p>
-            <p class="card-text">Location: 456 Elm Bose St, Kolkata, India</p>
-            <p class="card-text">Availability: Mon-Fri 9am-5pm</p>
-            <p class="card-text">Doctor: Dr. Sen</p>
+            <h5 class="card-title">{{hospital.hospital_name}}</h5>
+            <p class="card-text">Phone: {{hospital.phone_number}}</p>
+            <p class="card-text">Location: {{hospital.address}}</p>
             <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
           </div>
         </div>
       </div>
+      {% endfor %}      
 
-      <!-- Hospital Card 3 -->
+      {% for hospital in gemini_hospitals  %}
       <div class="col-md-4">
         <div class="card hospital-card">
-          <img src="Hospital-de-Bellvitge.jpg" class="card-img-top" alt="...">
+          <img src={% static "Base/media/default_hospital.jpeg" %} class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Hospital 3</h5>
-            <p class="card-text">Phone: 855-555-7855</p>
-            <p class="card-text">Location: 782 Bangur Avenue, City, Country</p>
-            <p class="card-text">Availability: Mon-Sun 10am-8pm</p>
-            <p class="card-text">Doctor: Dr. Samanta</p>
+            <h5 class="card-title">{{hospital.hospital_name}}</h5>
+            <p class="card-text">Phone: {{hospital.phone_number}}</p>
+            <p class="card-text">Location: {{hospital.address}}</p>
             <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card hospital-card">
-          <img src="Hospital-de-Bellvitge.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Hospital 4</h5>
-            <p class="card-text">Phone: 555-555-5555</p>
-            <p class="card-text">Location: 789 Oak St, City, Country</p>
-            <p class="card-text">Availability: Sat-Sun 10am-8pm</p>
-            <p class="card-text">Doctor: Dr. Williams</p>
-            <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card hospital-card">
-          <img src="Hoshiarpur_home.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Hospital 5</h5>
-            <p class="card-text">Phone: 555-555-5555</p>
-            <p class="card-text">Location: 789 Oak St, City, Country</p>
-            <p class="card-text">Availability: Sat-Sun 10am-8pm</p>
-            <p class="card-text">Doctor: Dr. Williams</p>
-            <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card hospital-card">
-          <img src="Hospital-de-Bellvitge.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Hospital 6</h5>
-            <p class="card-text">Phone: 955-855-5055</p>
-            <p class="card-text">Location: 67 Sk Deb Road,  Kolkata, India</p>
-            <p class="card-text">Availability: Mon-Sun 10am-8pm</p>
-            <p class="card-text">Doctor: Dr. Gupta</p>
-            <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card hospital-card">
-          <img src="Hoshiarpur_home.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Hospital 7</h5>
-            <p class="card-text">Phone: 555-555-5555</p>
-            <p class="card-text">Location: 123 Armherst Street,  Kolkata, India</p>
-            <p class="card-text">Availability: Mon-Sun 10am-8pm</p>
-            <p class="card-text">Doctor: Dr. Debnath</p>
-            <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card hospital-card">
-          <img src="Hospital-de-Bellvitge.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Hospital 8</h5>
-            <p class="card-text">Phone: 555-555-5555</p>
-            <p class="card-text">Location: 789 Oak St, City, Country</p>
-            <p class="card-text">Availability: Sat-Sun 10am-8pm</p>
-            <p class="card-text">Doctor: Dr. Williams</p>
-            <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card hospital-card">
-          <img src="Hoshiarpur_home.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Hospital 9</h5>
-            <p class="card-text">Phone: 555-555-5555</p>
-            <p class="card-text">Location: 789 BB Sarani Road,Kolkata, India</p>
-            <p class="card-text">Availability: Mon-Sun 10am-8pm</p>
-            <p class="card-text">Doctor: Dr. Das</p>
-            <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
-          </div>
-        </div>
-      </div>
-
-      
+      {% endfor %}      
 
     </div>
   </div>

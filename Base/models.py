@@ -139,6 +139,7 @@ class Hospital(models.Model):
     state = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=20)
+    image = models.ImageField(upload_to='hospital_images/', default='default_hospital.jpeg')
     # Add other fields as needed
 
     def __str__(self):
