@@ -1,0 +1,212 @@
+{% extends "Base/base.html" %}
+{% load static %}
+
+{% block title %}
+    Hospitals
+{% endblock title %}
+
+{% block css %}
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+<link rel="stylesheet" href={% static "Base/css/hospital.css" %}>
+{% endblock css %}
+
+{% block body %}
+<header class="s-header-bg">
+    <div class="s-container s-h-container">
+      <div class="s-header-content">
+        <h1>Providing an Exceptional Patient Experience</h1>
+        <p>
+          Welcome, where exceptional patient experiences are our priority.
+          With compassionate care, state-of-the-art facilities, and a
+          patient-centered approach, we're dedicated to your well-being. Trust
+          us with your health and experience the difference.
+        </p>
+      </div>
+
+    </div>
+  </header>
+
+
+
+  <div class="container">
+    <h2 class="text-center mt-5 mb-4">Hospital Information</h2>
+    <div class="row">
+      <!-- Hospital Card 1 -->
+      <div class="col-md-4">
+        <div class="card hospital-card">
+          <img src="Hospital-de-Bellvitge.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Hospital 1</h5>
+            <p class="card-text">Phone: 123-456-7890</p>
+            <p class="card-text">Location: 128 Vivekanada Road,  Kolkata, India</p>
+            <p class="card-text">Availability: Mon-Sat 9am-5pm</p>
+            <p class="card-text">Doctor: Dr. Roy</p>
+            <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hospital Card 2 -->
+      <div class="col-md-4">
+        <div class="card hospital-card">
+          <img src="Hoshiarpur_home.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Hospital 2</h5>
+            <p class="card-text">Phone: 987-654-3210</p>
+            <p class="card-text">Location: 456 Elm Bose St, Kolkata, India</p>
+            <p class="card-text">Availability: Mon-Fri 9am-5pm</p>
+            <p class="card-text">Doctor: Dr. Sen</p>
+            <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hospital Card 3 -->
+      <div class="col-md-4">
+        <div class="card hospital-card">
+          <img src="Hospital-de-Bellvitge.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Hospital 3</h5>
+            <p class="card-text">Phone: 855-555-7855</p>
+            <p class="card-text">Location: 782 Bangur Avenue, City, Country</p>
+            <p class="card-text">Availability: Mon-Sun 10am-8pm</p>
+            <p class="card-text">Doctor: Dr. Samanta</p>
+            <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card hospital-card">
+          <img src="Hospital-de-Bellvitge.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Hospital 4</h5>
+            <p class="card-text">Phone: 555-555-5555</p>
+            <p class="card-text">Location: 789 Oak St, City, Country</p>
+            <p class="card-text">Availability: Sat-Sun 10am-8pm</p>
+            <p class="card-text">Doctor: Dr. Williams</p>
+            <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card hospital-card">
+          <img src="Hoshiarpur_home.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Hospital 5</h5>
+            <p class="card-text">Phone: 555-555-5555</p>
+            <p class="card-text">Location: 789 Oak St, City, Country</p>
+            <p class="card-text">Availability: Sat-Sun 10am-8pm</p>
+            <p class="card-text">Doctor: Dr. Williams</p>
+            <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card hospital-card">
+          <img src="Hospital-de-Bellvitge.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Hospital 6</h5>
+            <p class="card-text">Phone: 955-855-5055</p>
+            <p class="card-text">Location: 67 Sk Deb Road,  Kolkata, India</p>
+            <p class="card-text">Availability: Mon-Sun 10am-8pm</p>
+            <p class="card-text">Doctor: Dr. Gupta</p>
+            <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card hospital-card">
+          <img src="Hoshiarpur_home.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Hospital 7</h5>
+            <p class="card-text">Phone: 555-555-5555</p>
+            <p class="card-text">Location: 123 Armherst Street,  Kolkata, India</p>
+            <p class="card-text">Availability: Mon-Sun 10am-8pm</p>
+            <p class="card-text">Doctor: Dr. Debnath</p>
+            <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card hospital-card">
+          <img src="Hospital-de-Bellvitge.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Hospital 8</h5>
+            <p class="card-text">Phone: 555-555-5555</p>
+            <p class="card-text">Location: 789 Oak St, City, Country</p>
+            <p class="card-text">Availability: Sat-Sun 10am-8pm</p>
+            <p class="card-text">Doctor: Dr. Williams</p>
+            <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card hospital-card">
+          <img src="Hoshiarpur_home.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Hospital 9</h5>
+            <p class="card-text">Phone: 555-555-5555</p>
+            <p class="card-text">Location: 789 BB Sarani Road,Kolkata, India</p>
+            <p class="card-text">Availability: Mon-Sun 10am-8pm</p>
+            <p class="card-text">Doctor: Dr. Das</p>
+            <a href="#" class="btn btn-primary btn-book-ambulance">Book Ambulance</a>
+          </div>
+        </div>
+      </div>
+
+      
+
+    </div>
+  </div>
+
+  <!-- Modal Popup Form -->
+  <div id="modalForm" class="modal-form">
+    <div class="modal-content">
+      <span class="close" onclick="closeModalForm()">&times;</span>
+      <h2>Book Ambulance</h2>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name:</label>
+          <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number:</label>
+          <input type="tel" class="form-control" id="phone" required>
+        </div>
+        <div class="mb-3">
+          <label for="address" class="form-label">Address:</label>
+          <textarea class="form-control" id="address" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-book-ambulance">Submit</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock body %}
+
+
+{% block js %}
+    <script>
+
+    const modalForm = document.getElementById('modalForm');
+  
+    function openModalForm() {
+      modalForm.style.display = "block";
+    }
+  
+    function closeModalForm() {
+      modalForm.style.display = "none";
+    }
+  
+    window.onclick = function (event) {
+      if (event.target == modalForm) {
+        modalForm.style.display = "none";
+      }
+    }
+  
+    const bookAmbulanceButtons = document.querySelectorAll('.btn-book-ambulance');
+    bookAmbulanceButtons.forEach(button => {
+      button.addEventListener('click', openModalForm);
+    });
+  </script>
+{% endblock js %}

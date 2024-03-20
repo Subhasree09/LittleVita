@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 import openai
+import google.generativeai as genai
 from django.http import JsonResponse
 from .models import Parent, Child, Disease, Doctor, Nutrition, Vaccine, VaccineStatus, Review
 from decouple import config
@@ -75,6 +76,7 @@ def calculate_age(born):
 @login_required(login_url='login')
 def dashboard(request):
     context={}
+    context['activeDashboard']='activate'
     if request.user.is_authenticated:
         print("user is authenticated")
         if request.method == 'POST':
@@ -131,38 +133,36 @@ def dashboard(request):
         return redirect('login')
 
 def home(request):
+    context={}
+    context['activeHome']='activate'
     answer = "Hi, Mom! I am here to help you. Ask me anything."
-    context = {'answer':answer}
+    context['answer'] = answer
     if request.method == "POST":
         ask = request.POST.get('question')
-        API_KEY = config('API_KEY')
-        openai.api_key = API_KEY
-        prompt = f"""My website named LittleVita is a platform for managing children's vaccination schedules. 
-                    And parent can add their children, manage their vaccination schedules, 
-                    and track their vaccination status. And they can search about the nutrition, 
-                    diseases, doctors, and vaccines.Here, parents can add their children, 
-                    manage their vaccination schedules, and track their vaccination status.
-                    Any question related to healthcare will return a response. 
-                    anyother question that is not related to our website or healthcaare will return a response 
-                    that you can't do that. User's question: {ask}"""
-        completion = openai.completions.create(
-            model="gpt-3.5-turbo-instruct",
-            prompt=prompt,
-            temperature=1,
-            max_tokens=256,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0
-        )
+        GOOGLE_API_KEY=config('GOOGLE_API_KEY')
+        genai.configure(api_key=GOOGLE_API_KEY)
+        model = genai.GenerativeModel('gemini-pro')
+        response = model.generate_content(f"""
+                I am an AI developed for a website named LittleVita, a platform dedicated to managing children's vaccination schedules and providing information about newborn baby health. 
+                I can provide information about adding children, managing their vaccination schedules, tracking their vaccination status, and searching for information about nutrition, diseases, doctors, and vaccines specifically for newborn babies. 
+                I can help you find doctors and hospitals Who are not associated with our platform, LittleVita. 
+                However, I can't provide information that is not related to our website or newborn baby healthcare. 
+                User's question: {ask}
+                """)
+        print(response.text)
+
         # print(completion)
-        answer = (completion.choices[0].text)
-        context = {'answer':answer, 'ask':ask}
+        answer = (response.text)
+        context['answer'] = answer
+        context['ask'] = ask 
         return JsonResponse({'answer': answer})
 
-    return render(request, 'Base/home.html')
+
+    return render(request, 'Base/home.html',  context)
 
 def nutrition(request):
     context={}
+    context['activeNutrition']='activate'
     if request.method == 'GET':
         if 'q' in request.GET:
             q = request.GET['q']
@@ -179,13 +179,18 @@ def nutrition(request):
     return render(request, 'Base/nutrition.html', context)
 
 def awarness(request):
-    return render(request, 'Base/awarness.html')
+    context={}
+    context['activeAwarness']='activate'
+    return render(request, 'Base/awarness.html', context)
 
 def blog(request):
-    return render(request, 'Base/blog.html')
+    context={}
+    context['activeBlog']='activate'
+    return render(request, 'Base/blog.html', context)
 
 def feedback(request):
     context={}
+    context['activeFeedback']='activate'
     if request.method == 'POST':
         if not request.user.is_authenticated:
             messages.error(request, 'You are not logged in')
@@ -205,7 +210,7 @@ def feedback(request):
 
 def doctors(request):
     context={}
-
+    context['activeDoctors']='activate'
     if request.method == 'GET':
         if 'q' in request.GET:
             q = request.GET['q']
@@ -224,7 +229,8 @@ def doctors(request):
     return render(request, 'Base/doctors.html', context)
 
 def disease(request):
-
+    context={}
+    context['activeDisease']='activate'
     if request.method == 'GET':
         if 'q' in request.GET:
             q = request.GET['q']
@@ -239,21 +245,29 @@ def disease(request):
                 context = {'diseases':diseases}
                 return render(request, 'Base/disease.html', context)
     diseases = Disease.objects.all()
-    context = {'diseases':diseases}
+    context['diseases'] = diseases
 
 
 
     return render(request, 'Base/disease.html', context)
 
 def vaccine(request):
-
+    context={}
+    context['activeVaccine']='activate'
     vaccines= Vaccine.objects.all()
     context = {'vaccines':vaccines}
     return render(request, 'Base/vaccine.html', context)
 
 def vaccine_schedule(request):
-    return render(request, 'Base/vaccine_schedule.html')
+    context={}
+    context['activeVaccine']='activate'
+    return render(request, 'Base/vaccine_schedule.html', context)
 
 # def videos(request):
 #     return render(request, 'Base/videos.html')
 
+
+def hospital(request):
+    context={}
+    context['activeHospital']='activate'
+    return render(request, 'Base/hospital.html', context)
