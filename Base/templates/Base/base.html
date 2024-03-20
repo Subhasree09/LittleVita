@@ -33,39 +33,42 @@
         <div class="collapse navbar-collapse" id="#navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href={% url "home" %}>Home</a>
+              <a class="nav-link {{activeHome}} " aria-current="page" href={% url "home" %}>Home</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle {{activeVaccine}}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Vaccine
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href={% url "vaccine" %}>Vaccine Information</a></li>
-                <li><a class="dropdown-item" href={% url "vaccine-schedule" %}>Vaccine Schedule</a></li>
+                <li><a class="dropdown-item {{activeVaccine}}" href={% url "vaccine" %}>Vaccine Information</a></li>
+                <li><a class="dropdown-item {{activeVaccine}}" href={% url "vaccine-schedule" %}>Vaccine Schedule</a></li>
               </ul>
             </li>
             {% if request.user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href={% url "dashboard" %}>Dashboard</a>
+              <a class="nav-link {{activeDashboard}} " href={% url "dashboard" %}>Dashboard</a>
             </li>
             {% endif %}
             <li class="nav-item">
-              <a class="nav-link" href={% url "disease" %}>Disease</a>
+              <a class="nav-link {{activeDisease}}" href={% url "disease" %}>Disease</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href={% url "nutrition" %}>Nutrition</a>
+              <a class="nav-link {{activeNutrition}}" href={% url "nutrition" %}>Nutrition</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href={% url "doctors" %}>Doctors</a>
+              <a class="nav-link {{activeDoctors}}" href={% url "doctors" %}>Doctors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href={% url "awarness" %}>Awarness</a>
+              <a class="nav-link {{activeHospital}}" href={% url "hospital" %}>Hospitals</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href={% url "blog" %}>Blogs</a>
+              <a class="nav-link {{activeAwarness}}" href={% url "awarness" %}>Awarness</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href={% url "feedback" %}>Feedback</a>
+              <a class="nav-link {{activeBlog}}" href={% url "blog" %}>Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{activeFeedback}}"  href={% url "feedback" %}>Feedback</a>
             </li>
           </ul>
 

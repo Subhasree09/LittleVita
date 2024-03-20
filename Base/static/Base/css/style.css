@@ -33,6 +33,10 @@ body{
 .navbar.hide {
   top: -100px;
 }
+a.activate {
+  color: #3c85d2 !important;
+  font-weight: bold;
+}
 
 .error{
   color:red;

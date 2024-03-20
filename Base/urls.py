@@ -10,6 +10,7 @@ urlpatterns = [
     path('doctors/', views.doctors, name='doctors'),
     path('disease/', views.disease, name='disease'),
     path('vaccine/', views.vaccine, name='vaccine'),
+	path('hospital/', views.hospital, name='hospital'),
     # path('videos/', views.videos, name='videos'),
     path('login/', views.loginUser, name='login'),
     path('signup/', views.signupUser, name='signup'),
