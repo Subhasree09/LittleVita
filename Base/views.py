@@ -149,8 +149,9 @@ def home(request):
         response = model.generate_content(f"""
                 I am an AI developed for a website named LittleVita, a platform dedicated to managing children's vaccination schedules and providing information about newborn baby health. 
                 I can provide information about adding children, managing their vaccination schedules, tracking their vaccination status, and searching for information about nutrition, diseases, doctors, and vaccines specifically for newborn babies. 
-                I can help you find doctors and hospitals Who are not associated with our platform, LittleVita. 
-                However, I can't provide information that is not related to our website or newborn baby healthcare. 
+                I can help you find doctors and hospitals Who are not associated with our platform, LittleVita.
+                I can alsoo provide about website registration and login and opening any tab.  
+                However, I can't provide information that is not related to our website or baby upto healthcare. 
                 User's question: {ask}
                 """)
         print(response.text)
@@ -294,8 +295,11 @@ def hospital(request):
             # print(type(response.text))
 
             gemini_hospitals = json.loads(response.text)
-            first_key = list(gemini_hospitals.keys())[0]
-            gemini_hospitals = gemini_hospitals[first_key]
+            if len(gemini_hospitals) == 1:
+                first_key = list(gemini_hospitals.keys())[0]
+                gemini_hospitals = gemini_hospitals[first_key]
+            else:
+                gemini_hospitals = [gemini_hospitals]
 
             print(gemini_hospitals)
             # print(type(gemini_hospitals))
