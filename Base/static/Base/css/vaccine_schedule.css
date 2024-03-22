@@ -19,6 +19,9 @@
     padding-right: 25px;
  }
 
+ .card-body{
+   position: absolute;
+ }
  .row {
     display: flex;
     align-items: center;
