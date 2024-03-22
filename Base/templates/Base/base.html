@@ -24,80 +24,78 @@
 <body>
 
   {% comment %} Navbar {% endcomment %}
-    <nav class="navbar navbar-expand-lg bg-body-tertiary blue-200 sticky-navbar">
-      <div class="container-fluid">
-        <a class="navbar-brand" href={% url "home" %} style="color: #FF4D7B;">LittleVita</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="#navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
-            <li class="nav-item">
-              <a class="nav-link {{activeHome}} " aria-current="page" href={% url "home" %}>Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle {{activeVaccine}}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Vaccine
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item {{activeVaccine}}" href={% url "vaccine" %}>Vaccine Information</a></li>
-                <li><a class="dropdown-item {{activeVaccine}}" href={% url "vaccine-schedule" %}>Vaccine Schedule</a></li>
-              </ul>
-            </li>
-            {% if request.user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link {{activeDashboard}} " href={% url "dashboard" %}>Dashboard</a>
-            </li>
-            {% endif %}
-            <li class="nav-item">
-              <a class="nav-link {{activeDisease}}" href={% url "disease" %}>Disease</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {{activeNutrition}}" href={% url "nutrition" %}>Nutrition</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {{activeDoctors}}" href={% url "doctors" %}>Doctors</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {{activeHospital}}" href={% url "hospital" %}>Hospitals</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {{activeAwarness}}" href={% url "awarness" %}>Awarness</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {{activeBlog}}" href={% url "blog" %}>Blogs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {{activeFeedback}}"  href={% url "feedback" %}>Feedback</a>
-            </li>
-          </ul>
 
-          {% if request.user.is_authenticated %}
-          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a href={% url "logout" %} class="btn btn-danger me-md-2" role="button">Logout</a>
-          </div>
-          {% else %}
-          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a href={% url "login" %} class="btn btn-info me-md-2" role="button">Login</a>
-            <a href={% url "signup" %} class="btn btn-primary" role="button">Signup</a>
-          </div>
-          {% endif %}
-     
-          {% comment %} Multilingual support added {% endcomment %}
-           <div id="google_translate"></div>
-           <script type="text/javascript">
-               function googleTranslateInit(){
-                 new google.translate.TranslateElement({pageLanguage:'en',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate');
-               }
-           </script>
-           <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateInit">
-           </script>
-          
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href={% url "home" %} style="color: #FF4D7B;">LittleVita</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+        <li class="nav-item">
+          <a class="nav-link {{activeHome}} " aria-current="page" href={% url "home" %}>Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle {{activeVaccine}}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Vaccine
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item {{activeVaccine}}" href={% url "vaccine" %}>Vaccine Information</a></li>
+            <li><a class="dropdown-item {{activeVaccine}}" href={% url "vaccine-schedule" %}>Vaccine Schedule</a></li>
+          </ul>
+        </li>
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link {{activeDashboard}} " href={% url "dashboard" %}>Dashboard</a>
+        </li>
+        {% endif %}
+        <li class="nav-item">
+          <a class="nav-link {{activeDisease}}" href={% url "disease" %}>Disease</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{activeNutrition}}" href={% url "nutrition" %}>Nutrition</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{activeDoctors}}" href={% url "doctors" %}>Doctors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{activeHospital}}" href={% url "hospital" %}>Hospitals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{activeAwarness}}" href={% url "awarness" %}>Awarness</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{activeBlog}}" href={% url "blog" %}>Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{activeFeedback}}"  href={% url "feedback" %}>Feedback</a>
+        </li>
+      </ul>
+
+      {% if request.user.is_authenticated %}
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href={% url "logout" %} class="btn btn-danger me-md-2" role="button">Logout</a>
       </div>
-      
+      {% else %}
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href={% url "login" %} class="btn btn-info me-md-2" role="button">Login</a>
+        <a href={% url "signup" %} class="btn btn-primary" role="button">Signup</a>
+      </div>
+      {% endif %}
+
+      {% comment %} Multilingual support added {% endcomment %}
+      {% comment %} <div id="google_translate"></div>
+      <script type="text/javascript">
+          function googleTranslateInit(){
+            new google.translate.TranslateElement({pageLanguage:'en',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate');
+          }
+      </script>
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateInit">
+      </script> {% endcomment %}
     </div>
-     
-  </nav>
+  </div>
+</nav>
 
 
   {% for message in messages %}
