@@ -16,119 +16,144 @@
 
 {% block body %}
 
-<div class="contain" id="pagecontainer">
+<div class="all">
 
-    <img src={% static "Base/media/LittleVitaBanner.jpg" %} class="img-fluid banner-img" alt="img">
-{% comment %} Vaccine Chart {% endcomment %}
-<div class="container-fluid mt-5 ">
-    <div id="form-wrapper">
-        <form action="/p/quote.php" method="GET">
-            <h1 id="form-title"><b>Vaccination Chart</b></h1>
-            <div class="debtamnt" id="debt-amount-slider">
-                <input type="radio" name="debt-amount" id="1" value="1" required>
-                <label for="1" data-debt-amount="Birth"></label>
-                <input type="radio" name="debt-amount" id="2" value="2" required>
-                <label for="2" data-debt-amount="6 Weeks"></label>
-                <input type="radio" name="debt-amount" id="3" value="3" required>
-                <label for="3" data-debt-amount="10 Weeks"></label>
-                <input type="radio" name="debt-amount" id="4" value="4" required>
-                <label for="4" data-debt-amount="14 Weeks"></label>
-                <input type="radio" name="debt-amount" id="5" value="5" required>
-                <label for="5" data-debt-amount="6 Months"></label>
-                <input type="radio" name="debt-amount" id="6" value="6" required>
-                <label for="6" data-debt-amount="7 Months"></label>
-                <input type="radio" name="debt-amount" id="7" value="7" required>
-                <label for="7" data-debt-amount="9 Months"></label>
-                <input type="radio" name="debt-amount" id="8" value="8" required>
-                <label for="8" data-debt-amount="12 Months"></label>
-                <input type="radio" name="debt-amount" id="9" value="9" required>
-                <label for="9" data-debt-amount="15 Months"></label>
-                <div id="debt-amount-pos"></div>
-            </div>
-        </form>
-        {% comment %} <form class="custom-form" action="{% url 'vaccine-schedule' %}" method="get">
-            <button type="submit">Vaccine Schedule</button>
-        </form> {% endcomment %}
-        <a href= {% url 'vaccine-schedule' %} class="scbutton "> <button type="submit" class="btn btn-primary">Vaccine Schedule</button> </a>
-        
-    </div>
-</div>
+<body class="lv-body">
+    <header class="lv-header-text">
+        <h1>Little Vitta: Where Little Patients <br> Find Big Solutions.</h1>
+        <p>Nurturing Little lives, Where Tiny Patients Discover <br> Grand Solution for Health and Happyness.</p>
+    </header>
 
+    <div class="lv-img-design"></div>
 
-<!-- Service starts -->
-<section id="about" class="about">
-    <div class="section-heading ">
-        <h2>about Us</h2>
-    </div>
-    <div class="container">
-        <div class="about-content">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="single-about-txt">
-                        <h3>
-                            Welcome to LittleVita, your essential companion in navigating your newborn's vaccination and polio monitoring. Our user-friendly web application ensures you effortlessly track each vaccine, offering insights into diseases and recommended vaccinations.
-                        </h3>
-                        <p>
-                            Beyond this, LittleVita connects you directly with experienced doctors, providing a seamless channel for any questions or concerns. Join us in prioritizing your baby's health – LittleVita is not just an app; it's your partner in ensuring a healthy and happy start for your little one.
-                        </p>
-                        <p>
-                            Join us on this journey of safeguarding your baby's health. LittleVita is more than an app; it's a commitment to the well-being of your precious one. Let's navigate the path to a healthy and happy childhood together.
-                        </p>
-                        {% comment %} <div class="row">
-                            <div class="col-sm-4">
-                                <div class="single-about-add-info">
-                                    <h3>phone</h3>
-                                    <p>987-123-6547</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="single-about-add-info">
-                                    <h3>email</h3>
-                                    <p>browny@info.com</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="single-about-add-info">
-                                    <h3>website</h3>
-                                    <p>www.brownsine.com</p>
-                                </div>
-                            </div>
-                        </div> {% endcomment %}
-                    </div>
+    <div class="container pt-3 pb-5 mb-5">
+        <h1 class="mb-4" style="font-size: 3.75rem;">Vaccination Chart</h1>
+
+        <div class="card-group">
+            <!-- Card 1 -->
+            <div class="card lv-chart-card lv-card-1" style="border-bottom-right-radius: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                 </div>
-                <div class="col-sm-offset-1 col-sm-5">
-                    <div class="single-about-img">
-                        <img src={% static "Base/media/about-image.jpg" %} alt="profile_image">
+                <div class="lv-overlay"></div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card lv-chart-card lv-card-2"
+                style="border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    </p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+                <div class="lv-overlay"></div>
+            </div>
+            <!-- Card 3 -->
+            <div class="card lv-chart-card lv-card-3" style="border-bottom-left-radius: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This card has even longer content than the first to show that equal height
+                        action.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class="lv-overlay"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 2nd Row -->
+        <div class="card-group">
+            <!-- Card 4 -->
+            <div class="card lv-chart-card lv-card-4" style="border-top-right-radius: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+                <div class="lv-overlay"></div>
+            </div>
+            <!-- Card 5 -->
+            <div class="card lv-chart-card lv-card-5"
+                style="border-top-right-radius: 10px; border-top-left-radius: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    </p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+                <div class="lv-overlay"></div>
+            </div>
+            <!-- Card 6 -->
+            <div class="card lv-chart-card lv-card-6" style="border-top-left-radius: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This card has even longer content than the first to show that equal height
+                        action.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class="lv-overlay"></div>
+                </div>
+            </div>
+        </div>
 
+    </div>
 
+    <!-- About Us  -->
+
+    <div class="lv-unique-back-img">
+        <div class="lv-unique-about-back-color">
+            <div class="lv-unique-about-section">
+                <div class="row">
+                    <div class="col-sm-4">
+
+                        <div class="lv-unique-flex-container">
+                            <div class="lv-unique-flex-item lv-unique-flex-container-reverse">
+                                <div>
+                                    <img src={% static "Base/media/about-3.jpg" %} class="img-thumbnail lv-unique-left-bottom-img"
+                                        alt="left-img">
+                                </div>
+
+                                <div
+                                    class="lv-unique-flex-item lv-unique-flex-container-row d-flex justify-content-center align-items-center fs-3 text-white">
+                                    <div class="text-start p-2">
+                                        About Us
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="col-sm-4 ">
+                        <div
+                            class="lv-unique-flex-item lv-unique-flex-container-row d-flex justify-content-center align-items-center text-white p-3">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore nemo libero molestiae sit,
+                            obcaecati est architecto maxime, sed maiores impedit perferendis animi nobis assumenda
+                            consectetur! Libero similique dolor eum aperiam!
 
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="lv-unique-about-img-style">
+                            <img src={% static "Base/media/about-2.jpg" %} class="img-thumbnail mx-auto d-block" alt="right-img">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section><!--/.about-->
-<!--about end -->
-<!-- Service ends -->
-
-
-
-
-{% comment %} --------Blog------ {% endcomment %}
-<div class="container mt-5">
-    <div class="container">
-        <h2 class="text-center mb-4">Popular Posts</h2>
-        
-        <div class="row" id="blogSection"></div>
-      </div>
-</div>
 
 
 
 
 
 
-    {% comment %} ---------------chat bot implement--------- {% endcomment %}
+
+
+
+
+    {% comment %} chat bot implement {% endcomment %}
 
     <div class="chat-icon" id="chatIcon">
         <img src={% static "Base/media/chat-bot.png" %} alt="Chatbot" srcset="" class="chatbot">
@@ -155,11 +180,11 @@
         
     </div>
 
-
+</div>
 
 
     {% include "Base/footer.html" %}
-    
+
 
 {% endblock body%}
 
@@ -169,75 +194,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     
-    {% comment %} owlCarousel {% endcomment %}
-    <script>
-        $(document).ready(function(){
-            $('.owl-carousel').owlCarousel({
-                items:4,
-                merge:true,
-                loop:true,
-                margin:10,
-                video:true,
-                stagePadding: 5,
-                videoHeight:true,
-                videoWidth:true,
-                lazyLoad:true,
-                center:true,
-                responsive:{
-                    480:{
-                        items:1
-                    },
-                    600:{
-                        items:3
-                    }
-                }
-            })
-        });    
-    </script>
-    {% comment %} Blog {% endcomment %}
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const blogSection = document.getElementById("blogSection");
-          
-            // Sample blog data (replace with your actual data)
-            const blogPosts = [
-              {
-                title: "Tiny Triumphs",
-                image: "https://www.parents.com/thmb/GExGCp2zHxDIKxnCtx4QykPFqAs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1407570793-5f7481ec66794bdb8f67f27f1a9cf6d2.jpg",
-                content: "Your baby will feel secure when they hear your voices and may respond by turning their head towards you. Your baby will also be able to hear your heart beating as they did in the womb."
-              },
-              {
-                title: "The Baby Diaries",
-                image: "https://previews.123rf.com/images/boggy22/boggy221603/boggy22160300022/53164547-happy-family-with-newborn-baby.jpg",
-                content: "A Journal of Firsts, Fumbles, and Fantastic Moments.newborn baby is learning a lot as you spend time together every day. Their brain is growing and developing as they see, hear, smell and touch things in the world around them."
-              },
-              {
-                title: "Lullabies and Laughter: Crafting a Joyful Journey",
-                image: "https://media.istockphoto.com/id/1186564021/photo/happy-laughing-cute-little-girl-portrait.jpg?s=612x612&w=0&k=20&c=0Me0v9Qsez2NDRlpU0xqiNC212hjJSgEkRf17P4UPUQ=",
-                content: "Defining them as being calm, content and easily soothed as their needs have been met, rather than a comment on the baby's personality."
-              },
-              // Add more blog posts as needed
-            ];
-          
-            // Generate blog cards
-            blogPosts.forEach(post => {
-              const card = document.createElement("div");
-              card.classList.add("col-md-4", "blog-card");
-          
-              card.innerHTML = `
-                <div class="card h-100">
-                  <img src="${post.image}" class="card-img-top" alt="${post.title}">
-                  <div class="card-body">
-                    <h5 class="card-title blog-card-title">${post.title}</h5>
-                    <p class="card-text blog-card-text">${post.content}</p>
-                  </div>
-                </div>
-              `;
-          
-              blogSection.appendChild(card);
-            });
-          });
-    </script>
+   
+    
     
     {% comment %} ChatBot implementation... Don't edit a single letter with out my permission  {% endcomment %}
     <script src={% static "Base/js/chatbot.js" %}></script>
