@@ -10,231 +10,186 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 {% endblock css %}
 
 {% block body %}
-<div class="container">
-    <div class="slide">
-      <div class="item" style="background-image:  url({% static "Base/media/awarness/Slide1.jpg" %});">
-        <div class="content rounded ">
-          <div class="name">
-            40 MILLION vaccinations prevent more than 2.5 million deaths each
-            year!
-          </div>
-          <div class="des">
-            <b>
-              Immunization is key to protecting children from 14 harmful
-              diseases before they turn 2 years old, and healthcare
-              professionals are the key to ensuring on-time vaccination. CDC
-              is committed to maintaining public trust in immunizations by
-              working to ensure the safety of vaccines and providing timely
-              and transparent information about vaccine benefits and risks.
-              Working with partners like the American Academy of Pediatrics
-              (AAP) and the American Academy of Family Physicians (AAFP), CDC
-              develops, reviews, and updates resources to help health care
-              professionals talk to parents about vaccines,
-              vaccine-preventable diseases, and vaccine safety.
-            </b>
-          </div>
-        </div>
+<header class="header">
+  <div class="section__container header__container" id="home">
+      <div class="header__image">
+          <img src={% static "Base/media/awarness/header.png" %} alt="header" />
       </div>
-      <div class="item" style="background-image: url({% static "Base/media/awarness/Slide2.jpg" %});">
-        <div class="content">
-          <div class="name">
-            80% REDUCTION in the incidence of bacterial meningitis since the
-            introduction of vaccine in 1988!
-          </div>
-          <div class="des">
-            <b>
-              The epidemiology of acute bacterial meningitis has changed
-              substantially since the introduction of conjugate vaccines.
-              Bacterial meningitis is associated with high rates of mortality
-              and morbidity. The most common bacteria causing meningitis
-              include Streptococcus pneumoniae, Neisseria meningitidis, and
-              Haemophilus influenzae. Conjugate vaccines have been developed
-              that target specific serogroups or serotypes of these bacteria
-              that commonly cause bacterial meningitis. Over the past 3
-              decades, these conjugate vaccines have been implemented in
-              routine pediatric immunization programs to lower the burden of
-              disease.
-            </b>
-          </div>
-        </div>
-      </div>
-      <div class="item" style="background-image: url({% static "Base/media/awarness/Slide3.jpg" %});">
-        <div class="content">
-          <div class="name">7 Star Protection with 7 vaccinations</div>
-          <div class="des">
-            <b>
-              Once a child turns a year old, parents often get relaxed and
-              lose track of their vaccination status. And this might result in
-              children being vulnerable to infections and diseases that can
-              not only disrupt their routine life but can also put their
-              health at risk. Getting timely and appropriate vaccination as
-              recommended by your pediatrician can provide much needed
-              immunity to your toddler against several serious infections. So,
-              if you are unsure of your child having the 7 star protection,
-              get in touch with your paediatrician to know more.
-              </b>
-          </div>
-        </div>
-      </div>
-      <div class="item" style="background-image: url({% static "Base/media/awarness/Slide4.jpg" %});">
-        <div class="content">
-          <div class="name">Immunization: the gift of health</div>
-          <div class="des">
-            <b>
-              Immunization is one of the more important medical
-              interventions. Over the course of history, it has helped keep
-              millions of us protected against some of the most devastating
-              and deadly diseases ever to befall mankind. In fact, it has been
-              so effective that some diseases that were once feared are now
-              extinct or easily manageable. Yet, in the recent past many
-              unheard-of diseases are emerging too. This makes immunization
-              even more crucial. Modern vaccines and oral drops have protected
-              children from a wide variety of dangerous and fatal diseases.In
-              fact, some historically prevalent diseases have now been
-              eradicated from various countries owing to successful
-              immunization campaigns. Smallpox is one such example.
-            </b>
-          </div>
-        </div>
-      </div>
-      <div class="item" style="background-image: url({% static "Base/media/awarness/Slide5.jpg" %});">
-        <div class="content">
-          <div class="name">
-            Your shot, your shield.Immunization protects the next generation
-          </div>
-          <div class="des">
-            <b>
-              Immunization has helped rid the world of some very serious
-              debilitating diseases. Polio, for example, has now been
-              eradicated from the country, meaning current and future
-              generations will never have to suffer from it. Other diseases,
-              like rubella can also pass from a mother to their unborn child
-              if the mother is not vaccinated. By vaccinating people today, we
-              are able to prevent the spread of serious diseases to future
-              generations and ensure they grow up healthier. In a country like
-              India where a large section of the population belongs to minimal
-              income groups, supporting a family member suffering from a
-              preventable disease can be difficult. It not only consumes all
-              financial savings but at times, pushes families towards
-              financial instability. The family member who is assigned the
-              role of taking care of the sick often finds themselves unable to
-              participate in economic activities and contribute to the income
-              of the family. All of this can be avoided by taking the correct
-              vaccine at the right time.
-              </b>
-          </div>
-        </div>
-      </div>
-      <div class="item" style="background-image: url({% static "Base/media/awarness/Slide6.jpg" %});">
-        <div class="content">
-          <div class="name">School-going Children Need Protection Too!</div>
-          <div class="des">
-            <b>
-                Once a child crosses infancy, parents often lose track of their
-              child’s vaccine status. As a result, children find themselves at
-              the risk of infections and diseases that could not only derail
-              their studies, but also compromise their health. So, if you are
-              not sure whether your child is adequately protected, check the
-              child’s Vaccination Card, and get in touch with your
-              pediatrician for more information on missed or due vaccinations.
-              Getting age appropriate vaccination as recommended by your
-              doctor can provide much needed immunity against several
-              life-compromising infections.
-            </b>
-          </div>
-        </div>
-      </div>
-      {% comment %} <div class="item" style="background-image: url('{% static "Base/media/awarness/Slide7.jpg" %});">
-        <div class="content">
-          <div class="name">School-going Children Need Protection Too!</div>
-          <div class="des">
-            <b>
-              Full Immunization Coverage is lowest among the Tribal
-              Population (56%) as compared to the national average of (62%) in
-              India. Understanding the bottlenecks and addressing the
-              inequities to bridge the gaps is one of the mandates of UNICEF.
-              A Needs Assessment Study conducted in seven tribal dominant
-              States of India unwraps realities and paves way for state
-              specific action plans to address inequities for the tribal
-              immunization.
-            </b>
-          </div>
-        </div>
-      </div> {% endcomment %}
-      <div class="item" style="background-image: url({% static "Base/media/awarness/Slide8.jpg" %});">
-        <div class="content">
-          <div class="name">
-            Toolkit for Prenatal Care Providers. Increasing the Use of
-            Maternal Vaccines
-          </div>
-          <div class="des">
-            <b>
-              This comprehensive toolkit is intended to help prenatal care
-              providers increase the rates of maternal immunization. Ob-gyns,
-              nurse-midwives, and other healthcare professionals who serve
-              pregnant women can all use this toolkit. The resources here
-              include recommendations from CDC and other relevant details
-              about vaccinating pregnant women.
-            </b>
-          </div>
-        </div>
-      </div>
-      <div class="item" style="background-image: url({% static "Base/media/awarness/Slide9.jpg" %});">
-        <div class="content">
-          <div class="name">
-            Vaccination card is your child’s passport to health.
-          </div>
-          <div class="des">
-            <b>
-              A Vaccination card (sometimes called immunization card)
-              provides a history of all the vaccines your child has received
-              and also helps you keep track of upcoming vaccinations. So that
-              you don’t miss a single one. Generally, a Vaccination card is
-              provided to you by the Pediatrician. Click on the link below to
-              know more about Vaccines recommended upto 18 years of age.
-            </b>
-          </div>
-        </div>
-      </div>
-      <div class="item" style="background-image: url({% static "Base/media/awarness/Slide10.jpg" %});">
-        <div class="content">
-          <div class="name">Know your child's vaccination schedule.</div>
-          <div class="des">
-            <b>
-              Vaccines save lives. Vaccines mean protection. Protection for
-              children against all preventable diseases. And if you have been
-              vaccinated or have vaccinated your children, you are part of the
-              chain that keeps all humanity safe. Which vaccines do children
-              need to be given before they turn 16? When should these vaccines
-              be administered and which diseases are they protecting children
-              from? We present to you a series of infographics explaining the
-              Universal Immunization Program (UIP) to keep you informed about
-              the vaccination schedule of your children and help you
-              understand the diseases they are preventing children from. Make
-              sure you save the schedule and vaccinate children against all
-              vaccine-preventable diseases.And parents and caregivers, please
-              don’t forget to vaccinate your children. Thanks to vaccines and
-              with dedication, care and love, we can secure a long life for
-              every child.
-            </b>
-          </div>
-        </div>
-      </div>
-
-      
-    </div>
-    <div class="button">
-        <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
-        <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+      <div class="header__content">
+          <h4>40 MILLION vaccinations</h4>
+          <h1 class="section__header">Prevent more than
+              2.5 million deaths each year!</h1>
+          <p>
+              Immunization is key to protecting children from 14 harmful diseases before they
+              turn 2 years old, and healthcare professionals are the key to ensuring on-time vaccination.
+              CDC is committed to maintaining public trust in immunizations by working to ensure the
+              safety of vaccines and providing timely and transparent information about vaccine benefits
+              and risks. Working with partners like the American Academy of Pediatrics (AAP) and the
+              American Academy of Family Physicians (AAFP), CDC develops, reviews, and updates resources
+              to help health care professionals talk to parents about vaccines, vaccine-preventable
+              diseases, and vaccine safety.
+          </p>
       </div>
   </div>
+</header>
+
+<section class="section__container about__container" id="about">
+  <div class="about__image">
+      <img src={% static "Base/media/awarness/about.png" %} alt="about" />
+  </div>
+  <div class="about__content">
+      <h2 class="section__header">Immunization: the gift of health</h2>
+      <p class="section__description">
+          Immunization is one of the more important medical interventions. Over the course
+          of history, it has helped keep millions of us protected against some of the most devastating
+          and deadly diseases ever to befall mankind.
+      </p>
+      <div class="about__grid">
+          <div class="about__card">
+              <span><i class="ri-open-arm-line"></i></span>
+              <div>
+                  <h4>Polio</h4>
+                  <p>
+                      his disease is caused by a virus. It can infect the brain and spinal cord and cause
+                      paralysis (when you can’t move one or more parts of your body) and even death.
+                  </p>
+              </div>
+          </div>
+          <div class="about__card">
+              <span><i class="ri-shield-cross-line"></i></span>
+              <div>
+                  <h4>Rotavirus</h4>
+                  <p>
+                      This infection is caused by a virus. It can cause severe diarrhea, vomiting, fever and belly
+                      pain. It can lead to dehydration.
+                  </p>
+              </div>
+          </div>
+          <div class="about__card">
+              <span><i class="ri-p2p-line"></i></span>
+              <div>
+                  <h4>Varicella (also called chickenpox)</h4>
+                  <p>
+                      This infection spreads easily and causes itchy skin, rash and fever, and is very contagious
+                      from person to person, even without direct contact.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="section__container class__container" id="class">
+  <h2 class="section__header">Toolkit for Prenatal Care Providers. Increasing the Use of Maternal Vaccines</h2>
+  <p class="section__description">
+      This comprehensive toolkit is intended to help prenatal care providers increase
+      the rates of maternal immunization. Ob-gyns, nurse-midwives, and other healthcare
+      professionals who serve pregnant women can all use this toolkit. The resources here include
+      recommendations from CDC and other relevant details about vaccinating pregnant women.
+  </p>
+  <div class="class__grid">
+      <div class="class__card">
+          
+          <img src={% static "Base/media/awarness/class-1.jpg" %} alt="class" />
+          <div class="class__content">
+              <h4>Africa CDC and UNICEF Expand Partnership</h4>
+              <p>Strengthen Health Systems and Immunization of Children in Africa</p>
+          </div>
+      </div>
+      <div class="class__card">
+          
+          <img src={% static "Base/media/awarness/class-2.jpg" %} alt="class" />
+          <div class="class__content">
+              <h4>Measles cases in Europe and Central Asia</h4>
+              <p>Skyrocket by 3000 per cent this year compared to last</p>
+          </div>
+      </div>
+      <div class="class__card">
+          
+          <img src={% static "Base/media/awarness/class-3.jpg" %} alt="class" />
+          <div class="class__content">
+              <h4>Millions at risk from cholera</h4>
+              <p>Due to lack of clean water, soap and toilets, and shortage of cholera vaccine</p>
+          </div>
+      </div>
+      <div class="class__card">
+          
+          <img src={% static "Base/media/awarness/class-4.jpg" %} alt="class" />
+          <div class="class__content">
+              <h4>Strengthening care for families and supporting mental health</h4>
+              <p>Being mentally healthy gives us the ability to enjoy life and cope with good and bad days.</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="section__container trainer__container" id="trainer">
+  <h2 class="section__header">Vaccination card is your child’s passport to health</h2>
+  <p class="section__description">
+      A Vaccination card (sometimes called immunization card) provides a history of
+      all the vaccines your child has received and also helps you keep track of upcoming
+      vaccinations. So that you don’t miss a single one.
+      Generally, a Vaccination card is provided to you by the Pediatrician. Click on the link
+      below to know more about Vaccines recommended upto 18 years of age.
+  </p>
+  <div class="trainer__grid">
+      <div class="trainer__card">
+          <img src={% static "Base/media/awarness/trainer-1.jpg" %} alt="trainer" />
+      </div>
+      <div class="trainer__card">
+          <div class="trainer__content">
+              <h4>Vaccines save lives</h4>
+              <h5>Vaccines mean protection</h5>
+              <hr />
+              <p>
+                  Protection for children againstall preventable diseases. And if you have been vaccinated or have
+                  vaccinated your children,
+                  you are part of the chain that keeps all humanity safe.
+              </p>
+          </div>
+      </div>
+      <div class="trainer__card">
+          <img src={% static "Base/media/awarness/trainer-2.jpg" %} alt="trainer" />
+      </div>
+      <div class="trainer__card">
+          <div class="trainer__content">
+              <h4>Immunization</h4>
+              <h5>Among Tribal Population</h5>
+              <hr />
+              <p>
+                  Full Immunization Coverage is lowest among the Tribal Population (56%) as
+                  compared to the national average of (62%) in India.
+              </p>
+          </div>
+      </div>
+      <div class="trainer__card">
+          <img src={% static "Base/media/awarness/trainer-3.jpg" %} alt="trainer" />
+      </div>
+      <div class="trainer__card">
+          <div class="trainer__content">
+              <h4>School-going Children</h4>
+              <h5>Need Protection Too!</h5>
+              <hr />
+              <p>
+                  Getting age appropriate vaccination as recommended by your doctor can provide much needed
+                  immunity against several life-compromising infections.
+              </p>
+          </div>
+      </div>
+  </div>
+</section>
 
     {% comment %} {% include "Base/footer.html" %} {% endcomment %}
 {% endblock body %}
 
 {% block js %}
   <script src={% static "Base/js/awarness.js" %}></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+   
 {% endblock js %}
